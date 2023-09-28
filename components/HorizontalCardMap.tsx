@@ -1,10 +1,12 @@
 import React from 'react';
-import { View, Text, ScrollView, FlatList, StyleSheet } from 'react-native';
+import { View, Text, Image, FlatList, StyleSheet } from 'react-native';
+import Lable from './Lable';
 
 interface Card {
   id: number;
   title: string;
   description: string;
+  image: string;
 }
 
 interface HorizontalCardMapProps {
@@ -13,6 +15,8 @@ interface HorizontalCardMapProps {
 
 const HorizontalCardMap: React.FC<HorizontalCardMapProps> = ({ cards }) => {
   return (
+    <View >
+    <Lable title="Power Course"/>
       <FlatList
         showsHorizontalScrollIndicator
         data={cards}
@@ -20,29 +24,37 @@ const HorizontalCardMap: React.FC<HorizontalCardMapProps> = ({ cards }) => {
         horizontal
         renderItem={({ item }) => (
           <View style={styles.card}>
+            <Image source={{ uri: item.image }} style={styles.image} />
             <Text style={styles.title}>{item.title}</Text>
             <Text style={styles.description}>{item.description}</Text>
           </View>
         )}
       />
+      </View>
   );
 };
 
 const styles = StyleSheet.create({
   card: {
-    width: 150, 
-    height: 160,
-    margin: 10,
-    padding: 10,
+    width: 122, 
+    height: 150,
+    margin: 7,
+    padding: 12,
     backgroundColor: 'white',
     borderRadius: 8,
   },
   title: {
-    fontSize: 18,
+    fontSize: 13,
     fontWeight: 'bold',
   },
   description: {
     fontSize: 14,
+  },
+  image: {
+    width: '100%',
+    height: 85, 
+    resizeMode: 'cover', 
+    marginBottom: 8, 
   },
 });
 

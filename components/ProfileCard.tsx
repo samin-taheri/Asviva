@@ -6,13 +6,13 @@ import { firstCard, primaryColor, secondCard, textColor, thirdCard } from '../gl
 import { ProfileCardProps } from "../types/data";
 
 const iconMap: { [key: string]: React.ReactNode } = {
-    'account-convert': <MaterialCommunityIcons name="account-convert" size={25} color={thirdCard} />,
-    'account-tie': <MaterialCommunityIcons name="account-tie" size={25} color={thirdCard} />,
-    'earth': <MaterialCommunityIcons name="earth" size={25} color={thirdCard} />,
-    'gender-male-female': <MaterialCommunityIcons name="gender-male-female" size={25} color={thirdCard} />,
-    'human-male-height': <MaterialCommunityIcons name="human-male-height" size={25} color={thirdCard} />,
-    'weight': <MaterialCommunityIcons name="weight" size={25} color={thirdCard} />,
-    'cake-variant': <MaterialCommunityIcons name="cake-variant" size={25} color={thirdCard} />,
+    'account-convert': <MaterialCommunityIcons name="account-convert" size={25} color={secondCard} />,
+    'account-tie': <MaterialCommunityIcons name="account-tie" size={25} color={secondCard} />,
+    'earth': <MaterialCommunityIcons name="earth" size={25} color={secondCard} />,
+    'gender-male-female': <MaterialCommunityIcons name="gender-male-female" size={25} color={secondCard} />,
+    'human-male-height': <MaterialCommunityIcons name="human-male-height" size={25} color={secondCard} />,
+    'weight': <MaterialCommunityIcons name="weight" size={25} color={secondCard} />,
+    'cake-variant': <MaterialCommunityIcons name="cake-variant" size={25} color={secondCard} />,
   };
 
 const ProfileCard: React.FC<ProfileCardProps> = ({

@@ -2,7 +2,7 @@
 import { View,Text, StyleSheet, Image, Pressable, TouchableOpacity } from "react-native";
 import Lable from "./Lable";
 import Card from "./Card";
-import { FontAwesome } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 import { useState } from "react";
 import MyModal from "./MyModal"; 
@@ -19,8 +19,8 @@ export default function PhysicalFitness () {
             <Lable title="Physical Fitness Test"/>
             <Card>
             <View style={styles.textContainer}>
-            <View style={{ backgroundColor: '#f3e4f1', width: 35, height: 35, alignItems: 'center',  justifyContent: 'center', borderRadius: 20, marginRight: 10 }}>
-                <FontAwesome name="star" size={25} color={firstCard} />
+                <View style={{ backgroundColor: '#f3e4f1', width: 40, height: 40, alignItems: 'center',  justifyContent: 'center', borderRadius: 8, marginRight: 10 }}>
+                <Ionicons name="trophy" size={30} color={firstCard} />
                 </View>
                 <Text style={styles.title}>FTP test to suit course intensity</Text>
                 <Pressable style={styles.buttonContainer} onPress={toggleModal}>
@@ -67,7 +67,7 @@ const styles= StyleSheet.create({
     buttonContainer: {
         flex: 1,
         flexDirection: 'row',
-        paddingLeft: '15%',
+        paddingLeft: '10%',
     },
     button: {
         color: primaryColor,
