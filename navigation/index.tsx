@@ -16,6 +16,7 @@ import StartCreating from "../screens/StartCreating";
 import { Text } from "react-native";
 import ConnectDevice from "../screens/ConnectDevice";
 import CustomHeader from "../components/CustomHeader";
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 
 export default function Navigation() {
   return (
@@ -115,3 +116,15 @@ function BottomTabNavigator() {
     </BottomTab.Navigator>
   );
 }
+const TopTab = createMaterialTopTabNavigator();
+function TopTabNavigator() {
+  return (
+    <NavigationContainer>
+      <TopTab.Navigator>
+        <TopTab.Screen name="First" component={Home} />
+        <TopTab.Screen name="Second" component={StartCreating} />
+      </TopTab.Navigator>
+    </NavigationContainer>
+  );
+}
+

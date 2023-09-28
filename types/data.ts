@@ -68,3 +68,11 @@ export interface ProfileCardProps {
     selectedAnswer?: string;
     selectedDate?: Date | null; 
 }
+export interface BackGroundCardProps {
+    title: string;
+    backgroundImage: string; 
+}
+export interface BackgroundCardProps {
+    title: string;
+    backgroundImage: string;
+}

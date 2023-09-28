@@ -18,7 +18,7 @@ const Card: React.FC<CardProps> = ({ children, style }) => {
 const styles = StyleSheet.create({
     card: {
         backgroundColor: "#ffffff",
-        borderRadius: 8,
+        borderRadius: 12,
         padding: 16,
         margin: 8,
         shadowColor: "#000000",

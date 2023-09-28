@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column', 
     alignItems: 'flex-start',
     padding: 10,
-    borderRadius: 8,
+    borderRadius: 12,
   },
   icon: {
     marginBottom: 10,
