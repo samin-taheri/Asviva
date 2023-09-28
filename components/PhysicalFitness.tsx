@@ -6,7 +6,7 @@ import { FontAwesome } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 import { useState } from "react";
 import MyModal from "./MyModal"; 
-import { primaryColor, thirdColor } from '../global';
+import { firstCard, primaryColor, secondCard, thirdCard } from '../global';
 
 export default function PhysicalFitness () {
         const [isModalVisible, setModalVisible] = useState(false);
@@ -19,8 +19,8 @@ export default function PhysicalFitness () {
             <Lable title="Physical Fitness Test"/>
             <Card>
             <View style={styles.textContainer}>
-            <View style={{ backgroundColor: thirdColor, width: 35, height: 35, alignItems: 'center',  justifyContent: 'center', borderRadius: 20, marginRight: 10 }}>
-                <FontAwesome name="star" size={25} color='#e2edfc' />
+            <View style={{ backgroundColor: 'rgba(190,217, 255,0.6)', width: 35, height: 35, alignItems: 'center',  justifyContent: 'center', borderRadius: 20, marginRight: 10 }}>
+                <FontAwesome name="star" size={25} color={'rgba(75,130, 207,1)'} />
                 </View>
                 <Text style={styles.title}>FTP test to suit course intensity</Text>
                 <Pressable style={styles.buttonContainer} onPress={toggleModal}>

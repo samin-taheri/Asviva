@@ -49,5 +49,22 @@ export interface TopNavigationBarProps {
     option2Text: string;
     selectedOption: 'option1' | 'option2';
     onOptionPress: (option: 'option1' | 'option2') => void;
-  }
-  
+}
+export interface DeviceCardProps {
+    title: string;
+    iconName: string;
+    cardColor: string;
+    onPress: () => void;
+    style?: ViewStyle;
+    iconColor?: string
+}
+export interface ProfileCardProps {
+    title: string;
+    iconName: string;
+    cardColor: string;
+    onPress: () => void;
+    style?: ViewStyle;
+    iconColor?: string;
+    selectedAnswer?: string;
+    selectedDate?: Date | null; 
+}
