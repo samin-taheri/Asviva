@@ -116,15 +116,3 @@ function BottomTabNavigator() {
     </BottomTab.Navigator>
   );
 }
-const TopTab = createMaterialTopTabNavigator();
-function TopTabNavigator() {
-  return (
-    <NavigationContainer>
-      <TopTab.Navigator>
-        <TopTab.Screen name="First" component={Home} />
-        <TopTab.Screen name="Second" component={StartCreating} />
-      </TopTab.Navigator>
-    </NavigationContainer>
-  );
-}
-

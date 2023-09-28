@@ -9,7 +9,8 @@ import BackGroundCard from "../components/backgroundCard";
 export default function Home({navigation}: NativeStackHeaderProps) {
 
     return(
-        <ScrollView>
+        <ScrollView 
+        showsVerticalScrollIndicator={false}>
         <View style={styles.container}>
             <WeaklyGoals onPress={()=> navigation.navigate("StartCreating")}/>
             <BackGroundCard title="Card Title" backgroundImage="https://img.freepik.com/free-vector/spring-landscape-scene_52683-56331.jpg?w=1800&t=st=1695926282~exp=1695926882~hmac=2a1ce89f08423b7a43e2974943add56f42ef47732633c51ff9ecd29da238a206" />
