@@ -2,6 +2,7 @@ import React from 'react';
 import { StyleSheet, View } from 'react-native';
 import ColoredCard from './ColoredCard'; 
 import Lable from './Lable';
+import { firstCard, secondCard, thirdCard } from '../global';
 
 const TotalWorkout: React.FC = () => {
   return (
@@ -14,19 +15,19 @@ const TotalWorkout: React.FC = () => {
             icon="clock"
             title="Total Duration"
             description="0 min"
-            cardColor="#93bffc" 
+            cardColor={firstCard} 
         />
         <ColoredCard
             icon="zap"
             title="Exercise Times"
             description="0"
-            cardColor="#2383e8"
+            cardColor={secondCard}
         />
         <ColoredCard
             icon="pie-chart"
             title="Total Calorie"
             description="0 kcal"
-            cardColor="#0056b3" 
+            cardColor={thirdCard}
         />
       </View>
       </View>

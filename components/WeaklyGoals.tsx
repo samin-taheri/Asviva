@@ -16,7 +16,7 @@ const WeaklyGoals: React.FC<WeaklyGoalsProps> = ({ onPress }) => {
                     <Text style={styles.description}>Start Creating</Text>
                     </Pressable>
                 </View>
-                <Image source={require("../assets/1.jpg")} style={styles.image} />
+                <Image source={require("../assets/4.jpg")} style={styles.image} />
             </Card>
         </View>
     );
@@ -46,15 +46,15 @@ const styles= StyleSheet.create({
         flex: 1,
       },
       image: {
-        width: 120,
-        height: 80,
+        width: 130,
+        height: 120,
         borderRadius: 8,
         marginLeft: 16,
       },
       title: {
         fontSize: 14,
         fontWeight: "bold",
-        marginBottom: 15
+        marginBottom: 25
       },
       description: {
         fontSize: 14,

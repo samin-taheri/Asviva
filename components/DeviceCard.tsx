@@ -4,11 +4,11 @@ import { Ionicons } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 import { FontAwesome5 } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { firstCard, secondCard, textColor, thirdCard } from '../global';
+import { firstCard, secondCard, secondaryColor, textColor, thirdCard } from '../global';
 import { DeviceCardProps } from "../types/data";
 
 const iconMap: { [key: string]: React.ReactNode } = {
-    'bicycle': <Ionicons name="bicycle" size={35} color={'#6ea5e3'} />,
+    'bicycle': <Ionicons name="bicycle" size={35} color={secondaryColor} />,
     'watch': <MaterialCommunityIcons name="watch" size={35} color={secondCard} />,
     'heartbeat': <FontAwesome5 name="heartbeat" size={35} color={thirdCard} />,
   };

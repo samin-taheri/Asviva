@@ -1,8 +1,8 @@
-export const primaryColor = '#0056b3';
-export const secondaryColor = '#93bffc';
+export const primaryColor = '#75456f';
+export const secondaryColor = '#995798';
 export const textColor = '#6c6c6c';
 export const backgroundColor = '#f5f5f5';
-export const secondCard = '#4b82cf';
-export const firstCard = '#93bffc';
-export const thirdCard = '#0056b3';
+export const secondCard = '#995798';
+export const firstCard = '#d2adcd';
+export const thirdCard = '#75456f';
 export const cardBackground = '#f3f3f5';

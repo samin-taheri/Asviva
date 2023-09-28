@@ -19,8 +19,8 @@ export default function PhysicalFitness () {
             <Lable title="Physical Fitness Test"/>
             <Card>
             <View style={styles.textContainer}>
-            <View style={{ backgroundColor: 'rgba(190,217, 255,0.6)', width: 35, height: 35, alignItems: 'center',  justifyContent: 'center', borderRadius: 20, marginRight: 10 }}>
-                <FontAwesome name="star" size={25} color={'rgba(75,130, 207,1)'} />
+            <View style={{ backgroundColor: '#f3e4f1', width: 35, height: 35, alignItems: 'center',  justifyContent: 'center', borderRadius: 20, marginRight: 10 }}>
+                <FontAwesome name="star" size={25} color={firstCard} />
                 </View>
                 <Text style={styles.title}>FTP test to suit course intensity</Text>
                 <Pressable style={styles.buttonContainer} onPress={toggleModal}>

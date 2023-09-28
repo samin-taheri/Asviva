@@ -30,7 +30,7 @@ export default function Profile({navigation}: NativeStackHeaderProps) {
                 title="Change Avatar"
                 iconName="account-convert"
                 cardColor={cardBackground}
-                style={{ paddingLeft: '23%'}}
+                style={{ paddingLeft: '27%'}}
                 selectedAnswer="Please Select" 
                 onPress={() => {}}
             />
@@ -39,7 +39,7 @@ export default function Profile({navigation}: NativeStackHeaderProps) {
                 title="Nickname"
                 iconName="account-tie"
                 cardColor={cardBackground}
-                style={{ paddingLeft: '31%'}}
+                style={{ paddingLeft: '35%'}}
                 selectedAnswer="Please Select" 
                 onPress={() => {
                 }}
@@ -49,7 +49,7 @@ export default function Profile({navigation}: NativeStackHeaderProps) {
                 title="Country / Region"
                 iconName="earth"
                 cardColor={cardBackground}
-                style={{ paddingLeft: '19%'}}
+                style={{ paddingLeft: '23%'}}
                 selectedAnswer="Please Select" 
                 onPress={() => {
                 }}
@@ -59,7 +59,7 @@ export default function Profile({navigation}: NativeStackHeaderProps) {
                 title="Gender"
                 iconName="gender-male-female"
                 cardColor={cardBackground}
-                style={{ paddingLeft: '36%'}}
+                style={{ paddingLeft: '40%'}}
                 selectedAnswer="Please Select" 
                 onPress={() => {
                 }}
@@ -68,7 +68,7 @@ export default function Profile({navigation}: NativeStackHeaderProps) {
                 title="Height"
                 iconName="human-male-height"
                 cardColor={cardBackground}
-                style={{ paddingLeft: '37%'}}
+                style={{ paddingLeft: '41%'}}
                 selectedAnswer="Please Select" 
                 onPress={() => {
                 }}
@@ -77,7 +77,7 @@ export default function Profile({navigation}: NativeStackHeaderProps) {
                 title="Weight"
                 iconName="weight"
                 cardColor={cardBackground}
-                style={{ paddingLeft: '37%'}}
+                style={{ paddingLeft: '41%'}}
                 selectedAnswer="Please Select" 
                 onPress={() => {
                 }}
@@ -86,7 +86,7 @@ export default function Profile({navigation}: NativeStackHeaderProps) {
                 title="Birthday"
                 iconName="cake-variant"
                 cardColor={cardBackground}
-                style={{ paddingLeft: '34%'}}
+                style={{ paddingLeft: '38%'}}
                 onPress={showDatePicker}
                 selectedAnswer="Please Select" 
             />
