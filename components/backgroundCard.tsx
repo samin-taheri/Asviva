@@ -1,15 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, Text, ImageBackground, StyleSheet, Pressable } from 'react-native';
 import Lable from './Lable';
-import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Entypo } from "@expo/vector-icons";
 import { firstCard, primaryColor, secondCard, textColor } from '../global';
 import { Feather } from "@expo/vector-icons";
 import { BackgroundCardProps } from '../types/data';
-
+import MyModal from './MyModal';
 {/* <View style={{ backgroundColor: secondCard, width: 35, height: 35, alignItems: 'center', justifyContent: 'center', borderRadius: 8, marginRight: 10 }}>
 <MaterialCommunityIcons name="dumbbell" size={25} color='white' />
 </View> */}
 const BackgroundCard: React.FC<BackgroundCardProps> = ({ backgroundImage }) => {
+        const [isModalVisible, setModalVisible] = useState(false);
+      
+        const toggleModal = () => {
+          setModalVisible(!isModalVisible);
+        };
   return (
     <View>
     <Lable title="Physical Fitness Test" />
@@ -17,14 +22,16 @@ const BackgroundCard: React.FC<BackgroundCardProps> = ({ backgroundImage }) => {
       <View style={styles.cardContainer}>
         <ImageBackground source={{ uri: backgroundImage }} style={styles.cardBackground}>
           <View style={[styles.cardContent, { backgroundColor: 'rgba(255, 255, 255, 0.77)' }]}>
+          <Entypo name="dot-single" size={30} color={primaryColor} />
             <Text style={styles.title}>FTP test for course integrity</Text>
-            <Pressable style={styles.buttonContainer}>
+            <Pressable style={styles.buttonContainer} onPress={toggleModal}>
               <Text style={styles.button}>Start</Text>
               <Feather name="chevron-right" size={20} color='white' style={{ marginRight: 15 }} />
             </Pressable>
           </View>
         </ImageBackground>
       </View>
+      <MyModal isVisible={isModalVisible} onClose={toggleModal} />
     </View>
     </View>
   );
@@ -63,17 +70,18 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 14,
     fontWeight: "bold",
-    paddingRight: 60,
-    paddingTop: 7
+    paddingRight: 30,
+    paddingTop: 7,
   },
   buttonContainer: {
-    backgroundColor: secondCard,
+    backgroundColor: primaryColor,
     width: 80,
     height: 30,
     borderRadius: 8,
     alignItems: 'center',
     justifyContent: 'center',
-    flexDirection: 'row'
+    flexDirection: 'row',
+    marginLeft: 5
 
   },
   button: {

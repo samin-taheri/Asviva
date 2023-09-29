@@ -4,7 +4,7 @@ import { StatsCardProps } from '../types/data';
 
 const StatsCard: React.FC<StatsCardProps> = ({ title, value, style }) => {
     return (
-        <View style={[styles.container, style]}>
+      <View style={[styles.container, style]}>
         <View style={styles.card}>
         <Text style={styles.title}>{title}</Text>
         <Text style={styles.value}>{value}</Text>

@@ -3,7 +3,6 @@ import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 import { backgroundColor } from '../global';
 import CustomHeader from "../components/CustomHeader";
 import HorizontalCardMap from "../components/HorizontalCardMap";
-import Workout from "../components/Workout";
 
 const cards = [
     { id: 1, title: '15-minute Body Warm Up', description: '', image: 'https://img.freepik.com/free-vector/fitness-tracker-concept-illustration_114360-3409.jpg?w=1380&t=st=1695912711~exp=1695913311~hmac=d586317d0755b8e5d9871f6d7c28efac2013e6f83b702a591370d910a42a8656'},
@@ -19,7 +18,6 @@ export default function SportsCenter({navigation}: NativeStackHeaderProps) {
             <View style={{padding: 8}}>
             <CustomHeader title="Sports Center" />
             <HorizontalCardMap cards={cards} />
-            <Workout/>
             </View>
         </View>
     )

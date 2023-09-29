@@ -3,10 +3,8 @@ import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 import WeaklyGoals from "../components/WeaklyGoals";
 import Chart from "../components/Chart";
 import { backgroundColor } from '../global';
-import TotalWorkout from "../components/TotalWorkout";
 import BackGroundCard from "../components/backgroundCard";
-import WorkoutCard from "../components/WorkoutCard";
-import Workout from "../components/Workout";
+import TotalWorkout2 from "../components/TotalWorkout2";
 
 export default function Home({navigation}: NativeStackHeaderProps) {
 
@@ -16,7 +14,7 @@ export default function Home({navigation}: NativeStackHeaderProps) {
         <View style={styles.container}>
             <BackGroundCard title="Card Title" backgroundImage="https://img.freepik.com/free-vector/spring-landscape-scene_52683-56331.jpg?w=1800&t=st=1695926282~exp=1695926882~hmac=2a1ce89f08423b7a43e2974943add56f42ef47732633c51ff9ecd29da238a206" />
             <WeaklyGoals onPress={()=> navigation.navigate("StartCreating")}/>
-            <TotalWorkout/>
+            <TotalWorkout2/>
             <Chart onPress={()=> navigation.navigate("Details")}/>
         </View>
         </ScrollView>
