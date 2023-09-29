@@ -3,6 +3,7 @@ export type Difficulaty = "easy" | "hard" | "normal";
 export type SequenceType= "exercise" | "Strech" | "break";
 import { ReactNode } from "react";
 import { ViewStyle } from 'react-native';
+import { ImageSourcePropType } from "react-native";
 
 export interface Workout {
     slug: string,
@@ -52,21 +53,19 @@ export interface TopNavigationBarProps {
 }
 export interface DeviceCardProps {
     title: string;
-    iconName: string;
     cardColor: string;
     onPress: () => void;
-    style?: ViewStyle;
-    iconColor?: string
+    imageSource: ImageSourcePropType
 }
 export interface ProfileCardProps {
     title: string;
-    iconName: string;
-    cardColor: string;
+    iconName?: string;
     onPress: () => void;
     style?: ViewStyle;
     iconColor?: string;
     selectedAnswer?: string;
     selectedDate?: Date | null; 
+    imageSource: ImageSourcePropType
 }
 export interface BackGroundCardProps {
     title: string;

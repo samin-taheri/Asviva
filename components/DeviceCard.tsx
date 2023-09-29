@@ -1,38 +1,30 @@
 import React from "react";
-import { View, Text, StyleSheet, Pressable } from "react-native";
-import { Ionicons } from "@expo/vector-icons";
-import { Feather } from "@expo/vector-icons";
-import { FontAwesome5 } from "@expo/vector-icons";
+import { View, Text, StyleSheet, Pressable, Image } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { firstCard, secondCard, secondaryColor, textColor, thirdCard } from '../global';
+import { Feather } from "@expo/vector-icons";
+import { cardBackground, primaryColor, secondCard, textColor, thirdCard } from '../global';
 import { DeviceCardProps } from "../types/data";
-
-const iconMap: { [key: string]: React.ReactNode } = {
-    'bicycle': <Ionicons name="bicycle" size={35} color={secondaryColor} />,
-    'watch': <MaterialCommunityIcons name="watch" size={35} color={secondCard} />,
-    'heartbeat': <FontAwesome5 name="heartbeat" size={35} color={thirdCard} />,
-  };
 
 const DeviceCard: React.FC<DeviceCardProps> = ({
   title,
-  cardColor,
-  iconName,
   onPress,
-  style
+  imageSource
 }) => {
   return (
     <Pressable style={styles.card} onPress={onPress}>
-      <View style={[styles.iconContainer, { backgroundColor: cardColor }]}>
-      {iconMap[iconName]}
-      
+      <View style={styles.iconContainer}>
+      <Image source={imageSource} style={styles.image} /> 
       </View>
+      <View style={{flexDirection: 'column', flex: 1}}>
       <Text style={styles.title}>{title}</Text>
-      <Feather
-        name="chevron-right"
-        size={20}
-        color={textColor}
-        style={[styles.chevron, style]}
-      />
+        </View>
+        <View style={[ styles.icon]}>
+          <Feather
+            name="arrow-right"
+            size={20}
+            color={textColor}
+          />
+      </View>
     </Pressable>
   );
 };
@@ -42,18 +34,19 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     padding: 10,
-    borderRadius: 8,
-    margin: 8,
+    borderRadius: 12,
+    margin: 6,
     backgroundColor: 'white'
   },
   iconContainer: {
-    backgroundColor: thirdCard,
-    width: 55,
-    height: 55,
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 8,
     marginRight: 10,
+    backgroundColor: cardBackground,
+    width: 60,
+    height: 60,
+    borderRadius: 12,
+
   },
   title: {
     fontSize: 14,
@@ -61,9 +54,31 @@ const styles = StyleSheet.create({
     paddingLeft: 10,
   },
   chevron: {
-    flex: 1,
-    alignItems: 'flex-end',
-    paddingLeft: '0%',
+  },
+  buttonContainer: {
+      flexDirection: 'row',
+      paddingLeft: '30%',
+  },
+  button: {
+      color: '#787878',
+      fontSize: 13,
+      paddingLeft: 10,
+      paddingTop: 8
+  },
+  icon: {
+    backgroundColor: cardBackground,
+    width: 35,
+    height: 35,
+    alignItems: 'center',
+    justifyContent: 'center',
+    borderRadius: 20,
+    marginRight: 10,
+  },
+  image: {
+    width: 160,
+    height: 160,
+    resizeMode: 'cover',
+    borderRadius: 12,
   },
 });
 

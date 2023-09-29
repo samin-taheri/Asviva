@@ -13,25 +13,22 @@ export default function ConnectDevice({ navigation }: NativeStackHeaderProps) {
             <View style={styles.contentContainer}>
             <DeviceCard
                 title="Cycling"
-                iconName="bicycle"
                 cardColor={cardBackground}
-                style={{ paddingLeft: '57%'}}
+                imageSource={require('../assets/connect-2.png')}
                 onPress={() => {
                 }}
             />
             <DeviceCard
                 title="Apple Watch"
-                iconName="watch"
                 cardColor={cardBackground}
-                style={{ paddingLeft: '47%'}}
+                imageSource={require('../assets/connect-4.png')}
                 onPress={() => {
                 }}
             />
             <DeviceCard
                 title="Standard Heart Rate Device"
-                iconName="heartbeat"
                 cardColor={cardBackground}
-                style={{ paddingLeft: '20%'}}
+                imageSource={require('../assets/connect-5.png')}
                 onPress={() => {
                 }}
             />
