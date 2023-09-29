@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { View, Text, ImageBackground, StyleSheet, Pressable } from 'react-native';
 import Lable from './Lable';
 import { Entypo } from "@expo/vector-icons";
-import { firstCard, primaryColor, secondCard, textColor } from '../global';
+import { primaryColor } from '../global';
 import { Feather } from "@expo/vector-icons";
 import { BackgroundCardProps } from '../types/data';
 import MyModal from './MyModal';
+
 {/* <View style={{ backgroundColor: secondCard, width: 35, height: 35, alignItems: 'center', justifyContent: 'center', borderRadius: 8, marginRight: 10 }}>
 <MaterialCommunityIcons name="dumbbell" size={25} color='white' />
 </View> */}

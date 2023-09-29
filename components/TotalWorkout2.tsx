@@ -27,7 +27,7 @@ const TotalWorkout2: React.FC = () => {
             title="Total Calorie"
             description="0 kcal"
             cardColor={cardBackground2}
-            imageSource={require('../assets/calories.png')}
+            imageSource={require('../assets/calorie.png')}
             />
       </View>
       </View>

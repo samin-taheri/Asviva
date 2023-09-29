@@ -1,8 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Dimensions, Image } from 'react-native'; 
-import { firstCard, primaryColor, secondCard } from '../global';
+import { primaryColor } from '../global';
 import { ImageSourcePropType } from "react-native";
-import { LinearGradient } from 'expo-linear-gradient';
 
 interface ColoredCards2Props {
   title: string;
