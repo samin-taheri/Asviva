@@ -16,7 +16,7 @@ const WeaklyGoals: React.FC<WeaklyGoalsProps> = ({ onPress }) => {
                     <Text style={styles.description}>Start Creating</Text>
                     </Pressable>
                 </View>
-                <Image source={require("../assets/4.jpg")} style={styles.image} />
+                <Image source={require("../assets/8.png")} style={styles.image} />
             </Card>
         </View>
     );
