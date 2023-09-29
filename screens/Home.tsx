@@ -5,6 +5,7 @@ import Chart from "../components/Chart";
 import { backgroundColor } from '../global';
 import BackGroundCard from "../components/backgroundCard";
 import TotalWorkout2 from "../components/TotalWorkout2";
+import TransparentCard from "../components/TransparentCard";
 
 export default function Home({navigation}: NativeStackHeaderProps) {
 

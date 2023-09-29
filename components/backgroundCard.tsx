@@ -12,7 +12,6 @@ import MyModal from './MyModal';
 </View> */}
 const BackgroundCard: React.FC<BackgroundCardProps> = ({ backgroundImage }) => {
         const [isModalVisible, setModalVisible] = useState(false);
-      
         const toggleModal = () => {
           setModalVisible(!isModalVisible);
         };

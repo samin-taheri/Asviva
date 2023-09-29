@@ -75,3 +75,15 @@ export interface BackgroundCardProps {
     title: string;
     backgroundImage: string;
 }
+export interface DetailsSectionProps {
+    title: string;
+    iconName?: string;
+    onPress: () => void;
+    style?: ViewStyle;
+    iconColor?: string;
+    imageSource: ImageSourcePropType
+}
+export interface LoginProps {
+    onLogin: (username: string, password: string) => void;
+    onRegister: () => void;
+}

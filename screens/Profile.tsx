@@ -33,7 +33,6 @@ export default function Profile({navigation}: NativeStackHeaderProps) {
                 imageSource={require('../assets/profile-15.png')}
                 onPress={() => {}}
             />
-            
             <ProfileCard
                 title="Nickname"
                 iconName="account-tie"

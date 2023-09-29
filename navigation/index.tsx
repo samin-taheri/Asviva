@@ -6,17 +6,18 @@ import Home from "../screens/Home";
 import { MaterialIcons } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import More from "../screens/More";
 import SportsCenter from "../screens/SportsCenter";
 import { Pressable } from "react-native";
 import Profile from "../screens/Profile";
 import Details from "../screens/Details";
-import { primaryColor, textColor } from '../global';
+import { primaryColor } from '../global';
 import StartCreating from "../screens/StartCreating";
 import { Text } from "react-native";
 import ConnectDevice from "../screens/ConnectDevice";
-import CustomHeader from "../components/CustomHeader";
-import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+import Cycle from "../screens/Cycle";
+import Login from "../screens/Login";
 
 export default function Navigation() {
   return (
@@ -58,6 +59,11 @@ function RootNavigator() {
         component={ConnectDevice}
         options={{ headerShown: false}}
       />
+      <Stack.Screen
+        name="Login"
+        component={Login}
+        options={{ headerShown: false}}
+      />
     </Stack.Navigator>
   );
 }
@@ -88,6 +94,18 @@ function BottomTabNavigator() {
           headerTitleStyle: {fontSize: 18, fontWeight: '600'}
         })
       }
+      />
+      <BottomTab.Screen
+        name="Cycle"
+        component={Cycle}
+        options={{
+          tabBarIcon: ({ color, size, focused }) => (
+            <MaterialCommunityIcons name="circle-double" size={35} color={focused ? primaryColor : color} />
+          ),
+          tabBarIconStyle: {marginTop:2},
+          tabBarLabel: "",
+          headerShown: false
+        }}
       />
       <BottomTab.Screen
         name="Sports Center"
