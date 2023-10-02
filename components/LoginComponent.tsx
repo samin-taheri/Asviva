@@ -19,9 +19,9 @@ const LoginComponent: React.FC<LoginProps> = ({ onLogin, onRegister }) => {
   const [password, setPassword] = useState('');
   const [userInfo, setUserInfo] = useState(null);
   const [request, response, promptAsync] = Google.useAuthRequest({
-    androidClientId: '88410767948-020354sqjhs6fucj1ajsvqhebgaf2sno.apps.googleusercontent.com',
-    iosClientId: '88410767948-mb2oa3ruobe52r2ctvs378a3fvssm3id.apps.googleusercontent.com',
-    webClientId: '88410767948-c5ifmd2fg9c0jarhm9fhgtf508t8hah9.apps.googleusercontent.com'
+    androidClientId: '215593517581-mdpooo1874qu1c7esu52huj095pr6toe.apps.googleusercontent.com',
+    iosClientId: '215593517581-d2ph6nkf9mkqe6tj72bfveg58rbl2f9i.apps.googleusercontent.com',
+    webClientId: '215593517581-6dmek378buevoh1mqfol6ht6e3cga59s.apps.googleusercontent.com'
   })
 
   const handleAppleSignIn = () => {
@@ -32,7 +32,7 @@ const LoginComponent: React.FC<LoginProps> = ({ onLogin, onRegister }) => {
   async function handleGoogleSignIn() {
    const user = await AsyncStorage.getItem("@user");
    if(!user){
-    if(response?.type=== 'success'){
+    if(response?.type === 'success'){
     await getUserInfo(response.authentication?.accessToken);
     }
    } else {
@@ -65,7 +65,7 @@ useEffect(()=> {
     <View>
         <MyHeader showLogoWithoutBack>
         <Text style={styles.title}>Login</Text>
-        <Text style={styles.title}>{JSON.stringify(userInfo)}</Text>
+        {/* <Text style={styles.title}>{JSON.stringify(userInfo)}</Text> */}
       <TextInput
         style={styles.input}
         placeholder="Username"
