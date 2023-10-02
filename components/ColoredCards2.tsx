@@ -1,14 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Dimensions, Image } from 'react-native'; 
 import { primaryColor } from '../global';
-import { ImageSourcePropType } from "react-native";
-
-interface ColoredCards2Props {
-  title: string;
-  description: string;
-  cardColor?: string;
-  imageSource: ImageSourcePropType
-}
+import { ColoredCards2Props } from '../types/data';
 
 const windowWidth = Dimensions.get('window').width; 
 

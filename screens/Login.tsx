@@ -1,7 +1,7 @@
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, Pressable } from "react-native";
 import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 import { backgroundColor } from '../global';
-import CustomHeader from "../components/CustomHeader";
+import { Feather } from "@expo/vector-icons";
 import LoginComponent from "../components/LoginComponent";
 
 export default function Login({navigation}: NativeStackHeaderProps) {
@@ -17,7 +17,7 @@ export default function Login({navigation}: NativeStackHeaderProps) {
         <View style={styles.container}>
         {/* <CustomHeader title="Login" onBack={() => navigation.goBack()}/>   */}
         <View style={styles.contentContainer}>
-        <LoginComponent onLogin={handleLogin} onRegister={handleRegister} />
+        <LoginComponent onLogin={handleLogin} onRegister={handleRegister} navigate={()=> navigation.navigate('Root')} signup={()=> navigation.navigate('Signup')}/>
         </View>
         </View>
     )

@@ -20,7 +20,7 @@ const BackgroundCard: React.FC<BackgroundCardProps> = ({ backgroundImage }) => {
     <Lable title="Physical Fitness Test" />
     <View style={{ padding: 8}}>
       <View style={styles.cardContainer}>
-        <ImageBackground source={{ uri: backgroundImage }} style={styles.cardBackground}>
+        <ImageBackground source={backgroundImage} style={styles.cardBackground}>
           <View style={[styles.cardContent, { backgroundColor: 'rgba(255, 255, 255, 0.77)' }]}>
           <Entypo name="dot-single" size={30} color={primaryColor} />
             <Text style={styles.title}>FTP test for course integrity</Text>

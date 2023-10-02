@@ -73,7 +73,7 @@ export interface BackGroundCardProps {
 }
 export interface BackgroundCardProps {
     title: string;
-    backgroundImage: string;
+    backgroundImage: ImageSourcePropType;
 }
 export interface DetailsSectionProps {
     title: string;
@@ -86,4 +86,12 @@ export interface DetailsSectionProps {
 export interface LoginProps {
     onLogin: (username: string, password: string) => void;
     onRegister: () => void;
+    navigate: () => void;
+    signup: () => void;
 }
+export interface ColoredCards2Props {
+    title: string;
+    description: string;
+    cardColor?: string;
+    imageSource: ImageSourcePropType
+  }

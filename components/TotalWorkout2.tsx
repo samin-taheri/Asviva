@@ -15,19 +15,19 @@ const TotalWorkout2: React.FC = () => {
             title="Total Duration"
             description="0 min"
             cardColor={cardBackground2}
-            imageSource={require('../assets/time.png')}
+            imageSource={require('../assets/times.png')}
             />
              <ColoredCards2  
             title="Exercise Times"
             description="0"
             cardColor={cardBackground2}
-            imageSource={require('../assets/exercise.png')}
+            imageSource={require('../assets/bike.png')}
             />
              <ColoredCards2  
             title="Total Calorie"
             description="0 kcal"
             cardColor={cardBackground2}
-            imageSource={require('../assets/calorie.png')}
+            imageSource={require('../assets/calories.png')}
             />
       </View>
       </View>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, TouchableOpacity, Dimensions, Platform, Text } from 'react-native'
+import { View, StyleSheet, TouchableOpacity, Dimensions, Platform, Image } from 'react-native'
 import * as Animatable from 'react-native-animatable';
 import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
@@ -61,7 +61,7 @@ const MyHeader: React.FC<MyHeaderProps> = (props) => {
           )}
         {/* <Image
           style={{ width: '100%', height: '100%', marginLeft: 'auto', top: -40, position: 'absolute', zIndex: -1, resizeMode: 'center' }}
-          source={require('../assets/time.png')}
+          source={require('../assets/logo.png')}
         /> */}
       </View>
       <Animatable.View style={styles.boxView} animation="fadeInUp">

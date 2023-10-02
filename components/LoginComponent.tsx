@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet, Button } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, StyleSheet, Button, Pressable } from 'react-native';
 import { LoginProps } from '../types/data';
-import { backgroundColor, cardBackground2, primaryColor } from '../global';
+import { backgroundColor, cardBackground2, primaryColor, textColor } from '../global';
 import MyHeader from './MyHeader';
 import { FontAwesome } from '@expo/vector-icons';
 import * as WebBrowser from 'expo-web-browser';
 import * as Google from 'expo-auth-session/providers/google';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { Feather } from "@expo/vector-icons";
+import { useNavigation } from '@react-navigation/native';
 
 WebBrowser.maybeCompleteAuthSession();
 
@@ -14,7 +16,7 @@ WebBrowser.maybeCompleteAuthSession();
 // ios: 88410767948-mb2oa3ruobe52r2ctvs378a3fvssm3id.apps.googleusercontent.com
 // andriod: 88410767948-020354sqjhs6fucj1ajsvqhebgaf2sno.apps.googleusercontent.com
 
-const LoginComponent: React.FC<LoginProps> = ({ onLogin, onRegister }) => {
+const LoginComponent: React.FC<LoginProps> = ({ onLogin, onRegister, navigate, signup }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [userInfo, setUserInfo] = useState(null);
@@ -23,6 +25,7 @@ const LoginComponent: React.FC<LoginProps> = ({ onLogin, onRegister }) => {
     iosClientId: '215593517581-d2ph6nkf9mkqe6tj72bfveg58rbl2f9i.apps.googleusercontent.com',
     webClientId: '215593517581-6dmek378buevoh1mqfol6ht6e3cga59s.apps.googleusercontent.com'
   })
+  const navigation = useNavigation();
 
   const handleAppleSignIn = () => {
     // Handle Apple sign-in logic here
@@ -64,7 +67,12 @@ useEffect(()=> {
   return (
     <View>
         <MyHeader showLogoWithoutBack>
+          <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
         <Text style={styles.title}>Login</Text>
+            <Pressable style={{ borderRadius: 8, backgroundColor: '#e8e8e8', padding: 8, flexDirection: 'row', height: 30 }} onPress={navigate}>
+              <Text style={{fontSize: 13}}>Guest Mode</Text>
+            </Pressable>
+            </View>
         {/* <Text style={styles.title}>{JSON.stringify(userInfo)}</Text> */}
       <TextInput
         style={styles.input}
@@ -79,6 +87,11 @@ useEffect(()=> {
         value={password}
         onChangeText={setPassword}
       />
+      <Pressable onPress={signup}>
+      <Text style={{ paddingBottom: 20, paddingLeft: 5, paddingTop: 10, fontWeight: '600' }}>Don't have an account?{" "}
+        <Text style={{ color: primaryColor }}>Sign Up</Text>
+      </Text>
+      </Pressable>
         <TouchableOpacity style={styles.loginButton}>
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>

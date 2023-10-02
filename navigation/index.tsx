@@ -9,15 +9,15 @@ import { Feather } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import More from "../screens/More";
 import SportsCenter from "../screens/SportsCenter";
-import { Pressable } from "react-native";
 import Profile from "../screens/Profile";
 import Details from "../screens/Details";
 import { primaryColor } from '../global';
 import StartCreating from "../screens/StartCreating";
-import { Text } from "react-native";
+import { Text, View, Image, Pressable } from "react-native";
 import ConnectDevice from "../screens/ConnectDevice";
 import Cycle from "../screens/Cycle";
 import Login from "../screens/Login";
+import SignUp from "../screens/SignUp";
 
 export default function Navigation() {
   return (
@@ -64,6 +64,11 @@ function RootNavigator() {
         component={Login}
         options={{ headerShown: false}}
       />
+      <Stack.Screen
+        name="Signup"
+        component={SignUp}
+        options={{ headerShown: false}}
+      />
     </Stack.Navigator>
   );
 }
@@ -90,6 +95,14 @@ function BottomTabNavigator() {
               <Feather name="radio" size={18} color='#000'  style={{paddingRight: 4, bottom: 0.5}}/>
               <Text style={{fontSize: 13, paddingRight: 3}}>Tap to Connect</Text>
             </Pressable>
+          ),
+          headerTitle: () => (
+            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+              <Image
+                source={require('../assets/logo.png')}
+                style={{ width: 85, height: 25 }}
+              />
+            </View>
           ),
           headerTitleStyle: {fontSize: 18, fontWeight: '600'}
         })

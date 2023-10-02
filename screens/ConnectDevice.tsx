@@ -14,7 +14,7 @@ export default function ConnectDevice({ navigation }: NativeStackHeaderProps) {
             <DeviceCard
                 title="Cycling"
                 cardColor={cardBackground}
-                imageSource={require('../assets/connect-2.png')}
+                imageSource={require('../assets/exercise.png')}
                 onPress={() => {
                 }}
             />
