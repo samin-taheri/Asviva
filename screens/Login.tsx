@@ -15,7 +15,7 @@ export default function Login({navigation}: NativeStackHeaderProps) {
     
     return(
         <View style={styles.container}>
-        <CustomHeader title="Login" onBack={() => navigation.goBack()}/>  
+        {/* <CustomHeader title="Login" onBack={() => navigation.goBack()}/>   */}
         <View style={styles.contentContainer}>
         <LoginComponent onLogin={handleLogin} onRegister={handleRegister} />
         </View>
@@ -25,7 +25,7 @@ export default function Login({navigation}: NativeStackHeaderProps) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: backgroundColor
+        backgroundColor: backgroundColor,
     },
     contentContainer: {
         flex: 1,
