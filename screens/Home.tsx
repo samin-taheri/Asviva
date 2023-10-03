@@ -11,7 +11,7 @@ export default function Home({navigation}: any) {
         <ScrollView 
         showsVerticalScrollIndicator={false}>
         <View style={styles.container}>
-            <BackgroundCard title="Card Title"  backgroundImage={require('../assets/bg-3.jpg')} onPress={()=> navigation.navigate('Couching')}/>
+            <BackgroundCard title="Find your couch"  backgroundImage={require('../assets/bg-3.jpg')} onPress={()=> navigation.navigate('SportsCenter')}/>
             <WeaklyGoals onPress={()=> navigation.navigate("StartCreating")}/>
             <TotalWorkout2/>
             <Chart onPress={()=> navigation.navigate("Details")}/>

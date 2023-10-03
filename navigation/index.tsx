@@ -127,7 +127,7 @@ function BottomTabNavigator() {
       }
       />
       <BottomTab.Screen
-        name="Sports Center"
+        name="SportsCenter"
         component={SportsCenter}
         options={{
           tabBarIcon: ({ color, size, focused }) => (

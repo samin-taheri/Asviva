@@ -7,7 +7,7 @@ import { Feather } from "@expo/vector-icons";
 import { BackgroundCardProps } from '../types/data';
 import MyModal from './MyModal';
 
-const BackgroundCard: React.FC<BackgroundCardProps> = ({ backgroundImage, onPress }) => {
+const BackgroundCard: React.FC<BackgroundCardProps> = ({ title, backgroundImage, onPress }) => {
         const [isModalVisible, setModalVisible] = useState(false);
         const toggleModal = () => {
           setModalVisible(!isModalVisible);
@@ -20,7 +20,7 @@ const BackgroundCard: React.FC<BackgroundCardProps> = ({ backgroundImage, onPres
         <ImageBackground source={backgroundImage} style={styles.cardBackground}>
           <View style={[styles.cardContent, { backgroundColor: 'rgba(255, 255, 255, 0.77)' }]}>
           <Entypo name="dot-single" size={30} color={primaryColor} />
-            <Text style={styles.title}>FTP test for course integrity</Text>
+            <Text style={styles.title}>{title}</Text>
             <Pressable style={styles.buttonContainer} onPress={onPress}>
               <Text style={styles.button}>Start</Text>
               <Feather name="chevron-right" size={20} color='white' style={{ marginRight: 15 }} />
@@ -67,7 +67,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 14,
     fontWeight: "bold",
-    paddingRight: 30,
+    paddingRight: '32%',
     paddingTop: 7,
   },
   buttonContainer: {

@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { View, StyleSheet } from "react-native";
-import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 import { backgroundColor, cardBackground } from '../global';
 import CustomHeader from "../components/CustomHeader";
 import { primaryColor } from '../global';
@@ -10,7 +9,7 @@ export default function ConnectDevice({ navigation }: any) {
 
     return (
         <View style={styles.container}>
-            <CustomHeader title="Connect the Devices" onBack={() => navigation.goBack()} />
+            <CustomHeader title="Connect the Devices" onBack={() => navigation.navigate('Root')} />
             <View style={styles.contentContainer}>
             <DeviceCard
                 title="Cycling"
