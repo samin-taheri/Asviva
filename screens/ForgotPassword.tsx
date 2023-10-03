@@ -1,14 +1,14 @@
-import { View, StyleSheet, Text, Pressable } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 import { backgroundColor } from '../global';
-import SignUpComponent from "../components/SignUpComponent";
+import ForgotPasswordComponent from "../components/ForgotPasswordComponent";
 
-export default function SignUp({navigation}: NativeStackHeaderProps) {
+export default function ForgotPAssword({navigation}: NativeStackHeaderProps) {
     
     return(
         <View style={styles.container}>
         <View style={styles.contentContainer}>
-        <SignUpComponent navigate={()=> navigation.navigate('Root')} signUp={()=> navigation.navigate('Login')} back={()=> navigation.goBack()}/>
+            <ForgotPasswordComponent onForgotPassword={()=> navigation.navigate('Login')} back={()=> navigation.goBack()}/>
         </View>
         </View>
     )

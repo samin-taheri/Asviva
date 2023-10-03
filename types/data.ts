@@ -87,7 +87,17 @@ export interface LoginProps {
     onLogin: (username: string, password: string) => void;
     onRegister: () => void;
     navigate: () => void;
-    signup: () => void;
+    forgotPassword: () => void;
+    signUp:() => void;
+}
+export interface SignUpProps {
+    navigate: () => void;
+    signUp:() => void;
+    back: () => void;
+}
+export interface ForgotPasswordProps {
+    onForgotPassword: () => void;
+    back: () => void;
 }
 export interface ColoredCards2Props {
     title: string;

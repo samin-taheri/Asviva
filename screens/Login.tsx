@@ -15,9 +15,8 @@ export default function Login({navigation}: NativeStackHeaderProps) {
     
     return(
         <View style={styles.container}>
-        {/* <CustomHeader title="Login" onBack={() => navigation.goBack()}/>   */}
         <View style={styles.contentContainer}>
-        <LoginComponent onLogin={handleLogin} onRegister={handleRegister} navigate={()=> navigation.navigate('Root')} signup={()=> navigation.navigate('Signup')}/>
+        <LoginComponent onLogin={handleLogin} onRegister={handleRegister} navigate={()=> navigation.navigate('Root')} forgotPassword={()=> navigation.navigate('ForgorPassword')} signUp={()=> navigation.navigate('Signup')}/>
         </View>
         </View>
     )

@@ -30,7 +30,7 @@ export default function Profile({navigation}: NativeStackHeaderProps) {
                 title="Change Avatar"
                 iconName="account-convert"
                 selectedAnswer="Please Select" 
-                imageSource={require('../assets/profile-15.png')}
+                imageSource={require('../assets/profile-19.png')}
                 onPress={() => {}}
             />
             <ProfileCard
@@ -70,7 +70,7 @@ export default function Profile({navigation}: NativeStackHeaderProps) {
             <ProfileCard
                 title="Weight"
                 iconName="weight"
-                imageSource={require('../assets/profile-18.png')}
+                imageSource={require('../assets/profile-20.png')}
                 selectedAnswer="Please Select" 
                 onPress={() => {
                 }}

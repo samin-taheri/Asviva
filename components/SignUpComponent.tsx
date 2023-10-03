@@ -1,31 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Pressable } from 'react-native';
-import { CheckBox } from 'react-native-elements';
-import { LoginProps } from '../types/data';
-import { backgroundColor, cardBackground2, primaryColor, textColor } from '../global';
+import { SignUpProps } from '../types/data';
+import { backgroundColor, cardBackground2, primaryColor } from '../global';
 import MyHeader from './MyHeader';
 import { FontAwesome } from '@expo/vector-icons';
-import * as WebBrowser from 'expo-web-browser';
-import * as Google from 'expo-auth-session/providers/google';
-import AsyncStorage from '@react-native-async-storage/async-storage';
-import { Feather } from "@expo/vector-icons";
-import { useNavigation } from '@react-navigation/native';
+import { Feather } from '@expo/vector-icons';
 
-WebBrowser.maybeCompleteAuthSession();
-
-// web: 88410767948-c5ifmd2fg9c0jarhm9fhgtf508t8hah9.apps.googleusercontent.com
-// ios: 88410767948-mb2oa3ruobe52r2ctvs378a3fvssm3id.apps.googleusercontent.com
-// andriod: 88410767948-020354sqjhs6fucj1ajsvqhebgaf2sno.apps.googleusercontent.com
-
-const LoginComponent: React.FC<LoginProps> = ({ onLogin, onRegister, navigate, forgotPassword, signUp }) => {
+const SignUpComponent: React.FC<SignUpProps> = ({  navigate, signUp, back }) => {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [userInfo, setUserInfo] = useState(null);
-  const [rememberMe, setRememberMe] = useState(false); 
+  const [confirmPassword, setConfirmPassword] = useState('');
 
   const [data, setData] = React.useState({
     check_textInputChange: false,
     secureTextEntry: true,
+    secureTextEntryConfirm: true,
     isValidUser: true,
     isValidPassword: true,
   });
@@ -35,63 +24,22 @@ const LoginComponent: React.FC<LoginProps> = ({ onLogin, onRegister, navigate, f
       secureTextEntry: !data.secureTextEntry
     });
   }
-
-  const [request, response, promptAsync] = Google.useAuthRequest({
-    androidClientId: '215593517581-mdpooo1874qu1c7esu52huj095pr6toe.apps.googleusercontent.com',
-    iosClientId: '215593517581-d2ph6nkf9mkqe6tj72bfveg58rbl2f9i.apps.googleusercontent.com',
-    webClientId: '215593517581-6dmek378buevoh1mqfol6ht6e3cga59s.apps.googleusercontent.com'
-  })
-  const navigation = useNavigation();
-
-  const handleAppleSignIn = () => {
-    // Handle Apple sign-in logic here
-  };
-
-
-  async function handleGoogleSignIn() {
-   const user = await AsyncStorage.getItem("@user");
-   if(!user){
-    if(response?.type === 'success'){
-    await getUserInfo(response.authentication?.accessToken);
-    }
-   } else {
-    setUserInfo(JSON.parse(user));
-   }
+  const updateSecureTExtEntryConfirm = () => {
+    setData({
+      ...data,
+      secureTextEntryConfirm: !data.secureTextEntryConfirm
+    });
   }
-
-const getUserInfo  = async(token: any) => {
-    if(!token) return;
-    try {
-        const response = await fetch(
-            "https://www.googleapis.com/userinfo/v2/me",
-            {
-                headers: { Authorization: `Bearer ${token}`}
-            }
-        );
-        const user = await response.json();
-        await AsyncStorage.setItem("@user", JSON.stringify(user));
-        setUserInfo(user);
-
-    } catch (error) {
-        console.error(error);
-    }
-}
-useEffect(()=> {
-    handleGoogleSignIn();
-}, [response]);
 
   return (
     <View>
-        <MyHeader showLogoWithoutBack>
+        <MyHeader onPress={back}>
           <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-          <View style={{flexDirection: 'row', justifyContent: 'space-around'}}>
-        <Text style={styles.title}>Login</Text>
-        </View>
+        <Text style={styles.title}>Sign Up</Text>
             <Pressable style={{ borderRadius: 8, backgroundColor: backgroundColor, padding: 8, flexDirection: 'row', height: 33, alignItems: 'center' }} onPress={navigate}>
               <Text style={{fontSize: 13}}>Guest Mode</Text>
             </Pressable>
             </View>
-        {/* <Text style={styles.title}>{JSON.stringify(userInfo)}</Text> */}
        
       <TextInput
         style={styles.input}
@@ -99,7 +47,7 @@ useEffect(()=> {
         value={username}
         onChangeText={setUsername}
       />
-      <View style={styles.action}>
+       <View style={styles.action}>
       <TextInput
         style={styles.input}
         placeholder="Password"
@@ -123,41 +71,51 @@ useEffect(()=> {
                 }
         </TouchableOpacity>
         </View>
-      <View style={styles.rememberMeContainer}>
-          <CheckBox
-            checked={rememberMe}
-            onPress={() => setRememberMe(!rememberMe)}
-            containerStyle={styles.checkBoxContainer}
-            textStyle={styles.checkBoxText}
-            title="Remember Me"
-            checkedIcon="check-square" 
-            uncheckedIcon="square" 
-            checkedColor={primaryColor} 
-            uncheckedColor='#ededed'
-          />
-          <Pressable onPress={forgotPassword}>
-          <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
-          </Pressable>
+        <View style={styles.action}>
+      <TextInput
+        style={styles.input}
+        placeholder="Confirm Password"
+        value={confirmPassword}
+        onChangeText={setConfirmPassword}
+        secureTextEntry={data.secureTextEntryConfirm ? true : false}
+      />
+      <TouchableOpacity onPress={updateSecureTExtEntryConfirm} style={{right: '60%', top: '4%'}}>
+                {data.secureTextEntryConfirm ?
+                <Feather
+                    name="eye-off"
+                    color="grey"
+                    size={20}
+                  />
+                  :
+                  <Feather
+                    name="eye"
+                    color="grey"
+                    size={20}
+                  />
+                }
+        </TouchableOpacity>
         </View>
         <TouchableOpacity style={styles.loginButton}>
-        <Feather name="log-in" size={30} color='white'  style={{right: 120}}/>
-          <Text style={styles.buttonText}>Login</Text>
+        <Feather name="log-in" size={30} color='white'  style={{right: 113}}/>
+          <Text style={styles.buttonText}>Sign Up</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.SignUpButton} onPress={signUp}>
-        <Feather name="log-in" size={30} color={primaryColor} style={{right: 113}}/>
-          <Text style={styles.buttonText2}>Sign Up</Text>
+        <Feather name="log-in" size={30} color={primaryColor} style={{right: 120}}/>
+          <Text style={styles.buttonText2}>Login</Text>
         </TouchableOpacity>
         <View style={styles.container3}>
         <View style={styles.divider} />
-      <Text style={styles.text}>Sign in with</Text>
+      <Text style={styles.text}>Sign up with</Text>
       <View style={styles.divider} />
       </View>
         <View style={styles.container2}>
-      <TouchableOpacity style={styles.googleButton} onPress={()=> promptAsync()}>
-        <FontAwesome name="google" size={30} color={primaryColor}/>
+      <TouchableOpacity style={styles.googleButton}>
+        <FontAwesome name="google" size={30} color={primaryColor}  style={{right: 65}}/>
+        <Text style={styles.buttonText2}>Continue with Google</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.appleButton} onPress={handleAppleSignIn}>
-        <FontAwesome name="apple" size={30} color={primaryColor}/>
+      <TouchableOpacity style={styles.appleButton}>
+        <FontAwesome name="apple" size={30} color={primaryColor} style={{right: 70}}/>
+        <Text style={styles.buttonText2}>Continue with Apple</Text>
       </TouchableOpacity>
     </View>
       </MyHeader>
@@ -175,14 +133,23 @@ const styles = StyleSheet.create({
     marginBottom: 20,
     paddingLeft: 5
   },
-  action: {
-    flexDirection: 'row',
-  },
     image: {
     width: 160,
     height: 160,
     resizeMode: 'cover',
     borderRadius: 12,
+  },
+  SignUpButton: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: cardBackground2, 
+    borderRadius: 12,
+    height: 50,
+    width: '100%',
+    marginBottom: 20,
+    marginTop: 10
   },
   input: {
     width: '100%',
@@ -214,6 +181,9 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: 'bold',
   },
+  action: {
+    flexDirection: 'row',
+  },
   buttonText3: {
     color: primaryColor,
     fontWeight: '600',
@@ -222,16 +192,24 @@ const styles = StyleSheet.create({
   buttonText2: {
     color: primaryColor,
     fontWeight: 'bold',
-    textAlign: 'center',
+    textAlign: 'center'
   },
   container2: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    marginBottom: 10
+  },
+  googleButton: {
+    flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
-    width: '35%',
     alignItems: 'center',
-    alignSelf: 'center',
+    backgroundColor: cardBackground2, 
+    borderRadius: 12,
+    height: 50,
+    width: '100%'
   },
-  SignUpButton: {
+  appleButton: {
     flex: 1,
     flexDirection: 'row',
     justifyContent: 'center',
@@ -240,28 +218,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     height: 50,
     width: '100%',
-    marginBottom: 20,
-    marginTop: 10
-  },
-  googleButton: {
-    flex: 1,
-    justifyContent:'center',
-    alignItems: 'center',
-    backgroundColor: cardBackground2, 
-    borderRadius: 30,
-    height: 62,
-    width: 30,
-    right: 7
-  },
-  appleButton: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: cardBackground2, 
-    borderRadius: 30,
-    height: 62,
-    width: 30,
-    left: 7
+    marginTop: 20
   },
 
   dividerContainer: {
@@ -322,4 +279,4 @@ divider: {
   }
 });
 
-export default LoginComponent;
+export default SignUpComponent;

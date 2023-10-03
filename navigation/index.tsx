@@ -18,6 +18,7 @@ import ConnectDevice from "../screens/ConnectDevice";
 import Cycle from "../screens/Cycle";
 import Login from "../screens/Login";
 import SignUp from "../screens/SignUp";
+import ForgotPAssword from "../screens/ForgotPassword";
 
 export default function Navigation() {
   return (
@@ -67,6 +68,11 @@ function RootNavigator() {
       <Stack.Screen
         name="Signup"
         component={SignUp}
+        options={{ headerShown: false}}
+      />
+       <Stack.Screen
+        name="ForgorPassword"
+        component={ForgotPAssword}
         options={{ headerShown: false}}
       />
     </Stack.Navigator>
