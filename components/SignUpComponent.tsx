@@ -110,12 +110,10 @@ const SignUpComponent: React.FC<SignUpProps> = ({  navigate, signUp, back }) => 
       </View>
         <View style={styles.container2}>
       <TouchableOpacity style={styles.googleButton}>
-        <FontAwesome name="google" size={30} color={primaryColor}  style={{right: 65}}/>
-        <Text style={styles.buttonText2}>Continue with Google</Text>
+        <FontAwesome name="google" size={30} color={primaryColor}/>
       </TouchableOpacity>
       <TouchableOpacity style={styles.appleButton}>
-        <FontAwesome name="apple" size={30} color={primaryColor} style={{right: 70}}/>
-        <Text style={styles.buttonText2}>Continue with Apple</Text>
+        <FontAwesome name="apple" size={30} color={primaryColor}/>
       </TouchableOpacity>
     </View>
       </MyHeader>
@@ -195,30 +193,31 @@ const styles = StyleSheet.create({
     textAlign: 'center'
   },
   container2: {
-    flexDirection: 'column',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    width: '35%',
     alignItems: 'center',
-    marginBottom: 10
+    alignSelf: 'center',
   },
   googleButton: {
     flex: 1,
-    flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent:'center',
     alignItems: 'center',
     backgroundColor: cardBackground2, 
-    borderRadius: 12,
-    height: 50,
-    width: '100%'
+    borderRadius: 30,
+    height: 62,
+    width: 62,
+    right: 7
   },
   appleButton: {
     flex: 1,
-    flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: cardBackground2, 
-    borderRadius: 12,
-    height: 50,
-    width: '100%',
-    marginTop: 20
+    borderRadius: 30,
+    height: 62,
+    width: 62,
+    left: 7
   },
 
   dividerContainer: {

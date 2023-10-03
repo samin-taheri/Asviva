@@ -250,7 +250,7 @@ const styles = StyleSheet.create({
     backgroundColor: cardBackground2, 
     borderRadius: 30,
     height: 62,
-    width: 30,
+    width: 62,
     right: 7
   },
   appleButton: {
@@ -260,7 +260,7 @@ const styles = StyleSheet.create({
     backgroundColor: cardBackground2, 
     borderRadius: 30,
     height: 62,
-    width: 30,
+    width: 62,
     left: 7
   },
 
