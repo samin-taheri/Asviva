@@ -11,7 +11,6 @@ export default function ConnectDevice({ navigation }: NativeStackHeaderProps) {
 
     return (
         <View style={styles.container}>
-        
             <CustomHeader title="Connect the Devices" onBack={() => navigation.goBack()} />
             <View style={styles.contentContainer}>
             <DeviceCard

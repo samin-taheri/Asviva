@@ -105,3 +105,5 @@ export interface ColoredCards2Props {
     cardColor?: string;
     imageSource: ImageSourcePropType
   }
+export interface LoadingProps {
+}
