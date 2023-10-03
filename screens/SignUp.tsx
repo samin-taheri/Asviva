@@ -1,9 +1,8 @@
 import { View, StyleSheet } from "react-native";
-import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 import { backgroundColor } from '../global';
 import SignUpComponent from "../components/SignUpComponent";
 
-export default function SignUp({navigation}: NativeStackHeaderProps) {
+export default function SignUp({navigation}: any) {
     
     return(
         <View style={styles.container}>

@@ -74,6 +74,7 @@ export interface BackGroundCardProps {
 export interface BackgroundCardProps {
     title: string;
     backgroundImage: ImageSourcePropType;
+    onPress:() => void;
 }
 export interface DetailsSectionProps {
     title: string;
@@ -108,3 +109,9 @@ export interface ColoredCards2Props {
 export interface LoadingProps {
     back: () => void;
 }
+export interface DataItem {
+    id: string;
+    title: string;
+    backgroundImage: ImageSourcePropType
+  }
+  

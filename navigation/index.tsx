@@ -127,18 +127,6 @@ function BottomTabNavigator() {
       }
       />
       <BottomTab.Screen
-        name="Cycle"
-        component={Cycle}
-        options={{
-          tabBarIcon: ({ color, size, focused }) => (
-            <MaterialCommunityIcons name="circle-double" size={35} color={focused ? primaryColor : color} />
-          ),
-          tabBarIconStyle: {marginTop:2},
-          tabBarLabel: "",
-          headerShown: false
-        }}
-      />
-      <BottomTab.Screen
         name="Sports Center"
         component={SportsCenter}
         options={{
@@ -146,6 +134,18 @@ function BottomTabNavigator() {
             <Entypo name="network" size={30} color={focused ? primaryColor : color} />
           ),
           tabBarIconStyle: {marginTop: 5},
+          tabBarLabel: "",
+          headerShown: false
+        }}
+      />
+      <BottomTab.Screen
+        name="Cycle"
+        component={Cycle}
+        options={{
+          tabBarIcon: ({ color, size, focused }) => (
+            <MaterialCommunityIcons name="circle-double" size={35} color={focused ? primaryColor : color} />
+          ),
+          tabBarIconStyle: {marginTop:2},
           tabBarLabel: "",
           headerShown: false
         }}

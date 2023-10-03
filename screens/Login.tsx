@@ -1,10 +1,8 @@
 import { View, StyleSheet } from "react-native";
-import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 import { backgroundColor } from '../global';
-import { Feather } from "@expo/vector-icons";
 import LoginComponent from "../components/LoginComponent";
 
-export default function Login({navigation}: NativeStackHeaderProps) {
+export default function Login({navigation}: any) {
     const handleLogin = (username: string, password: string) => {
         console.log(`Logging in with username: ${username} and password: ${password}`);
       };

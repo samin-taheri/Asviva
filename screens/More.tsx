@@ -1,11 +1,10 @@
 import React from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
-import { NativeStackHeaderProps } from "@react-navigation/native-stack";
-import { backgroundColor, cardBackground, cardBackground2, primaryColor, textColor } from '../global';
+import { backgroundColor, cardBackground, primaryColor } from '../global';
 import CustomHeader from "../components/CustomHeader";
 import DetailsSection from '../components/DetailsSection';
 
-export default function More({ navigation }: NativeStackHeaderProps) {
+export default function More({ navigation }: any) {
     return (
         <ScrollView 
         showsVerticalScrollIndicator={false}>

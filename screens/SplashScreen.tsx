@@ -1,11 +1,10 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import Swiper from 'react-native-swiper';
-import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 import { primaryColor } from '../global';
 import { Feather } from "@expo/vector-icons";
 
-export default function SplashScreen({ navigation }: NativeStackHeaderProps) {
+export default function SplashScreen({ navigation }: any) {
 
   const navigateToHome = () => {
     navigation.replace('Root');

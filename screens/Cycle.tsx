@@ -1,9 +1,8 @@
 import { View, StyleSheet, Text } from "react-native";
-import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 import { backgroundColor } from '../global';
 import CustomHeader from "../components/CustomHeader";
 
-export default function Cycle({navigation}: NativeStackHeaderProps) {
+export default function Cycle({navigation}: any) {
 
     return(
         <View style={styles.container}>

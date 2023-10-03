@@ -6,4 +6,6 @@ export const secondCard = 'rgba(153, 95, 91, 0.6)';
 export const firstCard = 'rgba(210, 177, 175, 1)';
 export const thirdCard = 'rgba(117, 72, 70, 0.8)';
 export const cardBackground = '#f3f3f5'; 
-export const cardBackground2 = 'rgba(153, 92, 88, 0.1)';
+export const cardBackground2 = 'rgba(153, 92, 88, 0.1)'; 
+export const loginBackground = '#fff6f5'; 
+

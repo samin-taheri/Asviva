@@ -7,10 +7,7 @@ import { Feather } from "@expo/vector-icons";
 import { BackgroundCardProps } from '../types/data';
 import MyModal from './MyModal';
 
-{/* <View style={{ backgroundColor: secondCard, width: 35, height: 35, alignItems: 'center', justifyContent: 'center', borderRadius: 8, marginRight: 10 }}>
-<MaterialCommunityIcons name="dumbbell" size={25} color='white' />
-</View> */}
-const BackgroundCard: React.FC<BackgroundCardProps> = ({ backgroundImage }) => {
+const BackgroundCard: React.FC<BackgroundCardProps> = ({ backgroundImage, onPress }) => {
         const [isModalVisible, setModalVisible] = useState(false);
         const toggleModal = () => {
           setModalVisible(!isModalVisible);
@@ -24,14 +21,14 @@ const BackgroundCard: React.FC<BackgroundCardProps> = ({ backgroundImage }) => {
           <View style={[styles.cardContent, { backgroundColor: 'rgba(255, 255, 255, 0.77)' }]}>
           <Entypo name="dot-single" size={30} color={primaryColor} />
             <Text style={styles.title}>FTP test for course integrity</Text>
-            <Pressable style={styles.buttonContainer} onPress={toggleModal}>
+            <Pressable style={styles.buttonContainer} onPress={onPress}>
               <Text style={styles.button}>Start</Text>
               <Feather name="chevron-right" size={20} color='white' style={{ marginRight: 15 }} />
             </Pressable>
           </View>
         </ImageBackground>
       </View>
-      <MyModal isVisible={isModalVisible} onClose={toggleModal} />
+      {/* <MyModal isVisible={isModalVisible} onClose={toggleModal} /> */}
     </View>
     </View>
   );

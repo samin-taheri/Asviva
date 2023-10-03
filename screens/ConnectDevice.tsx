@@ -6,7 +6,7 @@ import CustomHeader from "../components/CustomHeader";
 import { primaryColor } from '../global';
 import DeviceCard from "../components/DeviceCard";
 
-export default function ConnectDevice({ navigation }: NativeStackHeaderProps) {
+export default function ConnectDevice({ navigation }: any) {
 
     return (
         <View style={styles.container}>

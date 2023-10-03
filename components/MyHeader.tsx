@@ -3,7 +3,7 @@ import { View, StyleSheet, TouchableOpacity, Dimensions, Platform, Image } from 
 import * as Animatable from 'react-native-animatable';
 import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
-import { primaryColor } from '../global';
+import { backgroundColor, cardBackground2, loginBackground, primaryColor } from '../global';
 
 const { height } = Dimensions.get("screen");
 
@@ -53,16 +53,16 @@ const MyHeader: React.FC<MyHeaderProps> = (props) => {
               : (
                 <View>
                  <TouchableOpacity onPress={props.onPress} style={{ paddingTop: '12%', paddingLeft: '5%' }}>
-                    <Feather name="arrow-left" size={30} color={'white'}/>
+                    <Feather name="arrow-left" size={30} color={'black'}/>
                 </TouchableOpacity>
                   <Animatable.Text style={styles.HeaderText} animation="fadeInDown">{props.Title}</Animatable.Text>
                 </View>
               )
           )}
-        {/* <Image
+        <Image
           style={{ width: '100%', height: '100%', marginLeft: 'auto', top: -40, position: 'absolute', zIndex: -1, resizeMode: 'center' }}
           source={require('../assets/logo.png')}
-        /> */}
+        />
       </View>
       <Animatable.View style={styles.boxView} animation="fadeInUp">
         {props.children}
@@ -120,16 +120,16 @@ const styles = StyleSheet.create({
     left: 0,
     width: '100%',
     height: '60%',
-    backgroundColor: primaryColor,
-    borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30,
+    backgroundColor: loginBackground,
+    borderBottomLeftRadius: 40,
+    borderBottomRightRadius: 40,
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
       height: 5,
     },
-    shadowOpacity: 0.34,
-    shadowRadius: 6.27,
+    shadowOpacity: 0.1,
+    shadowRadius: 9,
     elevation: 10,
   },
 });

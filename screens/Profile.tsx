@@ -1,11 +1,10 @@
 import React, { useState } from "react";
-import { View,Image, StyleSheet, Text } from "react-native";
-import { NativeStackHeaderProps } from "@react-navigation/native-stack";
-import { backgroundColor, cardBackground } from '../global';
+import { View, StyleSheet } from "react-native";
+import { backgroundColor } from '../global';
 import CustomHeader from "../components/CustomHeader";
 import ProfileCard from "../components/ProfileCard";
 
-export default function Profile({navigation}: NativeStackHeaderProps) {
+export default function Profile({navigation}: any) {
     const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
     const [selectedDate, setSelectedDate] = useState<Date | null>(null);
   

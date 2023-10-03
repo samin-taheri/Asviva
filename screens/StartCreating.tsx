@@ -1,9 +1,8 @@
-import { View,Text, StyleSheet, Pressable } from "react-native";
-import { NativeStackHeaderProps } from "@react-navigation/native-stack";
+import { View,Text, StyleSheet } from "react-native";
 import { backgroundColor } from '../global';
 import CustomHeader from "../components/CustomHeader";
 
-export default function StartCreating({navigation}: NativeStackHeaderProps) {
+export default function StartCreating({navigation}: any) {
 
     return(
         <View style={styles.container}>

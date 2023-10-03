@@ -1,10 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, ActivityIndicator, StyleSheet, Image, TouchableOpacity } from 'react-native';
-import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 import { backgroundColor, primaryColor } from '../global';
 import CustomHeader from '../components/CustomHeader';
 
-export default function LoadingScreen({ navigation }: NativeStackHeaderProps) {
+export default function LoadingScreen({ navigation }: any) {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {

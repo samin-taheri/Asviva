@@ -1,18 +1,17 @@
 import { View, ScrollView, StyleSheet, Text } from "react-native";
-import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 import WeaklyGoals from "../components/WeaklyGoals";
 import Chart from "../components/Chart";
 import { backgroundColor } from '../global';
-import BackGroundCard from "../components/backgroundCard";
+import BackgroundCard from "../components/backgroundCard";
 import TotalWorkout2 from "../components/TotalWorkout2";
 
-export default function Home({navigation}: NativeStackHeaderProps) {
+export default function Home({navigation}: any) {
 
     return(
         <ScrollView 
         showsVerticalScrollIndicator={false}>
         <View style={styles.container}>
-            <BackGroundCard title="Card Title"  backgroundImage={require('../assets/bg-3.jpg')} />
+            <BackgroundCard title="Card Title"  backgroundImage={require('../assets/bg-3.jpg')} onPress={()=> navigation.navigate('Couching')}/>
             <WeaklyGoals onPress={()=> navigation.navigate("StartCreating")}/>
             <TotalWorkout2/>
             <Chart onPress={()=> navigation.navigate("Details")}/>

@@ -1,9 +1,8 @@
 import { View, StyleSheet } from "react-native";
-import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 import { backgroundColor } from '../global';
 import ForgotPasswordComponent from "../components/ForgotPasswordComponent";
 
-export default function ForgotPAssword({navigation}: NativeStackHeaderProps) {
+export default function ForgotPAssword({navigation}: any) {
     
     return(
         <View style={styles.container}>
