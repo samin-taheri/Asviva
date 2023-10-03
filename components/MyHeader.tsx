@@ -52,7 +52,7 @@ const MyHeader: React.FC<MyHeaderProps> = (props) => {
               )
               : (
                 <View>
-                 <TouchableOpacity onPress={props.onPress} style={{ paddingTop: '9%', paddingLeft: '5%' }}>
+                 <TouchableOpacity onPress={props.onPress} style={{ paddingTop: '12%', paddingLeft: '5%' }}>
                     <Feather name="arrow-left" size={30} color={'white'}/>
                 </TouchableOpacity>
                   <Animatable.Text style={styles.HeaderText} animation="fadeInDown">{props.Title}</Animatable.Text>

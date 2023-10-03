@@ -1,4 +1,4 @@
-import { View, StyleSheet, Text, Pressable } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 import { backgroundColor } from '../global';
 import SignUpComponent from "../components/SignUpComponent";

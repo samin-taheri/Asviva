@@ -19,6 +19,7 @@ import Cycle from "../screens/Cycle";
 import Login from "../screens/Login";
 import SignUp from "../screens/SignUp";
 import ForgotPAssword from "../screens/ForgotPassword";
+import SplashScreen from "../screens/SplashScreen";
 
 export default function Navigation() {
   return (
@@ -32,7 +33,7 @@ function RootNavigator() {
   
   return (
     <Stack.Navigator 
-    initialRouteName="Root"
+    initialRouteName="Splash"
     >
       <Stack.Screen
         name="Root"
@@ -73,6 +74,11 @@ function RootNavigator() {
        <Stack.Screen
         name="ForgorPassword"
         component={ForgotPAssword}
+        options={{ headerShown: false}}
+      />
+      <Stack.Screen
+        name="Splash"
+        component={SplashScreen}
         options={{ headerShown: false}}
       />
     </Stack.Navigator>
