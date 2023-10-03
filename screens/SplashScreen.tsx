@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import Swiper from 'react-native-swiper';
 import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 import { primaryColor } from '../global';
+import { Feather } from "@expo/vector-icons";
 
 export default function SplashScreen({ navigation }: NativeStackHeaderProps) {
 
@@ -41,8 +42,9 @@ export default function SplashScreen({ navigation }: NativeStackHeaderProps) {
           />
         </View>
       </Swiper>
-      <TouchableOpacity onPress={navigateToHome} style={styles.button}>
+      <TouchableOpacity  style={styles.buttonContainer} onPress={navigateToHome}>
         <Text style={styles.buttonText}>Skip</Text>
+        <Feather name="chevron-right" size={20} color='white' style={{ paddingLeft: 2 }} />
       </TouchableOpacity>
     </View>
   );
@@ -52,6 +54,18 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: 'white',
+  },
+  buttonContainer: {
+    backgroundColor: primaryColor,
+    width:  80,
+    height: 35,
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'row',
+    position: 'absolute',
+    bottom: 30,
+    right: 30,    
   },
   wrapper: {},
   slide: {
@@ -72,16 +86,10 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   button: {
-    position: 'absolute',
-    bottom: 30,
-    right: 30,
-    backgroundColor: primaryColor,
-    paddingHorizontal: 20,
-    paddingVertical: 10,
-    borderRadius: 8,
   },
   buttonText: {
     color: 'white',
+    paddingLeft: 10,
     fontWeight: 'bold',
   },
 });

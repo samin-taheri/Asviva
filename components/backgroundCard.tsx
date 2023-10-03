@@ -82,7 +82,6 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     flexDirection: 'row',
     marginLeft: 5
-
   },
   button: {
     color: 'white',

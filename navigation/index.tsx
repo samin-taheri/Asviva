@@ -20,6 +20,7 @@ import Login from "../screens/Login";
 import SignUp from "../screens/SignUp";
 import ForgotPAssword from "../screens/ForgotPassword";
 import SplashScreen from "../screens/SplashScreen";
+import LoadingScreen from "../screens/LoadingScreen";
 
 export default function Navigation() {
   return (
@@ -79,6 +80,11 @@ function RootNavigator() {
       <Stack.Screen
         name="Splash"
         component={SplashScreen}
+        options={{ headerShown: false}}
+      />
+       <Stack.Screen
+        name="Loading"
+        component={LoadingScreen}
         options={{ headerShown: false}}
       />
     </Stack.Navigator>

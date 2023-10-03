@@ -1,36 +1,36 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { View, StyleSheet } from "react-native";
 import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 import { backgroundColor, cardBackground } from '../global';
 import CustomHeader from "../components/CustomHeader";
 import { primaryColor } from '../global';
 import DeviceCard from "../components/DeviceCard";
+import LoadingScreen from "./LoadingScreen";
 
 export default function ConnectDevice({ navigation }: NativeStackHeaderProps) {
+
     return (
         <View style={styles.container}>
+        
             <CustomHeader title="Connect the Devices" onBack={() => navigation.goBack()} />
             <View style={styles.contentContainer}>
             <DeviceCard
                 title="Cycling"
                 cardColor={cardBackground}
                 imageSource={require('../assets/exercise.png')}
-                onPress={() => {
-                }}
+                onPress={() =>navigation.navigate('Loading')}
             />
             <DeviceCard
                 title="Apple Watch"
                 cardColor={cardBackground}
                 imageSource={require('../assets/connect-4.png')}
-                onPress={() => {
-                }}
+                onPress={() =>navigation.navigate('Loading')}
             />
             <DeviceCard
                 title="Standard Heart Rate Device"
                 cardColor={cardBackground}
                 imageSource={require('../assets/connect-5.png')}
-                onPress={() => {
-                }}
+                onPress={() =>navigation.navigate('Loading')}
             />
             </View>
         </View>
