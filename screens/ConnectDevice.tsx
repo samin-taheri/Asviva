@@ -5,7 +5,6 @@ import { backgroundColor, cardBackground } from '../global';
 import CustomHeader from "../components/CustomHeader";
 import { primaryColor } from '../global';
 import DeviceCard from "../components/DeviceCard";
-import LoadingScreen from "./LoadingScreen";
 
 export default function ConnectDevice({ navigation }: NativeStackHeaderProps) {
 

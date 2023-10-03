@@ -2,13 +2,43 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, ActivityIndicator, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { NativeStackHeaderProps } from "@react-navigation/native-stack";
 import { backgroundColor, primaryColor } from '../global';
-import LoadingComponent from '../components/LoadingComponent';
+import CustomHeader from '../components/CustomHeader';
 
 export default function LoadingScreen({ navigation }: NativeStackHeaderProps) {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 3000); 
+
+    return () => {
+      clearTimeout(timer); 
+    };
+  }, []);
 
   return (
     <View style={styles.container}>
-      <LoadingComponent/>
+      <CustomHeader title="Device Pairing" onBack={() => navigation.goBack()}/>
+      <>
+      {isLoading ? 
+       <View style={styles.contentContainer}>
+       <Image source={require("../assets/exersize.png")} style={styles.image} />
+       <ActivityIndicator size="large" color={primaryColor} />
+       <Text style={styles.text}>Searching...</Text>
+     </View>
+     :
+     <View style={styles.contentContainer}>
+          <Image source={require("../assets/oops.png")} style={styles.image} />
+          <Text style={styles.text}>No device found!</Text>
+        </View>
+      }
+      </>
+      <View style={styles.buttonContainer}>
+        <TouchableOpacity style={styles.button}>
+          <Text style={styles.buttonText}>Search Again</Text>
+        </TouchableOpacity>
+      </View>
     </View>
   );
 }
@@ -28,7 +58,7 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    top: -100,
+    marginBottom: 100
   },
   image: {
     width: 200,

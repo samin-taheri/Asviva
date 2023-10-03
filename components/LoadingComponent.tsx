@@ -4,7 +4,7 @@ import { backgroundColor, primaryColor } from '../global';
 import { LoadingProps } from '../types/data';
 import CustomHeader from './CustomHeader';
 
-const LoadingComponent: React.FC<LoadingProps> = ({}) => {
+const LoadingComponent: React.FC<LoadingProps> = ({back}) => {
     const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -17,29 +17,14 @@ const LoadingComponent: React.FC<LoadingProps> = ({}) => {
     };
   }, []);
 
-  const renderContent = () => {
-    if (isLoading) {
-      return (
-        <View style={styles.contentContainer}>
-          <Image source={require("../assets/exersize.png")} style={styles.image} />
-          <ActivityIndicator size="large" color={primaryColor} />
-          <Text style={styles.text}>Searching...</Text>
-        </View>
-      );
-    } else {
-      return (
-        <View style={styles.contentContainer}>
+  return (
+    <View style={styles.container}>
+      <CustomHeader title="Device Pairing" onBack={back}/>
+     
+     <View style={styles.contentContainer}>
           <Image source={require("../assets/oops.png")} style={styles.image} />
           <Text style={styles.text}>No device found!</Text>
         </View>
-      );
-    }
-  };
-
-  return (
-    <View style={styles.container}>
-      <CustomHeader title="Device Pairing" />
-      {renderContent()}
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.button}>
           <Text style={styles.buttonText}>Search Again</Text>
