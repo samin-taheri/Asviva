@@ -7,7 +7,7 @@ import { Feather } from "@expo/vector-icons";
 export default function SplashScreen({ navigation }: any) {
 
   const navigateToHome = () => {
-    navigation.replace('Root');
+    navigation.replace('Login');
   };
 
   return (

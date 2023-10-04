@@ -114,4 +114,6 @@ export interface DataItem {
     title: string;
     backgroundImage: ImageSourcePropType
   }
-  
+export interface ChallengeComponentProps {
+    imageSource: ImageSourcePropType; 
+}

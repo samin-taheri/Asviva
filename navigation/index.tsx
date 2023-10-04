@@ -95,7 +95,7 @@ function BottomTabNavigator() {
   return (
     <BottomTab.Navigator>
       <BottomTab.Screen
-        name="Asviva"
+        name="Home"
         component={Home}
         options={({ navigation }) => ({
           tabBarIcon: ({ color, focused }) => (

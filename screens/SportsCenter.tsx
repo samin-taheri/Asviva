@@ -17,9 +17,9 @@ export default function SportsCenter({ navigation }: any) {
             <CustomHeader title="Sports Center" />
             <NavigationContainer independent={true}>
               <Tab.Navigator>
+              <Tab.Screen name="Couching" component={CouchingCourseComponent} />
                 <Tab.Screen name="Challenge" component={ChallengeComponent} />
                 <Tab.Screen name="Power" component={PowerCourseComponent} />
-                <Tab.Screen name="Couching" component={CouchingCourseComponent} />
               </Tab.Navigator>
             </NavigationContainer>
           </View>
