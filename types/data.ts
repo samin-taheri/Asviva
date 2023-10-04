@@ -42,7 +42,7 @@ export interface StatsCardProps {
     style?: ViewStyle;
 }
 export interface CustomHeaderProps {
-    title: string;
+    title?: string;
     onBack?: () => void;
 }
 export interface TopNavigationBarProps {

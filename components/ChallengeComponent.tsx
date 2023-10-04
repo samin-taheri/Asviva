@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, FlatList, StyleSheet, ImageBackground, SafeAreaView, ImageSourcePropType, Pressable } from 'react-native';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
-import { backgroundColor, cardBackground2, primaryColor, textColor } from '../global';
+import { cardBackground2, primaryColor, textColor } from '../global';
 
 interface DataItem {
   id: string;
@@ -26,6 +26,7 @@ const ChallengeComponent: React.FC = ({ }) => {
   ];
 
   const renderItem = ({ item }: { item: DataItem }) => {
+
     return (
       <View style={styles.item}>
         <Pressable style={styles.cardContainer}>

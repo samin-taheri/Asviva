@@ -21,6 +21,7 @@ import SignUp from "../screens/SignUp";
 import ForgotPAssword from "../screens/ForgotPassword";
 import SplashScreen from "../screens/SplashScreen";
 import LoadingScreen from "../screens/LoadingScreen";
+import CouchingDetails from "../screens/CouchingDetails";
 
 export default function Navigation() {
   return (
@@ -85,6 +86,11 @@ function RootNavigator() {
        <Stack.Screen
         name="Loading"
         component={LoadingScreen}
+        options={{ headerShown: false}}
+      />
+       <Stack.Screen
+        name="CouchingDetails"
+        component={CouchingDetails}
         options={{ headerShown: false}}
       />
     </Stack.Navigator>

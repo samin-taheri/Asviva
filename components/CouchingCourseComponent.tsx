@@ -11,7 +11,13 @@ interface DataItem {
   kcal: string;
   imageSource: ImageSourcePropType;
 }
-const CouchingCourseComponent: React.FC = ({ }) => {
+
+interface CouchingCourseComponentProps {
+  onPress: (id: string) => void;
+}
+
+const CouchingCourseComponent: React.FC<CouchingCourseComponentProps> = ({onPress }) => {
+  
   const data: DataItem[] = [
     { id: '1',user: '19 min', kcal: '91 kcal', title: 'Hit Whole Body Fat Burning', imageSource: require('../assets/couching-1.jpg') },
     { id: '2',user: '37 min', kcal: '235 kcal', title: 'Fat Burning Cardio Workout New', imageSource: require('../assets/couching-3.jpg') },
@@ -24,11 +30,10 @@ const CouchingCourseComponent: React.FC = ({ }) => {
     { id: '9',user: '25 min', kcal: '129 kcal', title: 'Speed & Endurance Training', imageSource: require('../assets/couching-11.jpg') },
     { id: '10',user: '22 min', kcal: '138 kcal', title: 'Endurance Training New', imageSource: require('../assets/couching-3.jpg') },
   ];
-
   const renderItem = ({ item }: { item: DataItem }) => {
     return (
       <View style={styles.item}>
-        <Pressable style={styles.cardContainer}>
+        <Pressable style={styles.cardContainer} onPress={() => onPress(item?.id)}>
           <ImageBackground source={item.imageSource} style={styles.cardBackground}>
             <View style={[styles.cardContent, { backgroundColor: 'rgba(255, 255, 255, 0.77)' }]}>
               <View style={{flexDirection: 'column'}}>
