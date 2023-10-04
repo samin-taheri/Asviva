@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList, StyleSheet, ImageBackground, SafeAreaView, ImageSourcePropType } from 'react-native';
+import { View, Text, FlatList, StyleSheet, ImageBackground, SafeAreaView, ImageSourcePropType, Pressable } from 'react-native';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import { backgroundColor, cardBackground2, primaryColor, textColor } from '../global';
@@ -28,7 +28,7 @@ const ChallengeComponent: React.FC = ({ }) => {
   const renderItem = ({ item }: { item: DataItem }) => {
     return (
       <View style={styles.item}>
-        <View style={styles.cardContainer}>
+        <Pressable style={styles.cardContainer}>
           <ImageBackground source={item.imageSource} style={styles.cardBackground}>
             <View style={[styles.cardContent, { backgroundColor: 'rgba(255, 255, 255, 0.77)' }]}>
               <View style={{flexDirection: 'column'}}>
@@ -42,7 +42,7 @@ const ChallengeComponent: React.FC = ({ }) => {
                 />
                 <Text style={{fontSize: 11}}>{item.user}</Text>
                 </View>
-                <View style={[styles.iconContainer , {marginLeft: 5}]}>
+                <View style={[styles.iconContainer , {marginLeft: 10}]}>
                 <Entypo
                     name="location-pin"
                     size={20}
@@ -61,7 +61,7 @@ const ChallengeComponent: React.FC = ({ }) => {
             </View>
             </View>
           </ImageBackground>
-        </View>
+        </Pressable>
       </View>
     );
   };
@@ -105,9 +105,9 @@ const styles = StyleSheet.create({
   },
   cardContent: {
     padding: 14,
-    width: 355,
-    marginLeft: '5%',
-    marginTop: '14%',
+    width: '93%',
+    marginLeft: '3.5%',
+    marginTop: '17%',
     borderRadius: 12,
     flexDirection: 'row',
     justifyContent: 'space-between', 
