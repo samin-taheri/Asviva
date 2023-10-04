@@ -1,7 +1,9 @@
-import { View, StyleSheet, Text, ImageSourcePropType, Image } from "react-native";
+import { View, StyleSheet, Text, ImageSourcePropType, ImageBackground, ScrollView, TouchableOpacity } from "react-native";
 import { backgroundColor } from '../global';
 import { useRoute } from '@react-navigation/native';
-import CustomHeader from "../components/CustomHeader";
+import { Feather } from "@expo/vector-icons";
+import BoxWithItems from "../components/BoxWithItems";
+import StatsCard from "../components/StatsCard";
 
 interface DataItem {
   id: string;
@@ -23,18 +25,47 @@ const data: DataItem[] = [
   { id: '9',user: '25 min', kcal: '129 kcal', title: 'Speed & Endurance Training', imageSource: require('../assets/couching-11.jpg') },
   { id: '10',user: '22 min', kcal: '138 kcal', title: 'Endurance Training New', imageSource: require('../assets/couching-3.jpg') },
 ];
+const chartData = {
+  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
+  datasets: [
+    {
+      data: [50, 45, 60, 70, 52],
+    },
+  ],
+};
 
+const chartWidth = 300;
+const chartHeight = 200;
+const yAxisSuffix = 'k';
+const chartConfig = {
+  backgroundGradientFrom: '#fff',
+  backgroundGradientTo: '#fff',
+  color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`, // Bar color
+};
 export default function CouchingDetails({navigation}: any) {
   const route = useRoute();
   const { id } = route.params as { id: string }; 
   const selectedItem = data.find(item => item.id === id);
   if (selectedItem) {
     return(
-        <View style={styles.container}>
-          <CustomHeader onBack={() => navigation.goBack()}/>  
-          <Image source={selectedItem.imageSource} style={styles.image}/>
-          <Text>{selectedItem.title}</Text>
+        <ScrollView style={styles.container}>
+            <View style={styles.imageContainer}>
+          <ImageBackground source={selectedItem.imageSource} style={styles.image}>
+            <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
+              <Feather name="arrow-left" size={30} color="#fff" />
+            </TouchableOpacity>
+          <View style={[styles.cardContent, { backgroundColor: 'rgba(255, 255, 255, 0.77)' }]}>
+              <Text style={styles.title}>{selectedItem.title}</Text>
+          </View>
+          </ImageBackground>
+          </View>
+            <View style={{flexDirection: 'row', justifyContent: 'space-around', padding: 8, marginTop: 10}}>
+            <StatsCard title="Time" value="19.00" />
+            <StatsCard title="Energy" value="91 kcal" style={{paddingLeft: 10}}/>
+            <StatsCard title="Difficulty" value="2 Star" style={{paddingLeft: 10}}/>
         </View>
+          <BoxWithItems/>
+        </ScrollView>
     )
   }
 }
@@ -42,12 +73,39 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: backgroundColor,
-        alignItems: 'center'
+    },  
+    backButton: {
+      position: 'absolute',
+      top: '10%',
+      left: '2%',
+      zIndex: 1,
+      padding: 16,
+    },
+    imageContainer: {
+      position: 'relative',
     },
     image: {
+        width: '100%',
+        height: 250,
+        resizeMode: 'cover',
+        justifyContent: 'center',
+    },
+    cardContent: {
+      padding: 14,
+      width: '100%',
+      marginTop: '30%',
+      flexDirection: 'row',
+      justifyContent: 'space-between', 
+      alignItems: 'center', 
+    },
+    title: {
+      fontSize: 14,
+      fontWeight: "bold",
+      paddingRight: 30,
+      textAlign: 'left'
+    },
+    cardContainer: {
+      overflow: 'hidden',
       borderRadius: 12,
-      marginTop: 20,
-      height: 200,
-      width: '95%'
     },
 });
