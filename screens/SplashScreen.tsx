@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import Swiper from 'react-native-swiper';
-import { primaryColor } from '../global';
+import { cardBackground2, primaryColor } from '../global';
 import { Feather } from "@expo/vector-icons";
 
 export default function SplashScreen({ navigation }: any) {
@@ -21,28 +21,30 @@ export default function SplashScreen({ navigation }: any) {
       >
         <View style={styles.slide}>
           <Image
-            source={require('../assets/splash-1.jpeg')}
+            source={require('../assets/splash-9.png')}
+            style={styles.image}
+            resizeMode="cover"
+          />
+          <Text style={styles.title}>Welcome to Asviva</Text>
+          <Text style={styles.title}>Track Your Fitness Health Data</Text>
+        </View>
+        <View style={styles.slide}>
+          <Image
+            source={require('../assets/splash-10.png')}
             style={styles.image}
             resizeMode="cover"
           />
         </View>
         <View style={styles.slide}>
           <Image
-            source={require('../assets/splash-2.jpeg')}
-            style={styles.image}
-            resizeMode="cover"
-          />
-        </View>
-        <View style={styles.slide}>
-          <Image
-            source={require('../assets/splash-3.jpeg')}
+            source={require('../assets/splash-2.png')}
             style={styles.image}
             resizeMode="cover"
           />
         </View>
       </Swiper>
       <TouchableOpacity  style={styles.buttonContainer} onPress={navigateToHome}>
-        <Text style={styles.buttonText}>Skip</Text>
+        <Text style={styles.buttonText}>Get Started</Text>
         <Feather name="chevron-right" size={20} color='white' style={{ paddingLeft: 2 }} />
       </TouchableOpacity>
     </View>
@@ -56,7 +58,7 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     backgroundColor: primaryColor,
-    width:  80,
+    width:  120,
     height: 35,
     borderRadius: 8,
     alignItems: 'center',
@@ -76,13 +78,18 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    height: '20%',
+    height: '40%',
   },
   text: {
     color: '#fff',
     fontSize: 30,
     fontWeight: 'bold',
     marginBottom: 20,
+  },
+  title: {
+    fontSize: 18,
+    fontWeight: '600',
+    paddingTop: 10
   },
   button: {
   },

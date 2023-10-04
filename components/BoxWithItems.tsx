@@ -1,6 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList, StyleSheet } from 'react-native';
-import { cardBackground2 } from '../global';
+import { View, Text, FlatList, StyleSheet, SafeAreaView } from 'react-native';
 
 interface ListItem {
   id: number;
@@ -11,21 +10,21 @@ interface ListItem {
 }
 
 const data: ListItem[] = [
-  { id: 1, text1: '15 sec', text2: '25% FTP', text3: '18W', backgroundColor: 'rgba(246, 209, 209, 0.4)' },
-  { id: 2, text1: '18 sec', text2: '35% FTP', text3: '35W', backgroundColor: '#rgba(239, 236, 196, 0.4)' },
-  { id: 3, text1: '12 sec', text2: '50% FTP', text3: '21W', backgroundColor: '#rgba(206, 239, 196, 0.4)' },
-  { id: 4, text1: '16 sec', text2: '25% FTP', text3: '149W', backgroundColor: '#rgba(227, 214, 240, 0.4)' },
-  { id: 5, text1: '15 sec', text2: '30% FTP', text3: '53W', backgroundColor: '#rgba(239, 196, 217, 0.4)' },
-  { id: 6, text1: '14 sec', text2: '40% FTP', text3: '18W', backgroundColor: '#rgba(239, 216, 196, 0.4)' },
-  { id: 7, text1: '17 sec', text2: '44% FTP', text3: '19W', backgroundColor: '#rgba(209, 228, 246, 0.4)' },
-  { id: 8, text1: '15 sec', text2: '25% FTP', text3: '18W', backgroundColor: 'rgba(246, 209, 209, 0.4)' },
-  { id: 9, text1: '18 sec', text2: '35% FTP', text3: '35W', backgroundColor: '#rgba(239, 236, 196, 0.4)' },
-  { id: 10, text1: '12 sec', text2: '50% FTP', text3: '21W', backgroundColor: '#rgba(206, 239, 196, 0.4)' },
-  { id: 11, text1: '16 sec', text2: '25% FTP', text3: '149W', backgroundColor: '#rgba(227, 214, 240, 0.4)' },
-  { id: 12, text1: '15 sec', text2: '30% FTP', text3: '53W', backgroundColor: '#rgba(239, 196, 217, 0.4)' },
-  { id: 13, text1: '14 sec', text2: '40% FTP', text3: '18W', backgroundColor: '#rgba(239, 216, 196, 0.4)' },
-  { id: 14, text1: '17 sec', text2: '44% FTP', text3: '19W', backgroundColor: '#rgba(209, 228, 246, 0.4)' },
-  { id: 15, text1: '15 sec', text2: '25% FTP', text3: '18W', backgroundColor: 'rgba(246, 209, 209, 0.4)' },
+  { id: 1, text1: '15 sec', text2: '25% FTP', text3: '18W', backgroundColor: 'rgba(209, 209, 209, 0.4)' },
+  { id: 2, text1: '18 sec', text2: '35% FTP', text3: '35W', backgroundColor: 'rgba(209, 209, 209, 0.4)' },
+  { id: 3, text1: '12 sec', text2: '50% FTP', text3: '21W', backgroundColor: 'rgba(209, 209, 209, 0.4)' },
+  { id: 4, text1: '16 sec', text2: '25% FTP', text3: '149W', backgroundColor: 'rgba(209, 209, 209, 0.4))' },
+  { id: 5, text1: '15 sec', text2: '30% FTP', text3: '53W', backgroundColor: 'rgba(209, 209, 209, 0.4)' },
+  { id: 6, text1: '14 sec', text2: '40% FTP', text3: '18W', backgroundColor: 'rgba(209, 209, 209, 0.4)' },
+  { id: 7, text1: '17 sec', text2: '44% FTP', text3: '19W', backgroundColor: 'rgba(209, 209, 209, 0.4)' },
+  { id: 8, text1: '15 sec', text2: '25% FTP', text3: '18W', backgroundColor: 'rgba(209, 209, 209, 0.4)' },
+  { id: 9, text1: '18 sec', text2: '35% FTP', text3: '35W', backgroundColor: 'rgba(209, 209, 209, 0.4)' },
+  { id: 10, text1: '12 sec', text2: '50% FTP', text3: '21W', backgroundColor: 'rgba(209, 209, 209, 0.4)' },
+  { id: 11, text1: '16 sec', text2: '25% FTP', text3: '149W', backgroundColor: 'rgba(209, 209, 209, 0.4))' },
+  { id: 12, text1: '15 sec', text2: '30% FTP', text3: '53W', backgroundColor: 'rgba(209, 209, 209, 0.4)' },
+  { id: 13, text1: '14 sec', text2: '40% FTP', text3: '18W', backgroundColor: 'rgba(209, 209, 209, 0.4)' },
+  { id: 14, text1: '17 sec', text2: '44% FTP', text3: '19W', backgroundColor: 'rgba(209, 209, 209, 0.4)' },
+  { id: 15, text1: '15 sec', text2: '25% FTP', text3: '18W', backgroundColor: 'rgba(209, 209, 209, 0.4)' },
 ];
 
 const CardWithItems: React.FC = () => {
@@ -42,13 +41,15 @@ const CardWithItems: React.FC = () => {
   };
 
   return (
+    <SafeAreaView style={styles.container}>
     <FlatList
       data={data}
       renderItem={renderCard}
       keyExtractor={(item) => item.id.toString()}
-      contentContainerStyle={styles.container}
       style={{ marginTop: 10 }}
+      showsVerticalScrollIndicator={false}
     />
+    </SafeAreaView>
   );
 };
 

@@ -48,7 +48,7 @@ export default function CouchingDetails({navigation}: any) {
   const selectedItem = data.find(item => item.id === id);
   if (selectedItem) {
     return(
-        <ScrollView style={styles.container}>
+        <View style={styles.container}>
             <View style={styles.imageContainer}>
           <ImageBackground source={selectedItem.imageSource} style={styles.image}>
             <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
@@ -65,7 +65,7 @@ export default function CouchingDetails({navigation}: any) {
             <StatsCard title="Difficulty" value="2 Star" style={{paddingLeft: 10}}/>
         </View>
           <BoxWithItems/>
-        </ScrollView>
+        </View>
     )
   }
 }
