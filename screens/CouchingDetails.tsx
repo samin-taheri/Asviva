@@ -1,5 +1,5 @@
-import { View, StyleSheet, Text, ImageSourcePropType, ImageBackground, ScrollView, TouchableOpacity, SafeAreaView } from "react-native";
-import { backgroundColor, cardBackground2, firstCard, primaryColor, secondCard, tableBackgroundColor, thirdCard } from '../global';
+import { View, StyleSheet, Text, ImageSourcePropType, ImageBackground, ScrollView, TouchableOpacity } from "react-native";
+import { backgroundColor, tableBackgroundColor } from '../global';
 import { useRoute } from '@react-navigation/native';
 import { Feather } from "@expo/vector-icons";
 import BoxWithItems from "../components/BoxWithItems";
@@ -34,7 +34,7 @@ export default function CouchingDetails({navigation}: any) {
   const selectedItem = data.find(item => item.id === id);
   if (selectedItem) {
     return(
-        <ScrollView style={styles.container}>
+        <View style={styles.container}>
             <View style={styles.imageContainer}>
           <ImageBackground source={selectedItem.imageSource} style={styles.image}>
             <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
@@ -45,6 +45,7 @@ export default function CouchingDetails({navigation}: any) {
           </View>
           </ImageBackground>
           </View>
+          <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.container2}>
           <ColoredCards2  
             color='#3d3d4e'
@@ -79,7 +80,8 @@ export default function CouchingDetails({navigation}: any) {
            </Card>
            </View>
           <BoxWithItems />
-        </ScrollView>
+          </ScrollView>
+        </View>
     )
   }
   return null; 

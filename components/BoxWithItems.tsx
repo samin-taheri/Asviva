@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, FlatList, StyleSheet, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet, SafeAreaView } from 'react-native';
 import { tableBackgroundColor } from '../global';
 
 interface ListItem {
@@ -44,8 +44,8 @@ const CardWithItems: React.FC = () => {
   return (
     <SafeAreaView style={styles.container}>
        {data.map((item) => (
-  <View key={item.id.toString()}>{renderCard({ item })}</View>
-))}
+        <View key={item.id.toString()}>{renderCard({ item })}</View>
+        ))}
     </SafeAreaView>
   );
 };
@@ -55,9 +55,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
+    marginBottom: 30,
+    marginTop: 10
   },
   card: {
-    width: 390,
+    width: 380,
     height: 40,
     marginVertical: 2,
     paddingHorizontal: 16,
