@@ -80,7 +80,7 @@ export default function CouchingDetails({navigation}: any) {
             </View>
            </Card>
            </View>
-           <Graph/>
+           <Graph title={'Course Info'}/>
           <BoxWithItems />
           </ScrollView>
         </View>

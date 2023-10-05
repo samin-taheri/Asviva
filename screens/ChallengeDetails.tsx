@@ -1,86 +1,101 @@
 import { View, StyleSheet, Text, ImageSourcePropType, ImageBackground, ScrollView, TouchableOpacity } from "react-native";
-import { backgroundColor, tableBackgroundColor } from '../global';
+import { tableBackgroundColor } from '../global';
 import { useRoute } from '@react-navigation/native';
 import { Feather } from "@expo/vector-icons";
-import BoxWithItems from "../components/BoxWithItems";
 import ColoredCards2 from "../components/ColoredCards2";
 import Card from "../components/Card";
+import Graph from "../components/Graph";
+import { useEffect, useState } from "react";
+import ProgressBar from "../components/ProgressBar";
 
 interface DataItem {
   id: string;
   title: string;
   user: string;
-  kcal: string;
   intro: string;
   imageSource: ImageSourcePropType;
 }
 
-const data: DataItem[] = [
-  { id: '1',user: '19 min', kcal: '91 kcal', title: 'Hit Whole Body Fat Burning', intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace of life. ', imageSource: require('../assets/couching-1.jpg') },
-  { id: '2',user: '37 min', kcal: '235 kcal', title: 'Fat Burning Cardio Workout New', intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace of life. ',imageSource: require('../assets/couching-3.jpg') },
-  { id: '3',user: '24 min', kcal: '134 kcal', title: 'Sweat Fat Burning',intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace of life. ', imageSource: require('../assets/couching-5.jpg') },
-  { id: '4',user: '17 min', kcal: '89 kcal', title: 'HIT Training New',intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace of life. ', imageSource: require('../assets/couching-6.jpg') },
-  { id: '5',user: '30 min', kcal: '170 kcal', title: 'Rhythmic Fat Riding', intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace of life. ', imageSource: require('../assets/couching-4.jpg') },
-  { id: '6',user: '22 min', kcal: '132 kcal', title: 'Cardşopulmonary Strength Training New', intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace of life. ', imageSource: require('../assets/couching-8.jpg') },
-  { id: '7',user: '29 min', kcal: '185 kcal', title: 'Comprehensive Fat Burning', intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace of life. ', imageSource: require('../assets/couching-9.jpg') }, 
-  { id: '8',user: '27 min', kcal: '186 kcal', title: 'Strength Training New',intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace of life. ', imageSource: require('../assets/couching-10.jpg') },
-  { id: '9',user: '25 min', kcal: '129 kcal', title: 'Speed & Endurance Training',intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace of life. ', imageSource: require('../assets/couching-11.jpg') },
-  { id: '10',user: '22 min', kcal: '138 kcal', title: 'Endurance Training New',intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace of life. ', imageSource: require('../assets/couching-3.jpg') },
-];
+const newData: DataItem[] = [
+    { id: '1',user: '0', title: 'Sightseeing road (Norway)', intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace. ', imageSource: require('../assets/challenge-1.jpg') },
+    { id: '2',user: '1',  title: '(Xiamen) Skybike path', intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace. ', imageSource: require('../assets/challenge-3.jpg') },
+    { id: '3',user: '0', title: 'Otar River (Norway)', intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace. ', imageSource: require('../assets/challenge-4.jpg') },
+    { id: '4',user: '0', title: 'The Alps', intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace. ', imageSource: require('../assets/challenge-5.jpg') },
+    { id: '5',user: '0', title: '(Austria) Alpine garden', intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace. ', imageSource: require('../assets/challenge-6.jpg') },
+    { id: '6',user: '0', title: '(Three dimensional) space tunnel', intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace. ', imageSource: require('../assets/challenge-7.jpg') },
+    { id: '7',user: '0', title: '(3D) Pink Blue tunnel', intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace. ', imageSource: require('../assets/challenge-8.jpg') },
+    { id: '8',user: '0', title: '(3D) Love tunnel', intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace. ', imageSource: require('../assets/challenge-10.jpg') },
+    { id: '9',user: '0', title: '(3D) Purple and Yellow tunnel', intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace. ', imageSource: require('../assets/challenge-11.jpg') },
+    { id: '10',user: '0', title: '(Three dimensional) time travel', intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace. ', imageSource: require('../assets/challenge-12.jpg') },
+  ];
 
 export default function ChallengeDetails({navigation}: any) {
   const route = useRoute();
   const { id } = route.params as { id: string }; 
-  const selectedItem = data.find(item => item.id === id);
+  const selectedItem = newData.find(item => item.id === id);
+  const [progress, setProgress] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (progress < 100) {
+        setProgress(progress + 10);
+      } else {
+        clearInterval(interval);
+      }
+    }, 1000); 
+    return () => clearInterval(interval);
+  }, [progress]);
+  
   if (selectedItem) {
     return(
         <View style={styles.container}>
-            <View style={styles.imageContainer}>
-          <ImageBackground source={selectedItem.imageSource} style={styles.image}>
-            <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
+             <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
               <Feather name="arrow-left" size={30} color="#fff" />
             </TouchableOpacity>
+            <View style={styles.imageContainer}>
+          <ImageBackground source={selectedItem.imageSource} style={styles.image}>
           <View style={[styles.cardContent, { backgroundColor: 'rgba(255, 255, 255, 0.77)' }]}>
               <Text style={styles.title}>{selectedItem.title}</Text>
-          </View>
-          </ImageBackground>
           </View>
           <ScrollView showsVerticalScrollIndicator={false}>
           <View style={styles.container2}>
           <ColoredCards2  
             color='#3d3d4e'
-            title="Time"
-            description="19.00"
+            title="Distance"
+            description="10.35"
             cardColor='rgba(255, 233, 225, 0.8)'
-            imageSource={require('../assets/clock-2.png')}
+            imageSource={require('../assets/distance.png')}
             />
             <ColoredCards2  
             color='#3d3d4e'
-            title="Energy"
-            description="91 kcal"
-            cardColor='rgba(240, 215, 237, 0.5)'
-            imageSource={require('../assets/energy.png')}
+            title="Climb"
+            description="0.1 m"
+            cardColor='rgba(240, 215, 237, 0.8)'
+            imageSource={require('../assets/climb.png')}
             />
             <ColoredCards2  
             color='#3d3d4e'
             title="Difficulty"
-            description="3 star"
-            cardColor='#eaefe8'
+            description="1 star"
+            cardColor='rgba(234, 239, 232, 0.8)'
             imageSource={require('../assets/difficulty.png')}
             />
            </View>
+           <ProgressBar/>
            <View style={{padding: 8}}>
            <Card>
             <View style={styles.textContainer}>
               <View style={styles.iconContainer}>
-                <Text style={styles.introTitle}>Course Intro</Text>
+                <Text style={styles.introTitle}>Route Intro</Text>
               </View>
               <Text style={styles.title2}>{selectedItem.intro}</Text>
             </View>
            </Card>
            </View>
-          <BoxWithItems />
+           <Graph title={'Route Info'}/>
           </ScrollView>
+          </ImageBackground>
+          </View>
         </View>
     )
   }
@@ -89,7 +104,6 @@ export default function ChallengeDetails({navigation}: any) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: backgroundColor,
     },  
     textContainer: {
       flex: 1,
@@ -103,7 +117,7 @@ const styles = StyleSheet.create({
     },
     backButton: {
       position: 'absolute',
-      top: '10%',
+      top: '5%',
       left: '2%',
       zIndex: 1,
       padding: 16,
@@ -113,7 +127,7 @@ const styles = StyleSheet.create({
     },
     image: {
         width: '100%',
-        height: 250,
+        height: '100%',
         resizeMode: 'cover',
         justifyContent: 'center',
     },
@@ -121,7 +135,7 @@ const styles = StyleSheet.create({
       padding: 10,
       width: '93%',
       marginLeft: '3.5%',
-      marginTop: '30%',
+      marginTop: '26%',
       borderRadius: 12,
       flexDirection: 'row',
       justifyContent: 'space-between', 

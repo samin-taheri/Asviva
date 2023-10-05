@@ -30,13 +30,13 @@ const data = {
     color: (opacity = 0.2) => `rgba(0, 0, 0, ${opacity})`, 
   };
   
-const Graph: React.FC<GraphProps> = ({ onPress }) => {
+const Graph: React.FC<GraphProps> = ({ onPress, title }) => {
   return (
     <View style={{padding: 8}}>
         <Card>
               <View style={{flexDirection: 'column'}}>
               <View style={styles.iconContainer}>
-                <Text style={styles.introTitle}>Lesson Plan</Text>
+                <Text style={styles.introTitle}>{title}</Text>
               </View>
                 <LineChart
                 style={{padding: 7, marginLeft: -20}}
