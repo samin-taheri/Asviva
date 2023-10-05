@@ -53,18 +53,17 @@ const CardWithItems: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center',
     marginBottom: 30,
     marginTop: 10,
   },
   card: {
-    width: 360,
+    width: '92%',
     height: 40,
     marginVertical: 2,
     paddingHorizontal: 16,
     paddingVertical: 10,
     borderRadius: 12,
+    marginLeft: '4.5%'
   },
   row: {
     flexDirection: 'row',
