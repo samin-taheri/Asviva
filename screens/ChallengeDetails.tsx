@@ -50,7 +50,7 @@ export default function ChallengeDetails({navigation}: any) {
     return(
         <View style={styles.container}>
              <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
-              <Feather name="arrow-left" size={30} color="#fff" />
+              <Feather name="arrow-left" size={30} color="#000" />
             </TouchableOpacity>
             <View style={styles.imageContainer}>
           <ImageBackground source={selectedItem.imageSource} style={styles.image}>
@@ -92,7 +92,9 @@ export default function ChallengeDetails({navigation}: any) {
             </View>
            </Card>
            </View>
+           <View style={{marginBottom: 30}}>
            <Graph title={'Route Info'}/>
+           </View>
           </ScrollView>
           </ImageBackground>
           </View>

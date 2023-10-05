@@ -25,9 +25,13 @@ const ProgressBar: React.FC<ProgressBarProps> = ({ progress }) => {
   return (
     <View style={styles.container}>
          {isProgressCompleted ? (
+        <View style={styles.successContainer}>
         <Text style={styles.successText}>Downloaded!</Text>
+        </View>
       ) : (
+        <View style={styles.percentageContainer}>
         <Text style={styles.progressText}>{`${progress}%`}</Text>
+        </View>
       )}
       <View style={styles.progressBar}>
         <View style={[styles.progress, { width: `${progress}%` }]} />
@@ -100,7 +104,8 @@ const App: React.FC = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    padding: 8
+    padding: 8,
+    paddingTop: 0
   }, 
   textContainer: {
     flex: 1,
@@ -116,6 +121,28 @@ const styles = StyleSheet.create({
     padding: 0,
     width: 160,
     height: 50,
+  },
+  successContainer: {
+    borderRadius: 12,
+    backgroundColor: '#eaefe7',
+    width: 120,
+    height: 30,
+    alignSelf: 'flex-end',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignContent: 'center',
+    marginBottom: 10
+  },
+  percentageContainer: {
+    borderRadius: 12,
+    backgroundColor: tableBackgroundColor,
+    width: 50,
+    height: 30,
+    alignSelf: 'flex-end',
+    justifyContent: 'center',
+    alignItems: 'center',
+    alignContent: 'center',
+    marginBottom: 10
   },
   introTitle: {
     fontSize: 14,
@@ -145,14 +172,14 @@ const styles = StyleSheet.create({
     borderColor: 'gray'
   },
   progressBar: {
-    height: 15,
-    backgroundColor: '#ccc',
+    height: 12,
+    backgroundColor: '#d7d7d7',
     position: 'relative',
     borderRadius: 12,
   },
   progress: {
     height: '100%',
-    backgroundColor: '#848484',
+    backgroundColor: '#a3a3a3',
     position: 'absolute',
     borderRadius: 12,
   },
@@ -163,18 +190,14 @@ const styles = StyleSheet.create({
     right: 0,
   },
   progressText: {
-    marginBottom: 10,
-    textAlign: 'right',
     fontSize: 15,
     fontWeight: 'bold',
     color: '#848484',
   },
   successText: {
-    marginBottom: 10,
-    textAlign: 'right',
     fontSize: 15,
     fontWeight: 'bold',
-    color: '#848484', 
+    color: '#537d3c', 
   },
 });
 
