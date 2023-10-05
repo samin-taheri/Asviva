@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, Text, FlatList, StyleSheet, Image, SafeAreaView, ImageSourcePropType, Pressable } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, FlatList, StyleSheet, Image, SafeAreaView, ImageSourcePropType, Pressable, ActivityIndicator } from 'react-native';
 import { cardBackground2, primaryColor } from '../global';
 
 interface DataItem {
@@ -10,12 +10,23 @@ interface DataItem {
 }
 
 const PowerCourseComponent: React.FC = ({ }) => {
-  const data: DataItem[] = [
+
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState<DataItem[]>([]);
+
+  useEffect(() => {
+    // Simulate a half-second delay before loading the data
+    setTimeout(() => {
+  const newData: DataItem[] = [
     { id: '1',desc: 'Take your first step and master riding skills', title: 'Beginner', imageSource: require('../assets/power-bike.jpeg') },
     { id: '2',desc: 'Burn more calories within limited time', title: 'Fat burning', imageSource: require('../assets/power-bike.jpeg') },
     { id: '3',desc: 'Buil better mental and physical ability', title: 'Endurance',  imageSource: require('../assets/power-bike.jpeg') },
     { id: '4',desc: 'More explosive power and better muscle lnes', title: 'Muscle Strength', imageSource: require('../assets/power-bike.jpeg') },
   ];
+  setData(newData);
+  setLoading(false);
+}, 500);
+}, []);
   
   const renderItem = ({ item }: { item: DataItem }) => {
     return (
@@ -32,6 +43,13 @@ const PowerCourseComponent: React.FC = ({ }) => {
       </View>
     );
   };
+  if (loading) {
+    return (
+      <View style={styles.loaderContainer}>
+        <ActivityIndicator size="large" color={primaryColor} />
+      </View>
+    );
+  }
 
   return (
     <SafeAreaView style={styles.container}>
@@ -52,6 +70,11 @@ const styles = StyleSheet.create({
   },
   item: {
     padding: 8,
+  },
+  loaderContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   cardContainer: {
     overflow: 'hidden',

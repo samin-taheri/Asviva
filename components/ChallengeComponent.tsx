@@ -1,5 +1,5 @@
-import React from 'react';
-import { View, Text, FlatList, StyleSheet, ImageBackground, SafeAreaView, ImageSourcePropType, Pressable } from 'react-native';
+import React, { useEffect, useState } from 'react';
+import { View, Text, FlatList, StyleSheet, ImageBackground, SafeAreaView, ImageSourcePropType, Pressable, ActivityIndicator } from 'react-native';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import { cardBackground2, primaryColor, textColor } from '../global';
@@ -12,18 +12,28 @@ interface DataItem {
   imageSource: ImageSourcePropType;
 }
 const ChallengeComponent: React.FC = ({ }) => {
-  const data: DataItem[] = [
-    { id: '1',user: '0', loc: '5.58 km', title: 'Sightseeing road (Norway)', imageSource: require('../assets/challenge-1.jpg') },
-    { id: '2',user: '1', loc: '3.66 km', title: '(Xiamen) Skybike path', imageSource: require('../assets/challenge-3.jpg') },
-    { id: '3',user: '0', loc: '5.28 km', title: 'Otar River (Norway)', imageSource: require('../assets/challenge-4.jpg') },
-    { id: '4',user: '0', loc: '3.67 km', title: 'The Alps', imageSource: require('../assets/challenge-5.jpg') },
-    { id: '5',user: '0', loc: '3.00 km', title: '(Austria) Alpine garden', imageSource: require('../assets/challenge-6.jpg') },
-    { id: '6',user: '0', loc: '17.50 km', title: '(Three dimensional) space tunnel', imageSource: require('../assets/challenge-7.jpg') },
-    { id: '7',user: '0', loc: '20.19 km', title: '(3D) Pink Blue tunnel', imageSource: require('../assets/challenge-8.jpg') },
-    { id: '8',user: '0', loc: '3.35 km', title: '(3D) Love tunnel', imageSource: require('../assets/challenge-10.jpg') },
-    { id: '9',user: '0', loc: '5.01 km', title: '(3D) Purple and Yellow tunnel', imageSource: require('../assets/challenge-11.jpg') },
-    { id: '10',user: '0', loc: '4.96 km', title: '(Three dimensional) time travel', imageSource: require('../assets/challenge-12.jpg') },
-  ];
+  const [loading, setLoading] = useState(true);
+  const [data, setData] = useState<DataItem[]>([]);
+
+  useEffect(() => {
+    // Simulate a half-second delay before loading the data
+    setTimeout(() => {
+      const newData: DataItem[] = [
+        { id: '1',user: '0', loc: '5.58 km', title: 'Sightseeing road (Norway)', imageSource: require('../assets/challenge-1.jpg') },
+        { id: '2',user: '1', loc: '3.66 km', title: '(Xiamen) Skybike path', imageSource: require('../assets/challenge-3.jpg') },
+        { id: '3',user: '0', loc: '5.28 km', title: 'Otar River (Norway)', imageSource: require('../assets/challenge-4.jpg') },
+        { id: '4',user: '0', loc: '3.67 km', title: 'The Alps', imageSource: require('../assets/challenge-5.jpg') },
+        { id: '5',user: '0', loc: '3.00 km', title: '(Austria) Alpine garden', imageSource: require('../assets/challenge-6.jpg') },
+        { id: '6',user: '0', loc: '17.50 km', title: '(Three dimensional) space tunnel', imageSource: require('../assets/challenge-7.jpg') },
+        { id: '7',user: '0', loc: '20.19 km', title: '(3D) Pink Blue tunnel', imageSource: require('../assets/challenge-8.jpg') },
+        { id: '8',user: '0', loc: '3.35 km', title: '(3D) Love tunnel', imageSource: require('../assets/challenge-10.jpg') },
+        { id: '9',user: '0', loc: '5.01 km', title: '(3D) Purple and Yellow tunnel', imageSource: require('../assets/challenge-11.jpg') },
+        { id: '10',user: '0', loc: '4.96 km', title: '(Three dimensional) time travel', imageSource: require('../assets/challenge-12.jpg') },
+      ];
+      setData(newData);
+      setLoading(false);
+    }, 500);
+  }, []);
 
   const renderItem = ({ item }: { item: DataItem }) => {
 
@@ -67,6 +77,14 @@ const ChallengeComponent: React.FC = ({ }) => {
     );
   };
 
+  if (loading) {
+    return (
+      <View style={styles.loaderContainer}>
+        <ActivityIndicator size="large" color={primaryColor} />
+      </View>
+    );
+  }
+  
   return (
     <SafeAreaView style={styles.container}>
     <FlatList
@@ -90,6 +108,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     width: '13%',
+  },
+  loaderContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   item: {
     padding: 8, 

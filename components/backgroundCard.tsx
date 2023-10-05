@@ -47,12 +47,13 @@ const styles = StyleSheet.create({
   },
   cardContent: {
     padding: 14,
-    width: 370,
-    marginLeft: '3%',
+    width: '93%',
+    marginLeft: '3.5%',
     marginTop: '30%',
     borderRadius: 12,
     flexDirection: 'row',
-    justifyContent: 'center',
+    justifyContent: 'space-between', 
+    alignItems: 'center', 
   },
   cardTitle: {
     fontSize: 20,
@@ -68,7 +69,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     fontWeight: "bold",
     paddingRight: '32%',
-    paddingTop: 7,
   },
   buttonContainer: {
     backgroundColor: primaryColor,
