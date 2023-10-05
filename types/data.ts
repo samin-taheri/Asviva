@@ -104,7 +104,8 @@ export interface ColoredCards2Props {
     title: string;
     description: string;
     cardColor?: string;
-    imageSource: ImageSourcePropType
+    imageSource: ImageSourcePropType;
+    color: string;
   }
 export interface LoadingProps {
     back: () => void;

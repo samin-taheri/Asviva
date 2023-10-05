@@ -1,9 +1,9 @@
 import { View, StyleSheet, Text, ImageSourcePropType, ImageBackground, ScrollView, TouchableOpacity } from "react-native";
-import { backgroundColor } from '../global';
+import { backgroundColor, cardBackground2, firstCard, primaryColor, secondCard, thirdCard } from '../global';
 import { useRoute } from '@react-navigation/native';
 import { Feather } from "@expo/vector-icons";
 import BoxWithItems from "../components/BoxWithItems";
-import StatsCard from "../components/StatsCard";
+import ColoredCards2 from "../components/ColoredCards2";
 
 interface DataItem {
   id: string;
@@ -25,23 +25,7 @@ const data: DataItem[] = [
   { id: '9',user: '25 min', kcal: '129 kcal', title: 'Speed & Endurance Training', imageSource: require('../assets/couching-11.jpg') },
   { id: '10',user: '22 min', kcal: '138 kcal', title: 'Endurance Training New', imageSource: require('../assets/couching-3.jpg') },
 ];
-const chartData = {
-  labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May'],
-  datasets: [
-    {
-      data: [50, 45, 60, 70, 52],
-    },
-  ],
-};
 
-const chartWidth = 300;
-const chartHeight = 200;
-const yAxisSuffix = 'k';
-const chartConfig = {
-  backgroundGradientFrom: '#fff',
-  backgroundGradientTo: '#fff',
-  color: (opacity = 1) => `rgba(0, 0, 0, ${opacity})`, // Bar color
-};
 export default function CouchingDetails({navigation}: any) {
   const route = useRoute();
   const { id } = route.params as { id: string }; 
@@ -59,12 +43,30 @@ export default function CouchingDetails({navigation}: any) {
           </View>
           </ImageBackground>
           </View>
-            <View style={{flexDirection: 'row', justifyContent: 'space-around', padding: 8, marginTop: 10}}>
-            <StatsCard title="Time" value="19.00" />
-            <StatsCard title="Energy" value="91 kcal" style={{paddingLeft: 10}}/>
-            <StatsCard title="Difficulty" value="2 Star" style={{paddingLeft: 10}}/>
-        </View>
-          <BoxWithItems/>
+          <View style={styles.container2}>
+          <ColoredCards2  
+            color='#3d3d4e'
+            title="Time"
+            description="19.00"
+            cardColor='rgba(255, 233, 225, 0.8)'
+            imageSource={require('../assets/clock-2.png')}
+            />
+            <ColoredCards2  
+            color='#3d3d4e'
+            title="Energy"
+            description="91 kcal"
+            cardColor='rgba(240, 215, 237, 0.5)'
+            imageSource={require('../assets/energy.png')}
+            />
+            <ColoredCards2  
+            color='#3d3d4e'
+            title="Difficulty"
+            description="3 star"
+            cardColor='#eaefe8'
+            imageSource={require('../assets/difficulty.png')}
+            />
+           </View>
+            <BoxWithItems/>
         </View>
     )
   }
@@ -74,6 +76,13 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: backgroundColor,
     },  
+    container2: {
+      flexDirection: 'row',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      padding: 16,
+      marginTop: 10
+    },
     backButton: {
       position: 'absolute',
       top: '10%',
