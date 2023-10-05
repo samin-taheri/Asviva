@@ -25,7 +25,7 @@ const TotalWorkout: React.FC = () => {
         />
         <ColoredCard
             icon="pie-chart"
-            title="Total Calorie"
+            title="Total Calories"
             description="0 kcal"
             cardColor={thirdCard}
         />

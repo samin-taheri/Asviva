@@ -26,9 +26,9 @@ const MyModal: React.FC<MyModalProps> = ({ isVisible, onClose }) => {
           />
           <Text style={styles.title}>Modal Content</Text>
           <View style={styles.container2}>
-          <ListItem iconName="file-text" style={{ fontSize: 16, paddingRight: '28%', textAlign: 'left'}} itemText="Questionnaire evaluation" />
-          <ListItem iconName="battery-charging" style={{ fontSize: 16, paddingRight: '36%', textAlign: 'left'}} itemText="Physical fitness test" />
-          <ListItem iconName="edit" style={{ fontSize: 16, paddingRight: '38%', textAlign: 'left'}} itemText="Manual fine-tuning" />
+          <ListItem iconName="file-text" style={{ fontSize: 16, paddingLeft: 10, paddingRight: '25%', textAlign: 'left'}} itemText="Questionnaire evaluation" />
+          <ListItem iconName="battery-charging" style={{ fontSize: 16, paddingLeft: 10, paddingRight: '33%', textAlign: 'left'}} itemText="Physical fitness test" />
+          <ListItem iconName="edit" style={{ fontSize: 16, paddingRight: '35%',paddingLeft: 10, textAlign: 'left'}} itemText="Manual fine-tuning" />
           </View>
         </View>
       </View>

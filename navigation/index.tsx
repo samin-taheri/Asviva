@@ -22,6 +22,7 @@ import ForgotPAssword from "../screens/ForgotPassword";
 import SplashScreen from "../screens/SplashScreen";
 import LoadingScreen from "../screens/LoadingScreen";
 import CouchingDetails from "../screens/CouchingDetails";
+import ChallengeDetails from "../screens/ChallengeDetails";
 
 export default function Navigation() {
   return (
@@ -93,6 +94,11 @@ function RootNavigator() {
         component={CouchingDetails}
         options={{ headerShown: false}}
       />
+      <Stack.Screen
+        name="ChallengeDetails"
+        component={ChallengeDetails}
+        options={{ headerShown: false}}
+      />
     </Stack.Navigator>
   );
 }
@@ -117,7 +123,7 @@ function BottomTabNavigator() {
           headerRight: () => (
             <Pressable style={{ right: 15, borderRadius: 8, backgroundColor: '#e8e8e8', padding: 6, flexDirection: 'row' }} onPress={()=> navigation.navigate('ConnectDevice')}>
               <Feather name="radio" size={18} color='#000'  style={{paddingRight: 4, bottom: 0.5}}/>
-              <Text style={{fontSize: 13, paddingRight: 3}}>Tap to Connect</Text>
+              <Text style={{fontSize: 12, paddingRight: 3}}>Tap to Connect</Text>
             </Pressable>
           ),
           headerTitle: () => (

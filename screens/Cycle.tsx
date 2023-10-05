@@ -6,7 +6,7 @@ export default function Cycle({navigation}: any) {
 
     return(
         <View style={styles.container}>
-        <CustomHeader title="Cycle" onBack={() => navigation.goBack()}/>  
+        <CustomHeader title="Cycle"/>  
         <View style={styles.contentContainer}>
             <Text style={styles.text}>Cycle</Text>
         </View>

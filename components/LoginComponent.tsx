@@ -140,11 +140,11 @@ useEffect(()=> {
           </Pressable>
         </View>
         <TouchableOpacity style={styles.loginButton}>
-        <Feather name="log-in" size={30} color='white'  style={{right: 120}}/>
+        <Feather name="log-in" size={30} color='white'  style={{right: 100}}/>
           <Text style={styles.buttonText}>Login</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.SignUpButton} onPress={signUp}>
-        <Feather name="log-in" size={30} color={primaryColor} style={{right: 113}}/>
+        <Feather name="log-in" size={30} color={primaryColor} style={{right: 93}}/>
           <Text style={styles.buttonText2}>Sign Up</Text>
         </TouchableOpacity>
         <View style={styles.container3}>

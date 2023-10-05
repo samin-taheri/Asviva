@@ -11,7 +11,11 @@ interface DataItem {
   loc: string;
   imageSource: ImageSourcePropType;
 }
-const ChallengeComponent: React.FC = ({ }) => {
+interface CouchingCourseComponentProps {
+  onPress: (id: string) => void;
+}
+
+const ChallengeComponent: React.FC<CouchingCourseComponentProps> = ({onPress }) => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<DataItem[]>([]);
 
@@ -39,7 +43,7 @@ const ChallengeComponent: React.FC = ({ }) => {
 
     return (
       <View style={styles.item}>
-        <Pressable style={styles.cardContainer}>
+        <Pressable style={styles.cardContainer} onPress={() => onPress(item?.id)}>
           <ImageBackground source={item.imageSource} style={styles.cardBackground}>
             <View style={[styles.cardContent, { backgroundColor: 'rgba(255, 255, 255, 0.77)' }]}>
               <View style={{flexDirection: 'column'}}>

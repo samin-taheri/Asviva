@@ -34,7 +34,7 @@ export default function SplashScreen({ navigation }: any) {
             style={styles.image}
             resizeMode="cover"
           />
-          <Text style={styles.title}>Quality, service and expert advice - this is fitness shopping made in Germany! </Text>
+          <Text style={styles.title}>Quality, service and expert advice. This is fitness shopping made in Germany! </Text>
         </View>
         <View style={styles.slide}>
           <Image
@@ -42,7 +42,7 @@ export default function SplashScreen({ navigation }: any) {
             style={styles.image}
             resizeMode="cover"
           />
-          <Text style={styles.title}>Buy fitness equipment at AsVIVA - exercise bikes, cross trainers, treadmills, indoor bikes and much more...</Text>
+          <Text style={styles.title}>Buy fitness equipment at AsVIVA. Exercise bikes, cross trainers, treadmills, indoor bikes and much more...</Text>
         </View>
       </Swiper>
       <TouchableOpacity  style={styles.buttonContainer} onPress={navigateToHome}>

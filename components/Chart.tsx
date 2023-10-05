@@ -51,14 +51,14 @@ const Chart: React.FC<ChartProps> = ({ onPress }) => {
         </Pressable>
     </View>
         <Card>
-        <View style={{flexDirection: 'column'}}>
+        <View style={{flexDirection: 'column', alignSelf: 'center'}}>
         <View style={{flexDirection: 'row', justifyContent: 'space-around', paddingBottom: 10}}>
         <StatsCard title="Workouts" value="0 min" />
-        <StatsCard title="Calories" value="0 kcal" style={{paddingLeft: 10}}/>
-        <StatsCard title="Clock In" value="0 day" style={{paddingLeft: 10}}/>
+        <StatsCard title="Calories" value="0 kcal"/>
+        <StatsCard title="Clock In" value="0 day"/>
         </View>
         <LineChart
-        style={{padding: 7, marginLeft: -20}}
+        style={{padding: 7, marginLeft: -22, width: '90%', height: '90%'}}
         data={data}
         width={350}
         height={200}

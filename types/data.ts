@@ -30,6 +30,10 @@ export interface ChartProps {
     children?: ReactNode;
     onPress?: () => void;
 }
+export interface GraphProps {
+    children?: ReactNode;
+    onPress?: () => void;
+}
 export interface TotalProps {
     onPress?: () => void;
 }

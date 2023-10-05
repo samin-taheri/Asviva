@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, ScrollView } from "react-native";
 import { backgroundColor } from '../global';
 import CustomHeader from "../components/CustomHeader";
 import ProfileCard from "../components/ProfileCard";
@@ -22,7 +22,7 @@ export default function Profile({navigation}: any) {
     };
   
     return(
-        <View style={styles.container}>
+        <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
         <CustomHeader title="Profile" onBack={() => navigation.goBack()}/>  
         <View style={styles.contentContainer}>
         <ProfileCard
@@ -82,7 +82,7 @@ export default function Profile({navigation}: any) {
                 selectedAnswer="Please Select" 
             />
         </View>
-        </View>
+        </ScrollView>
     )
 }
 const styles = StyleSheet.create({

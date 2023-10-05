@@ -96,11 +96,11 @@ const SignUpComponent: React.FC<SignUpProps> = ({  navigate, signUp, back }) => 
         </TouchableOpacity>
         </View>
         <TouchableOpacity style={styles.loginButton}>
-        <Feather name="log-in" size={30} color='white'  style={{right: 113}}/>
+        <Feather name="log-in" size={30} color='white'  style={{right: 93}}/>
           <Text style={styles.buttonText}>Sign Up</Text>
         </TouchableOpacity>
         <TouchableOpacity style={styles.SignUpButton} onPress={signUp}>
-        <Feather name="log-in" size={30} color={primaryColor} style={{right: 120}}/>
+        <Feather name="log-in" size={30} color={primaryColor} style={{right: 100}}/>
           <Text style={styles.buttonText2}>Login</Text>
         </TouchableOpacity>
         <View style={styles.container3}>

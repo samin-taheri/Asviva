@@ -31,13 +31,13 @@ const data: ListItem[] = [
 const CardWithItems: React.FC = () => {
   const renderCard = ({ item }: { item: ListItem }) => {
     return (
-      <View style={[styles.card, { backgroundColor: item.backgroundColor }]}>
-        <View style={styles.row}>
-          <Text style={styles.text}>{item.text1}</Text>
-          <Text style={styles.text}>{item.text2}</Text>
-          <Text style={styles.text}>{item.text3}</Text>
+        <View style={[styles.card, { backgroundColor: item.backgroundColor }]}>
+            <View style={styles.row}>
+            <Text style={styles.text}>{item.text1}</Text>
+            <Text style={styles.text}>{item.text2}</Text>
+            <Text style={styles.text}>{item.text3}</Text>
+            </View>
         </View>
-      </View>
     );
   };
 
@@ -56,10 +56,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     marginBottom: 30,
-    marginTop: 10
+    marginTop: 10,
   },
   card: {
-    width: 380,
+    width: 360,
     height: 40,
     marginVertical: 2,
     paddingHorizontal: 16,

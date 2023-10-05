@@ -16,12 +16,13 @@ const StatsCard: React.FC<StatsCardProps> = ({ title, value, style }) => {
 const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
-    alignItems: 'center'
+    alignItems: 'center',
+    flex: 1
   },
   card: {
     flexDirection: 'column',
-    paddingLeft: 30,
-    paddingRight: 30,
+    paddingLeft: 20,
+    paddingRight: 20,
     paddingTop: 10, 
     paddingBottom: 10,
     alignItems: 'center',

@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { View, StyleSheet, ScrollView } from 'react-native';
 import { backgroundColor, cardBackground, primaryColor } from '../global';
 import CustomHeader from "../components/CustomHeader";
 import DetailsSection from '../components/DetailsSection';
+import MyModal from '../components/MyModal';
 
 export default function More({ navigation }: any) {
+    const [isModalVisible, setModalVisible] = useState(false);
+    const toggleModal = () => {
+      setModalVisible(!isModalVisible);
+    };
     return (
         <ScrollView 
         showsVerticalScrollIndicator={false}>
@@ -38,15 +43,15 @@ export default function More({ navigation }: any) {
                 iconName="account-tie"
                 imageSource={require('../assets/11.png')}
                 onPress={() => {
-                }}
+}}
             />
             <DetailsSection
                 title="Physical Fitness Test"
                 iconName="account-tie"
                 imageSource={require('../assets/12.png')}
-                onPress={() => {
-                }}
+                onPress={toggleModal}
             />
+            <MyModal isVisible={isModalVisible} onClose={toggleModal} />
             <DetailsSection
                 title="Manage Devices"
                 iconName="account-tie"
