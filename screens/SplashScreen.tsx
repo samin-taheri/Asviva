@@ -25,8 +25,8 @@ export default function SplashScreen({ navigation }: any) {
             style={styles.image}
             resizeMode="cover"
           />
-          <Text style={styles.title}>Welcome to Asviva</Text>
-          <Text style={styles.title}>Track Your Fitness Health Data</Text>
+          <Text style={styles.title}>Welcome to AsVIVA</Text>
+          <Text style={styles.title3}>Track Your Fitness Health Data!</Text>
         </View>
         <View style={styles.slide}>
           <Image
@@ -34,6 +34,7 @@ export default function SplashScreen({ navigation }: any) {
             style={styles.image}
             resizeMode="cover"
           />
+          <Text style={styles.title}>Quality, service and expert advice - this is fitness shopping made in Germany! </Text>
         </View>
         <View style={styles.slide}>
           <Image
@@ -41,6 +42,7 @@ export default function SplashScreen({ navigation }: any) {
             style={styles.image}
             resizeMode="cover"
           />
+          <Text style={styles.title}>Buy fitness equipment at AsVIVA - exercise bikes, cross trainers, treadmills, indoor bikes and much more...</Text>
         </View>
       </Swiper>
       <TouchableOpacity  style={styles.buttonContainer} onPress={navigateToHome}>
@@ -87,9 +89,22 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   title: {
-    fontSize: 18,
-    fontWeight: '600',
-    paddingTop: 10
+    fontSize: 22,
+    fontWeight: 'bold',
+    paddingTop: 10,
+    textAlign: 'center',
+    padding: 15,
+  },
+  title3: {
+    fontSize: 22,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    paddingBottom: 20,
+  },
+  title2: {
+    fontSize: 19,
+    fontWeight: '700',
+    fontStyle: 'italic'
   },
   button: {
   },

@@ -30,7 +30,7 @@ const MyHeader: React.FC<MyHeaderProps> = (props) => {
               />
               <TouchableOpacity
                 onPress={props.onPress}
-                style={{ bottom: 160, left: '5%' }}
+                style={{  zIndex: 1  }}
               >
                 <Ionicons
                   name="arrow-back-outline"
@@ -43,26 +43,28 @@ const MyHeader: React.FC<MyHeaderProps> = (props) => {
           : (
             props.showLogoWithoutBack
               ? (
-                <Animatable.Image
-                  animation="fadeInDown"
-                  resizeMode="center"
-                  style={{ right: '50%' }}
-                  source={require('../assets/time.png')}
+                <Animatable.View style={styles.logoContainer}>
+                <Image
+                  style={styles.logoImage2}
+                  source={require('../assets/logo.png')}
                 />
+              </Animatable.View>
               )
               : (
-                <View>
-                 <TouchableOpacity onPress={props.onPress} style={{ paddingTop: '12%', paddingLeft: '5%' }}>
+                <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+                 <TouchableOpacity onPress={props.onPress} style={{ paddingTop: '12%', paddingLeft: '5%', zIndex: 1 }}>
                     <Feather name="arrow-left" size={30} color={'black'}/>
                 </TouchableOpacity>
                   <Animatable.Text style={styles.HeaderText} animation="fadeInDown">{props.Title}</Animatable.Text>
                 </View>
               )
           )}
+       <Animatable.View style={styles.logoContainer}>
         <Image
-          style={{ width: '100%', height: '100%', marginLeft: 'auto', top: -40, position: 'absolute', zIndex: -1, resizeMode: 'center' }}
+          style={styles.logoImage}
           source={require('../assets/logo.png')}
         />
+      </Animatable.View>
       </View>
       <Animatable.View style={styles.boxView} animation="fadeInUp">
         {props.children}
@@ -113,6 +115,26 @@ const styles = StyleSheet.create({
     maxHeight: height - (Platform.OS == 'ios' ? 230 : 200),
     paddingTop: '8%',
     paddingBottom: Platform.OS == 'ios' ? '4%' : '4%'
+  },
+  logoContainer: {
+    width: '100%',
+    height: '100%',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  logoImage: {
+    width: '45%', 
+    height: '80%', 
+    resizeMode: 'contain',
+    position: 'absolute',
+    top: -80
+  },
+  logoImage2: {
+    width: '45%', 
+    height: '80%', 
+    resizeMode: 'contain',
+    position: 'absolute',
+    top: 0
   },
   topShadow: {
     top: 0,

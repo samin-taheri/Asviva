@@ -7,7 +7,7 @@ export default function ForgotPAssword({navigation}: any) {
     return(
         <View style={styles.container}>
         <View style={styles.contentContainer}>
-            <ForgotPasswordComponent onForgotPassword={()=> navigation.navigate('Login')} back={()=> navigation.goBack()}/>
+            <ForgotPasswordComponent onForgotPassword={()=> navigation.goBack()} back={()=> navigation.goBack()}/>
         </View>
         </View>
     )
