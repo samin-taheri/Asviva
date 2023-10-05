@@ -21,34 +21,18 @@ const MyHeader: React.FC<MyHeaderProps> = (props) => {
       <View style={styles.topShadow}>
         {props.showLogo
           ? (
-            <View>
-              <Animatable.Image
-                animation="fadeInDown"
-                resizeMode="center"
-                style={{ right: '50%' }}
-                source={require('../assets/time.png')}
-              />
-              <TouchableOpacity
-                onPress={props.onPress}
-                style={{  zIndex: 1  }}
-              >
-                <Ionicons
-                  name="arrow-back-outline"
-                  color="#fff"
-                  size={30}
-                />
-              </TouchableOpacity>
-            </View>
-          )
-          : (
-            props.showLogoWithoutBack
-              ? (
-                <Animatable.View style={styles.logoContainer}>
+            <Animatable.View style={styles.logoContainer}>
                 <Image
                   style={styles.logoImage2}
                   source={require('../assets/logo.png')}
                 />
               </Animatable.View>
+          )
+          : (
+            props.showLogoWithoutBack
+              ? (
+                <View style={{ flexDirection: 'row', alignItems: 'center', paddingTop: 75 }}>
+               </View>
               )
               : (
                 <View style={{ flexDirection: 'row', alignItems: 'center' }}>

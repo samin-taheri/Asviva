@@ -20,7 +20,6 @@ const LoadingComponent: React.FC<LoadingProps> = ({back}) => {
   return (
     <View style={styles.container}>
       <CustomHeader title="Device Pairing" onBack={back}/>
-     
      <View style={styles.contentContainer}>
           <Image source={require("../assets/oops.png")} style={styles.image} />
           <Text style={styles.text}>No device found!</Text>

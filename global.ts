@@ -7,5 +7,6 @@ export const firstCard = 'rgba(210, 177, 175, 1)';
 export const thirdCard = 'rgba(117, 72, 70, 0.8)';
 export const cardBackground = '#f3f3f5'; 
 export const cardBackground2 = 'rgba(153, 92, 88, 0.1)'; 
-export const loginBackground = '#f3f3f5'; 
+export const loginBackground = '#f3f3f5';  
+export const tableBackgroundColor = 'rgba(209, 209, 209, 0.4)';
 

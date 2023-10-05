@@ -1,29 +1,31 @@
-import { View, StyleSheet, Text, ImageSourcePropType, ImageBackground, ScrollView, TouchableOpacity } from "react-native";
-import { backgroundColor, cardBackground2, firstCard, primaryColor, secondCard, thirdCard } from '../global';
+import { View, StyleSheet, Text, ImageSourcePropType, ImageBackground, ScrollView, TouchableOpacity, SafeAreaView } from "react-native";
+import { backgroundColor, cardBackground2, firstCard, primaryColor, secondCard, tableBackgroundColor, thirdCard } from '../global';
 import { useRoute } from '@react-navigation/native';
 import { Feather } from "@expo/vector-icons";
 import BoxWithItems from "../components/BoxWithItems";
 import ColoredCards2 from "../components/ColoredCards2";
+import Card from "../components/Card";
 
 interface DataItem {
   id: string;
   title: string;
   user: string;
   kcal: string;
+  intro: string;
   imageSource: ImageSourcePropType;
 }
 
 const data: DataItem[] = [
-  { id: '1',user: '19 min', kcal: '91 kcal', title: 'Hit Whole Body Fat Burning', imageSource: require('../assets/couching-1.jpg') },
-  { id: '2',user: '37 min', kcal: '235 kcal', title: 'Fat Burning Cardio Workout New', imageSource: require('../assets/couching-3.jpg') },
-  { id: '3',user: '24 min', kcal: '134 kcal', title: 'Sweat Fat Burning', imageSource: require('../assets/couching-5.jpg') },
-  { id: '4',user: '17 min', kcal: '89 kcal', title: 'HIT Training New', imageSource: require('../assets/couching-6.jpg') },
-  { id: '5',user: '30 min', kcal: '170 kcal', title: 'Rhythmic Fat Riding', imageSource: require('../assets/couching-4.jpg') },
-  { id: '6',user: '22 min', kcal: '132 kcal', title: 'Cardşopulmonary Strength Training New', imageSource: require('../assets/couching-8.jpg') },
-  { id: '7',user: '29 min', kcal: '185 kcal', title: 'Comprehensive Fat Burning', imageSource: require('../assets/couching-9.jpg') },
-  { id: '8',user: '27 min', kcal: '186 kcal', title: 'Strength Training New', imageSource: require('../assets/couching-10.jpg') },
-  { id: '9',user: '25 min', kcal: '129 kcal', title: 'Speed & Endurance Training', imageSource: require('../assets/couching-11.jpg') },
-  { id: '10',user: '22 min', kcal: '138 kcal', title: 'Endurance Training New', imageSource: require('../assets/couching-3.jpg') },
+  { id: '1',user: '19 min', kcal: '91 kcal', title: 'Hit Whole Body Fat Burning', intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace of life. ', imageSource: require('../assets/couching-1.jpg') },
+  { id: '2',user: '37 min', kcal: '235 kcal', title: 'Fat Burning Cardio Workout New', intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace of life. ',imageSource: require('../assets/couching-3.jpg') },
+  { id: '3',user: '24 min', kcal: '134 kcal', title: 'Sweat Fat Burning',intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace of life. ', imageSource: require('../assets/couching-5.jpg') },
+  { id: '4',user: '17 min', kcal: '89 kcal', title: 'HIT Training New',intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace of life. ', imageSource: require('../assets/couching-6.jpg') },
+  { id: '5',user: '30 min', kcal: '170 kcal', title: 'Rhythmic Fat Riding', intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace of life. ', imageSource: require('../assets/couching-4.jpg') },
+  { id: '6',user: '22 min', kcal: '132 kcal', title: 'Cardşopulmonary Strength Training New', intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace of life. ', imageSource: require('../assets/couching-8.jpg') },
+  { id: '7',user: '29 min', kcal: '185 kcal', title: 'Comprehensive Fat Burning', intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace of life. ', imageSource: require('../assets/couching-9.jpg') }, 
+  { id: '8',user: '27 min', kcal: '186 kcal', title: 'Strength Training New',intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace of life. ', imageSource: require('../assets/couching-10.jpg') },
+  { id: '9',user: '25 min', kcal: '129 kcal', title: 'Speed & Endurance Training',intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace of life. ', imageSource: require('../assets/couching-11.jpg') },
+  { id: '10',user: '22 min', kcal: '138 kcal', title: 'Endurance Training New',intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace of life. ', imageSource: require('../assets/couching-3.jpg') },
 ];
 
 export default function CouchingDetails({navigation}: any) {
@@ -32,7 +34,7 @@ export default function CouchingDetails({navigation}: any) {
   const selectedItem = data.find(item => item.id === id);
   if (selectedItem) {
     return(
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             <View style={styles.imageContainer}>
           <ImageBackground source={selectedItem.imageSource} style={styles.image}>
             <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
@@ -66,16 +68,30 @@ export default function CouchingDetails({navigation}: any) {
             imageSource={require('../assets/difficulty.png')}
             />
            </View>
-            <BoxWithItems/>
-        </View>
+           <View style={{padding: 8}}>
+           <Card>
+            <View style={styles.textContainer}>
+              <View style={styles.iconContainer}>
+                <Text style={styles.introTitle}>Course Intro</Text>
+              </View>
+              <Text style={styles.title2}>{selectedItem.intro}</Text>
+            </View>
+           </Card>
+           </View>
+          <BoxWithItems />
+        </ScrollView>
     )
   }
+  return null; 
 }
 const styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: backgroundColor,
     },  
+    textContainer: {
+      flex: 1,
+    },
     container2: {
       flexDirection: 'row',
       alignItems: 'center',
@@ -100,21 +116,50 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     cardContent: {
-      padding: 14,
-      width: '100%',
+      padding: 10,
+      width: '93%',
+      marginLeft: '3.5%',
       marginTop: '30%',
+      borderRadius: 12,
       flexDirection: 'row',
       justifyContent: 'space-between', 
       alignItems: 'center', 
     },
     title: {
+      fontSize: 18,
+      fontWeight: "bold",
+      padding: 10,
+      textAlign: 'left',
+    },
+    introTitle: {
       fontSize: 14,
       fontWeight: "bold",
-      paddingRight: 30,
-      textAlign: 'left'
+      padding: 10,
+      textAlign: 'left',
+    },
+    title2: {
+      fontSize: 14,
+      padding: 10,
+      textAlign: 'left',
+      paddingTop: 10
     },
     cardContainer: {
       overflow: 'hidden',
       borderRadius: 12,
     },
+    iconContainer: {
+      alignItems: 'center',
+      justifyContent: 'center',
+      borderRadius: 12,
+      backgroundColor: tableBackgroundColor,
+      flexDirection: 'row',
+      alignContent: 'center',
+      marginTop: 5,
+      padding: 0,
+      width: 120,
+    },
 });
+
+
+
+
