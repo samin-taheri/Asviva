@@ -5,16 +5,19 @@ import CustomHeader from "../components/CustomHeader";
 import ProfileCard from "../components/ProfileCard";
 import BottomSelectorModal from "../components/BottomSelectorModal";
 import NumberSelectorModal from "../components/NumberSelectorComponent";
+import TextInputComponent from "../components/TextInputComponent";
 
 export default function Profile({navigation}: any) {
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [isModalVisible2, setIsModalVisibl2] = useState(false);
   const [isModalVisible3, setIsModalVisibl3] = useState(false);
   const [isModalVisible4, setIsModalVisibl4] = useState(false);
+  const [isModalVisible5, setIsModalVisibl5] = useState(false);
   const [selectedOption, setSelectedOption] = useState<string | null>(null); 
   const [selectedHeight, setselectedHeight] = useState<number | null>(null);
   const [selectedWeight, setselectedWeight] = useState<number | null>(null);
   const [selectedBirthday, setselectedBirthday] = useState<number | null>(null);
+  const [selectedNickname, setselectedNickname] = useState<string | null>(null);
 
     const handleGenderSelect = (option: string) => {
         setSelectedOption(option);
@@ -51,6 +54,15 @@ export default function Profile({navigation}: any) {
         toggleModal4();
       };
 
+      const toggleModal5 = () => {
+        setIsModalVisibl5(!isModalVisible5);
+      };
+    
+      const handleNicknameSelect = (string: string | null) => {
+        setselectedNickname(string);
+        toggleModal5();
+      };
+
     return(
         <View style={styles.container}>
         <CustomHeader title="Profile" onBack={() => navigation.goBack()}/>  
@@ -66,10 +78,9 @@ export default function Profile({navigation}: any) {
             <ProfileCard
                 title="Nickname"
                 iconName="account-tie"
-                selectedOption="Please Select" 
+                selectedOption={selectedNickname !== null ? `Selected: ${selectedNickname}` : "Please Select"}
                 imageSource={require('../assets/profile-13.png')}
-                onPress={() => {
-                }}
+                onPress={toggleModal5}
             />
             <View style={styles.line} />
             <ProfileCard
@@ -124,6 +135,11 @@ export default function Profile({navigation}: any) {
               isVisible={isModalVisible4}
               onToggle={toggleModal4}
               onSelectNumber={handleBirthdaySelect}
+            />
+            <TextInputComponent
+              isVisible={isModalVisible5}
+              onToggle={toggleModal5}
+              onSelectNickname={handleNicknameSelect}
             />
             </View>
         </ScrollView>

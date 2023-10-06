@@ -56,13 +56,11 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: 'white',
     padding: 16,
-    borderTopLeftRadius: 10,
-    borderTopRightRadius: 10,
   },
   label: {
     fontSize: 18,
     fontWeight: 'bold',
-    marginBottom: 10,
+    marginBottom: 25
   },
   selectedNumber: {
     fontSize: 16,
@@ -75,9 +73,9 @@ const pickerSelectStyles = StyleSheet.create({
     fontSize: 16,
     paddingVertical: 12,
     paddingHorizontal: 10,
-    borderWidth: 1,
+    borderWidth: 0.5,
     borderColor: '#ccc',
-    borderRadius: 4,
+    borderRadius: 12,
     color: 'black',
   },
   inputAndroid: {
@@ -86,7 +84,7 @@ const pickerSelectStyles = StyleSheet.create({
     paddingVertical: 8,
     borderWidth: 0.5,
     borderColor: '#ccc',
-    borderRadius: 8,
+    borderRadius: 12,
     color: 'black',
     paddingRight: 30,
   },

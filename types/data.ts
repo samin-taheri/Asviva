@@ -73,6 +73,7 @@ export interface ProfileCardProps {
     selectedOption?: string;
     selectedNumber?: number;
     selectedDate?: string; 
+    selectedNickname?: string;
     imageSource: ImageSourcePropType
 }
 export interface BackGroundCardProps {
