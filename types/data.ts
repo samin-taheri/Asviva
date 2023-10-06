@@ -70,8 +70,8 @@ export interface ProfileCardProps {
     onPress: () => void;
     style?: ViewStyle;
     iconColor?: string;
-    selectedAnswer?: string;
-    selectedDate?: Date | null; 
+    selectedOption?: string;
+    selectedDate?: string; 
     imageSource: ImageSourcePropType
 }
 export interface BackGroundCardProps {

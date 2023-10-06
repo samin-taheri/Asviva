@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   card: {
     flexDirection: 'column', 
     alignItems: 'center',
-    padding: 10,
+    padding: 8,
     borderRadius: 12,
 
   },
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   title: {
-    fontSize: 14,
+    fontSize: 13,
     fontWeight: '600',
     paddingTop: 30,
     textAlign: 'center'

@@ -7,29 +7,24 @@ import { ProfileCardProps } from "../types/data";
 const ProfileCard: React.FC<ProfileCardProps> = ({
   title,
   onPress,
-  selectedAnswer,
-  selectedDate,
+  selectedOption,
   imageSource
 }) => {
   return (
     <Pressable style={styles.card} onPress={onPress}>
       <View style={styles.iconContainer}>
-      <Image source={imageSource} style={styles.image} /> 
+        <Image source={imageSource} style={styles.image} />
       </View>
-      <View style={{flexDirection: 'column', flex: 1}}>
-      <Text style={styles.title}>{title}</Text>
-      {selectedDate ? (
-          <Text style={styles.button}>{selectedDate.toDateString()}</Text>
-        ) : (
-          <Text style={styles.button}>{selectedAnswer}</Text>
-        )}
-        </View>
-        <View style={[ styles.icon]}>
-          <Feather
-            name="arrow-right"
-            size={20}
-            color={textColor}
-          />
+      <View style={{ flexDirection: 'column', flex: 1 }}>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.button}>{selectedOption || "Please Select"}</Text>
+      </View>
+      <View style={[styles.icon]}>
+        <Feather
+          name="arrow-right"
+          size={20}
+          color={textColor}
+        />
       </View>
     </Pressable>
   );
@@ -52,24 +47,22 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 12,
-
   },
   title: {
     fontSize: 14,
     fontWeight: 'bold',
     paddingLeft: 10,
   },
-  chevron: {
-  },
+  chevron: {},
   buttonContainer: {
-      flexDirection: 'row',
-      paddingLeft: '30%',
+    flexDirection: 'row',
+    paddingLeft: '30%',
   },
   button: {
-      color: '#787878',
-      fontSize: 13,
-      paddingLeft: 10,
-      paddingTop: 8
+    color: '#787878',
+    fontSize: 13,
+    paddingLeft: 10,
+    paddingTop: 8
   },
   icon: {
     backgroundColor: cardBackground,

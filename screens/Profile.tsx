@@ -3,22 +3,28 @@ import { View, StyleSheet, ScrollView } from "react-native";
 import { backgroundColor } from '../global';
 import CustomHeader from "../components/CustomHeader";
 import ProfileCard from "../components/ProfileCard";
+import BottomSelectorModal from "../components/BottomSelectorModal";
 
 export default function Profile({navigation}: any) {
     const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
-    const [selectedDate, setSelectedDate] = useState<Date | null>(null);
-  
+    const [isModalVisible, setIsModalVisible] = useState(false);
+    const [selectedOption, setSelectedOption] = useState<string | null>(null); 
+
+    const handleGenderSelect = (option: string) => {
+        setSelectedOption(option);
+        toggleModal(); 
+      };
+      
+    const  toggleModal= () => {
+        setIsModalVisible(!isModalVisible);
+      };
+    
     const showDatePicker = () => {
       setDatePickerVisibility(true);
     };
   
     const hideDatePicker = () => {
       setDatePickerVisibility(false);
-    };
-  
-    const handleConfirm = (date: Date) => {
-      setSelectedDate(date);
-      hideDatePicker();
     };
   
     return(
@@ -29,14 +35,14 @@ export default function Profile({navigation}: any) {
         <ProfileCard
                 title="Change Avatar"
                 iconName="account-convert"
-                selectedAnswer="Please Select" 
+                selectedOption="Please Select" 
                 imageSource={require('../assets/profile-19.png')}
                 onPress={() => {}}
             />
             <ProfileCard
                 title="Nickname"
                 iconName="account-tie"
-                selectedAnswer="Please Select" 
+                selectedOption="Please Select" 
                 imageSource={require('../assets/profile-13.png')}
                 onPress={() => {
                 }}
@@ -45,7 +51,7 @@ export default function Profile({navigation}: any) {
             <ProfileCard
                 title="Country / Region"
                 iconName="earth"
-                selectedAnswer="Please Select" 
+                selectedOption="Please Select" 
                 imageSource={require('../assets/profile-3.png')}
                 onPress={() => {
                 }}
@@ -55,15 +61,14 @@ export default function Profile({navigation}: any) {
                 title="Gender"
                 iconName="gender-male-female"
                 imageSource={require('../assets/profile-11.png')}
-                selectedAnswer="Please Select" 
-                onPress={() => {
-                }}
+                selectedOption={selectedOption || "Please Select"} 
+                onPress={toggleModal}
             />
             <ProfileCard
                 title="Height"
                 iconName="human-male-height"
                 imageSource={require('../assets/profile-5.png')}
-                selectedAnswer="Please Select" 
+                selectedOption="Please Select" 
                 onPress={() => {
                 }}
             />
@@ -71,7 +76,7 @@ export default function Profile({navigation}: any) {
                 title="Weight"
                 iconName="weight"
                 imageSource={require('../assets/profile-20.png')}
-                selectedAnswer="Please Select" 
+                selectedOption="Please Select" 
                 onPress={() => {
                 }}
             />
@@ -80,8 +85,9 @@ export default function Profile({navigation}: any) {
                 iconName="cake-variant"
                 imageSource={require('../assets/profile-9.png')}
                 onPress={showDatePicker}
-                selectedAnswer="Please Select" 
+                selectedOption="Please Select" 
             />
+        <BottomSelectorModal selectedOption={selectedOption} onSelect={handleGenderSelect} title="Select Gender" isVisible={isModalVisible} onClose={toggleModal} />
         </View>
         </ScrollView>
         </View>
