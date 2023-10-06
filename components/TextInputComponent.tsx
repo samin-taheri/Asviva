@@ -40,9 +40,9 @@ const TextInputComponent: React.FC<TextInputComponentProps> = ({
           style={styles.textInput}
           onChangeText={handleTextInputChange}
           value={inputText}
-          placeholder="Type something..."
+          placeholder="Select Nickname"
         />
-        <Button title="Close Modal" onPress={() => onSelectNickname(inputText)} />
+        <Button title="Select" onPress={() => onSelectNickname(inputText)} />
       </View>
     </Modal>
   );

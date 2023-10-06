@@ -3,16 +3,9 @@ import { View, StyleSheet, TouchableOpacity, Dimensions, Platform, Image } from 
 import * as Animatable from 'react-native-animatable';
 import { Feather } from '@expo/vector-icons';
 import { loginBackground, } from '../global';
+import { MyHeaderProps } from '../types/data';
 
 const { height } = Dimensions.get("screen");
-
-interface MyHeaderProps {
-  showLogo?: boolean;
-  showLogoWithoutBack?: boolean;
-  onPress?: () => void;
-  Title?: string;
-  children?: React.ReactNode;
-}
 
 const MyHeader: React.FC<MyHeaderProps> = (props) => {
   return (

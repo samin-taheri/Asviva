@@ -1,11 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { LinearGradient } from 'expo-linear-gradient';
-
-interface TransparentCardProps {
-  title: string;
-  content: string;
-}
+import { TransparentCardProps } from "../types/data";
 
 const TransparentCard: React.FC<TransparentCardProps> = ({ title, content }) => {
   return (

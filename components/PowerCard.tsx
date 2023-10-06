@@ -3,14 +3,7 @@ import { View, Text, StyleSheet, Image, Pressable } from "react-native";
 import { textColor } from "../global";
 import { FontAwesome } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
-
-interface SimpleCardProps {
-  backgroundColor: string;
-  title: string;
-  kcal: string;
-  id: string;
-  onPress: (id: string) => void;
-}
+import { SimpleCardProps } from "../types/data";
 
 const PowerCard: React.FC<SimpleCardProps> = ({
   backgroundColor,

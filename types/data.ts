@@ -127,3 +127,99 @@ export interface DataItem {
 export interface ChallengeComponentProps {
     imageSource: ImageSourcePropType; 
 }
+export interface TransparentCardProps {
+    title: string;
+    content: string;
+}
+export interface ProgressBarProps {
+    progress: number;
+}
+export interface CouchingCourseComponentProps {
+    onPress: (id: string) => void;
+}
+export interface SimpleCardProps {
+    backgroundColor: string;
+    title: string;
+    kcal: string;
+    id: string;
+    onPress: (id: string) => void;
+}
+export interface NumberSelectorModalProps {
+    isVisible: boolean;
+    onToggle: () => void;
+    onSelectNumber: (selectedNumber: number | null) => void;
+}
+export interface MyModalProps {
+    isVisible: boolean;
+    onClose: () => void;
+}
+export interface MyHeaderProps {
+    showLogo?: boolean;
+    showLogoWithoutBack?: boolean;
+    onPress?: () => void;
+    Title?: string;
+    children?: React.ReactNode;
+}
+export interface ListItemProps {
+    iconName: string;
+    itemText: string;
+    style?: any; 
+}
+export interface CochingCardProps {
+    onPress: (id: string) => void;
+}
+export interface CochingCardProps {
+    onPress: (id: string) => void;
+}
+export interface CochingCardProps {
+    onPress: (id: string) => void;
+}
+export interface Card {
+    id: number;
+    title: string;
+    description: string;
+    image: string;
+}
+export interface HorizontalCardMapProps {
+    cards: Card[];
+}
+export interface CustomTopTabBarProps {
+    tabs: string[];
+    activeTab: number;
+    onTabPress: (index: number) => void;
+}
+export interface CouchingCourseComponentProps {
+    onPress: (id: string) => void;
+}
+export interface CoouchingCardProps {
+    imageSource: { uri: string };
+    title: string;
+    user: string;
+    kcal: string;
+    id: string;
+    onPress: (id: string) => void;
+}
+export interface ColoredCardProps {
+    icon: string;
+    title: string;
+    description: string;
+    cardColor: string;
+}
+export interface CouchingCourseComponentProps {
+    onPress: (id: string) => void;
+}
+export interface ChallengeCardProps {
+    imageSource: { uri: string };
+    title: string;
+    user: string;
+    loc: string;
+    id: string;
+    onPress: (id: string) => void;
+}  
+export interface MyModalProps {
+    isVisible: boolean;
+    onClose: () => void;
+    title: string;
+    selectedOption: string | null;
+    onSelect: (option: string) => void;
+}

@@ -1,14 +1,7 @@
 import React from "react";
 import { View, StyleSheet, Text, Pressable, Platform } from "react-native";
 import { ChartProps } from "../types/data";
-import {
-    LineChart,
-    BarChart,
-    PieChart,
-    ProgressChart,
-    ContributionGraph,
-    StackedBarChart
-  } from "react-native-chart-kit";
+import { LineChart } from "react-native-chart-kit";
 import Card from "./Card";
 import StatsCard from "./StatsCard";
 import { primaryColor } from '../global';

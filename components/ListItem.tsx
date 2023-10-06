@@ -1,12 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet } from "react-native";
 import { Feather } from "@expo/vector-icons";
-
-interface ListItemProps {
-  iconName: string;
-  itemText: string;
-  style?: any; 
-}
+import { ListItemProps } from "../types/data";
 
 const iconMap: { [key: string]: React.ReactNode } = {
   "file-text": <Feather name="file-text" size={24} color="#424242" />,

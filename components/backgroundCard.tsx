@@ -7,10 +7,6 @@ import { Feather } from "@expo/vector-icons";
 import { BackgroundCardProps } from '../types/data';
 
 const BackgroundCard: React.FC<BackgroundCardProps> = ({ title, backgroundImage, onPress }) => {
-        const [isModalVisible, setModalVisible] = useState(false);
-        const toggleModal = () => {
-          setModalVisible(!isModalVisible);
-        };
   return (
     <View>
     <Lable title="Physical Fitness Test" />
@@ -27,7 +23,6 @@ const BackgroundCard: React.FC<BackgroundCardProps> = ({ title, backgroundImage,
           </View>
         </ImageBackground>
       </View>
-      {/* <MyModal isVisible={isModalVisible} onClose={toggleModal} /> */}
     </View>
     </View>
   );

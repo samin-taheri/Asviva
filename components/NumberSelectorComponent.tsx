@@ -2,12 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, StyleSheet, Button } from 'react-native';
 import Modal from 'react-native-modal';
 import RNPickerSelect from 'react-native-picker-select';
-
-interface NumberSelectorModalProps {
-  isVisible: boolean;
-  onToggle: () => void;
-  onSelectNumber: (selectedNumber: number | null) => void;
-}
+import { NumberSelectorModalProps } from '../types/data';
 
 const NumberSelectorModal: React.FC<NumberSelectorModalProps> = ({
   isVisible,

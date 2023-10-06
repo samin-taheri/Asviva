@@ -12,9 +12,6 @@ const Card: React.FC<CardProps> = ({ children, style }) => {
   );
 };
 
-
-
-
 const styles = StyleSheet.create({
     card: {
         backgroundColor: "#ffffff",

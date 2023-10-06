@@ -1,12 +1,8 @@
 import React from 'react';
 import { View, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import { primaryColor } from '../global';
+import { CustomTopTabBarProps } from '../types/data';
 
-interface CustomTopTabBarProps {
-  tabs: string[];
-  activeTab: number;
-  onTabPress: (index: number) => void;
-}
 
 const CustomTopTabBar: React.FC<CustomTopTabBarProps> = ({
   tabs,

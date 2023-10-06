@@ -4,17 +4,12 @@ import { tableBackgroundColor, textColor } from '../global';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
 import Card from './Card';
-
-interface ProgressBarProps {
-  progress: number;
-}
+import { ProgressBarProps } from '../types/data';
 
 const ProgressBar: React.FC<ProgressBarProps> = ({ progress }) => {
-  // State to track whether progress is completed
   const [isProgressCompleted, setIsProgressCompleted] = useState(false);
 
   useEffect(() => {
-    // When the progress reaches 100%, set isProgressCompleted to true
     if (progress === 100) {
       setIsProgressCompleted(true);
     } else {

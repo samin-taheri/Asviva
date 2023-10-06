@@ -2,11 +2,7 @@ import React from "react";
 import { View, StyleSheet, FlatList } from "react-native";
 import Lable from "./Lable";
 import CouchingCard from "./CouchingCard";
-import Navigation from "../navigation";
-
-interface CochingCardProps {
-    onPress: (id: string) => void;
-  }
+import { CochingCardProps } from "../types/data";
 
 const cardData = [
     { id: '1',user: '19 min', kcal: '91 kcal', title: 'Hit Whole Body Fat Burning', imageSource: require('../assets/couching-1.jpg') },

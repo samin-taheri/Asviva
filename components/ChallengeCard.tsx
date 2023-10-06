@@ -2,15 +2,7 @@ import React from "react";
 import { View, Text, StyleSheet, ImageBackground, Pressable } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
-
-interface ChallengeCardProps {
-  imageSource: { uri: string };
-  title: string;
-  user: string;
-  loc: string;
-  id: string;
-  onPress: (id: string) => void;
-}
+import { ChallengeCardProps } from "../types/data";
 
 const ChallengeCard: React.FC<ChallengeCardProps> = ({
   imageSource,

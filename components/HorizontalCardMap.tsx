@@ -1,17 +1,7 @@
 import React from 'react';
 import { View, Text, Image, FlatList, StyleSheet } from 'react-native';
 import Lable from './Lable';
-
-interface Card {
-  id: number;
-  title: string;
-  description: string;
-  image: string;
-}
-
-interface HorizontalCardMapProps {
-  cards: Card[];
-}
+import { HorizontalCardMapProps } from '../types/data';
 
 const HorizontalCardMap: React.FC<HorizontalCardMapProps> = ({ cards }) => {
   return (

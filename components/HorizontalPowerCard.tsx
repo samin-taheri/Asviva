@@ -2,10 +2,7 @@ import React from "react";
 import { View, StyleSheet, FlatList } from "react-native";
 import Lable from "./Lable";
 import PowerCard from "./PowerCard";
-
-interface CochingCardProps {
-    onPress: (id: string) => void;
-  }
+import { CochingCardProps } from "../types/data";
 
 const cardData = [
   { id: '1', backgroundColor: '#7a5a7c', desc: 'Take your first step and master riding skills', title1: 'Beginner', title2: '15-minute Body Warm Up', kcal: '82 kcal',  imageSource: require('../assets/power-bike.jpeg') },

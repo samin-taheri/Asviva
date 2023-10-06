@@ -2,10 +2,7 @@ import React from "react";
 import { View, StyleSheet, FlatList } from "react-native";
 import Lable from "./Lable";
 import ChallengeCard from "./ChallengeCard";
-
-interface CochingCardProps {
-  onPress: (id: string) => void;
-}
+import { CochingCardProps } from "../types/data";
 
 const cardData = [
     { id: '1',user: '0', loc: '5.58 km', title: 'Otar River (Norway)', intro: 'HIT is the abbrevation of high intenstity interval training. By altering and repeating short-term high-intensity exercise and low-intensity exercise. HIT can achieve high energy consumption in a short time and keep the body burning fat after training. It is very suitable for urban people with fast pace. ', imageSource: require('../assets/challenge-4.jpg') },

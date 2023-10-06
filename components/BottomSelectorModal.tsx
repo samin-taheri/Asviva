@@ -2,18 +2,11 @@ import React from "react";
 import { View, Text, StyleSheet, FlatList, TouchableOpacity } from "react-native";
 import Modal from "react-native-modal";
 import { Feather } from "@expo/vector-icons";
+import { MyModalProps } from "../types/data";
 
 interface Option {
-    id: string;
-    label: string;
-  }
-  
-interface MyModalProps {
-  isVisible: boolean;
-  onClose: () => void;
-  title: string;
-  selectedOption: string | null;
-  onSelect: (option: string) => void;
+  id: string;
+  label: string;
 }
 
 const BottomSelectorModal: React.FC<MyModalProps> = ({ isVisible, onClose, title, selectedOption, onSelect }) => {

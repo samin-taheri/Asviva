@@ -3,11 +3,7 @@ import { View, Text, StyleSheet } from "react-native";
 import Modal from "react-native-modal";
 import { Feather } from "@expo/vector-icons";
 import ListItem from "./ListItem";
-
-interface MyModalProps {
-  isVisible: boolean;
-  onClose: () => void;
-}
+import { MyModalProps } from "../types/data";
 
 const MyModal: React.FC<MyModalProps> = ({ isVisible, onClose }) => {
     const toggleModal = () => {

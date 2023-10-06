@@ -1,13 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import { Feather } from '@expo/vector-icons';
-
-interface ColoredCardProps {
-  icon: string;
-  title: string;
-  description: string;
-  cardColor: string;
-}
+import { ColoredCardProps } from '../types/data';
 
 const windowWidth = Dimensions.get('window').width; 
 

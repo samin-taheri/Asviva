@@ -3,6 +3,7 @@ import { View, Text, FlatList, StyleSheet, ImageBackground, SafeAreaView, ImageS
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 import { cardBackground2, primaryColor, textColor } from '../global';
+import { CouchingCourseComponentProps } from '../types/data';
 
 interface DataItem {
   id: string;
@@ -11,11 +12,6 @@ interface DataItem {
   kcal: string;
   imageSource: ImageSourcePropType;
 }
-
-interface CouchingCourseComponentProps {
-  onPress: (id: string) => void;
-}
-
 const CouchingCourseComponent: React.FC<CouchingCourseComponentProps> = ({onPress }) => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<DataItem[]>([]);

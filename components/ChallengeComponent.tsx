@@ -3,6 +3,7 @@ import { View, Text, FlatList, StyleSheet, ImageBackground, SafeAreaView, ImageS
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import { cardBackground2, primaryColor, textColor } from '../global';
+import { CouchingCourseComponentProps } from '../types/data';
 
 interface DataItem {
   id: string;
@@ -11,16 +12,12 @@ interface DataItem {
   loc: string;
   imageSource: ImageSourcePropType;
 }
-interface CouchingCourseComponentProps {
-  onPress: (id: string) => void;
-}
 
 const ChallengeComponent: React.FC<CouchingCourseComponentProps> = ({onPress }) => {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<DataItem[]>([]);
 
   useEffect(() => {
-    // Simulate a half-second delay before loading the data
     setTimeout(() => {
       const newData: DataItem[] = [
         { id: '1',user: '0', loc: '5.58 km', title: 'Sightseeing road (Norway)', imageSource: require('../assets/challenge-1.jpg') },

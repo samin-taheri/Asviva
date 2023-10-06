@@ -3,24 +3,9 @@ import { View, Text, StyleSheet, Image, Pressable } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { textColor } from "../global";
 import { FontAwesome } from "@expo/vector-icons";
+import { CoouchingCardProps } from "../types/data";
 
-interface SimpleCardProps {
-  imageSource: { uri: string };
-  title: string;
-  user: string;
-  kcal: string;
-  id: string;
-  onPress: (id: string) => void;
-}
-
-const CouchingCard: React.FC<SimpleCardProps> = ({
-  imageSource,
-  title,
-  user,
-  kcal,
-  id,
-  onPress
-}) => {
+const CouchingCard: React.FC<CoouchingCardProps> = ({ imageSource, title, user, kcal, id, onPress }) => {
     
   return (
     <Pressable style={styles.card} onPress={() => onPress(id)}>

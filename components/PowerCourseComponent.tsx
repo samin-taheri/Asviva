@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, StyleSheet, Image, SafeAreaView, ImageSourcePropType, Pressable, ActivityIndicator } from 'react-native';
 import { cardBackground2, primaryColor } from '../global';
+import { CouchingCourseComponentProps } from '../types/data';
 
 interface DataItem {
   id: string;
@@ -9,9 +10,6 @@ interface DataItem {
   imageSource: ImageSourcePropType;
 }
 
-interface CouchingCourseComponentProps {
-  onPress: (id: string) => void;
-}
 const PowerCourseComponent: React.FC<CouchingCourseComponentProps> = ({onPress }) => {
 
   const [loading, setLoading] = useState(true);
