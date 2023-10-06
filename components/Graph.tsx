@@ -30,19 +30,21 @@ const data = {
     color: (opacity = 0.2) => `rgba(0, 0, 0, ${opacity})`, 
   };
   
-const Graph: React.FC<GraphProps> = ({ onPress, title }) => {
+const Graph: React.FC<GraphProps> = ({ onPress, title, width, height }) => {
   return (
     <View style={{padding: 8}}>
         <Card>
               <View style={{flexDirection: 'column'}}>
+                {title ?
               <View style={styles.iconContainer}>
                 <Text style={styles.introTitle}>{title}</Text>
               </View>
+              : null }
                 <LineChart
-                style={{padding: 7, marginLeft: -20}}
+                style={{padding: 0, marginLeft: -10}}
                 data={data}
-                width={350}
-                height={200}
+                width={width}
+                height={height}
                 chartConfig={chartConfig}
                 />
                 </View>

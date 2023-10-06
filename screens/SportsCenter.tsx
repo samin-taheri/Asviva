@@ -26,7 +26,7 @@ export default function SportsCenter({ navigation }: any) {
       <View style={styles.tabContent}>
         {activeTab === 0 && <CouchingCourseComponent onPress={(id) => navigation.navigate( 'CouchingDetails', {id})}/> }
         {activeTab === 1 && <ChallengeComponent onPress={(id) => navigation.navigate( 'ChallengeDetails', {id})}/>}
-        {activeTab === 2 && <PowerCourseComponent/>}
+        {activeTab === 2 && <PowerCourseComponent onPress={(id) => navigation.navigate( 'PowerDetails', {id})}/>}
       </View>
     </View>
   );

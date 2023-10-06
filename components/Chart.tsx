@@ -58,7 +58,7 @@ const Chart: React.FC<ChartProps> = ({ onPress }) => {
         <StatsCard title="Clock In" value="0 day"/>
         </View>
         <LineChart
-        style={{padding: 7, marginLeft: -22, width: '90%', height: '90%'}}
+        style={{padding: 7, marginLeft: -22}}
         data={data}
         width={350}
         height={200}

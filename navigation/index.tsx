@@ -23,6 +23,8 @@ import SplashScreen from "../screens/SplashScreen";
 import LoadingScreen from "../screens/LoadingScreen";
 import CouchingDetails from "../screens/CouchingDetails";
 import ChallengeDetails from "../screens/ChallengeDetails";
+import PowerDetails from "../screens/PowerDetails";
+import PowerSubDetails from "../screens/PowerSubDetails";
 
 export default function Navigation() {
   return (
@@ -97,6 +99,16 @@ function RootNavigator() {
       <Stack.Screen
         name="ChallengeDetails"
         component={ChallengeDetails}
+        options={{ headerShown: false}}
+      />
+        <Stack.Screen
+        name="PowerDetails"
+        component={PowerDetails}
+        options={{ headerShown: false}}
+      />
+        <Stack.Screen
+        name="PowerSubDetails"
+        component={PowerSubDetails}
         options={{ headerShown: false}}
       />
     </Stack.Navigator>

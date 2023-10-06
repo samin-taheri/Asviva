@@ -9,10 +9,14 @@ interface DataItem {
   imageSource: ImageSourcePropType;
 }
 
-const PowerCourseComponent: React.FC = ({ }) => {
+interface CouchingCourseComponentProps {
+  onPress: (id: string) => void;
+}
+const PowerCourseComponent: React.FC<CouchingCourseComponentProps> = ({onPress }) => {
 
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState<DataItem[]>([]);
+
 
   useEffect(() => {
     // Simulate a half-second delay before loading the data
@@ -31,7 +35,7 @@ const PowerCourseComponent: React.FC = ({ }) => {
   const renderItem = ({ item }: { item: DataItem }) => {
     return (
       <View style={styles.item}>
-        <Pressable style={styles.cardContainer}>
+        <Pressable style={styles.cardContainer} onPress={() => onPress(item?.id)}>
           <View style={[styles.cardContent, { backgroundColor: 'white' }]}>
             <View style={{ flexDirection: 'column', flex: 1, paddingLeft: 8 }}>
               <Text style={styles.title}>{item.title}</Text>

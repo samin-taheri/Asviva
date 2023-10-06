@@ -66,7 +66,7 @@ export default function CouchingDetails({navigation}: any) {
             color='#3d3d4e'
             title="Difficulty"
             description="3 star"
-            cardColor='#eaefe8'
+            cardColor='rgba(234, 239, 232, 0.8)'
             imageSource={require('../assets/difficulty.png')}
             />
            </View>
@@ -80,7 +80,7 @@ export default function CouchingDetails({navigation}: any) {
             </View>
            </Card>
            </View>
-           <Graph title={'Course Info'}/>
+           <Graph title={'Course Info'} width={340} height={170}/>
           <BoxWithItems />
           </ScrollView>
         </View>
