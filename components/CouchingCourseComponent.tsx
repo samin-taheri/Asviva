@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, StyleSheet, ImageBackground, SafeAreaView, ImageSourcePropType, Pressable, ActivityIndicator } from 'react-native';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
-import { Entypo } from "@expo/vector-icons";
+import { FontAwesome } from "@expo/vector-icons";
 import { cardBackground2, primaryColor, textColor } from '../global';
 
 interface DataItem {
@@ -58,10 +58,11 @@ const CouchingCourseComponent: React.FC<CouchingCourseComponentProps> = ({onPres
                 <Text style={{fontSize: 11}}>{item.user}</Text>
                 </View>
                 <View style={[styles.iconContainer , {marginLeft: 10}]}>
-                <Entypo
-                    name="location-pin"
+                <FontAwesome
+                    name="flash"
                     size={20}
                     color={textColor}
+                    style={{paddingRight: 5}}
                 />
                 <Text style={{fontSize: 11}}>{item.kcal}</Text>
                 </View>

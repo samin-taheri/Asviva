@@ -3,7 +3,6 @@ import { backgroundColor, tableBackgroundColor, textColor } from '../global';
 import { useRoute } from '@react-navigation/native';
 import { Feather } from "@expo/vector-icons";
 import Graph from "../components/Graph";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 
 interface DataItem {

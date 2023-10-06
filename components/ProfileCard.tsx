@@ -1,8 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet, Pressable, Image } from "react-native";
-import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Feather } from "@expo/vector-icons";
-import { cardBackground, primaryColor, secondCard, textColor, thirdCard } from '../global';
+import { cardBackground, textColor } from '../global';
 import { ProfileCardProps } from "../types/data";
 
 const ProfileCard: React.FC<ProfileCardProps> = ({

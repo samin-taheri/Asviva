@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet } from "react-native";
 import { backgroundColor } from '../global';
 import CustomHeader from "../components/CustomHeader";
 import CustomTopTabBar from "../components/CustomTopTabBar";

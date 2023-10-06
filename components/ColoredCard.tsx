@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Dimensions } from 'react-native'; // Import Dimensions
+import { View, Text, StyleSheet, Dimensions } from 'react-native';
 import { Feather } from '@expo/vector-icons';
 
 interface ColoredCardProps {
@@ -9,10 +9,10 @@ interface ColoredCardProps {
   cardColor: string;
 }
 
-const windowWidth = Dimensions.get('window').width; // Get the window width
+const windowWidth = Dimensions.get('window').width; 
 
 const ColoredCard: React.FC<ColoredCardProps> = ({ icon, title, description, cardColor }) => {
-  const cardWidth = (windowWidth - 53) / 3; // Calculate the width for each card
+  const cardWidth = (windowWidth - 53) / 3; 
 
   return (
     <View style={[styles.card, { backgroundColor: cardColor, width: cardWidth }]}>

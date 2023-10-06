@@ -5,7 +5,6 @@ import { Entypo } from "@expo/vector-icons";
 import { primaryColor } from '../global';
 import { Feather } from "@expo/vector-icons";
 import { BackgroundCardProps } from '../types/data';
-import MyModal from './MyModal';
 
 const BackgroundCard: React.FC<BackgroundCardProps> = ({ title, backgroundImage, onPress }) => {
         const [isModalVisible, setModalVisible] = useState(false);

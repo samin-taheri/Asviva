@@ -1,32 +1,30 @@
-import { View, StyleSheet, Text } from "react-native";
+import { View, StyleSheet, Text, ScrollView } from "react-native";
 import { backgroundColor } from '../global';
 import CustomHeader from "../components/CustomHeader";
+import HorizontalCoachingCard from "../components/HorizontalCoachingCard";
+import HorizontalChallengeCard from "../components/HorizontalChallengeCard";
+import HorizontalPowerCard from "../components/HorizontalPowerCard";
 
 export default function Cycle({navigation}: any) {
 
     return(
         <View style={styles.container}>
         <CustomHeader title="Cycle"/>  
-        <View style={styles.contentContainer}>
-            <Text style={styles.text}>Cycle</Text>
-        </View>
+        <ScrollView style={styles.contentContainer}>
+            <HorizontalChallengeCard onPress={(id) => navigation.navigate( 'ChallengeDetails', {id})}/>
+            <HorizontalCoachingCard onPress={(id) => navigation.navigate( 'CouchingDetails', {id})}/>
+            <HorizontalPowerCard onPress={(id) => navigation.navigate( 'PowerSubDetails', {id})}/>
+        </ScrollView>
         </View>
     )
 }
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: backgroundColor
+        backgroundColor: backgroundColor,
     },
     contentContainer: {
         flex: 1,
-    },
-    text: {
-        fontSize: 18,
-        fontWeight: '600',
-        textAlign: 'left',
-        padding: 12,
-        paddingRight: '12%',
-        color: 'black', 
-    },
+        padding: 8
+    }
 });

@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import Swiper from 'react-native-swiper';
-import { cardBackground2, primaryColor } from '../global';
+import { primaryColor } from '../global';
 import { Feather } from "@expo/vector-icons";
 
 export default function SplashScreen({ navigation }: any) {

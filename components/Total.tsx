@@ -20,7 +20,6 @@ const Total: React.FC = ({ }) => {
 };
 
 const styles = StyleSheet.create({
-
 });
 
 export default Total;

@@ -1,9 +1,8 @@
 import React from 'react';
 import { View, StyleSheet, TouchableOpacity, Dimensions, Platform, Image } from 'react-native'
 import * as Animatable from 'react-native-animatable';
-import { Ionicons } from '@expo/vector-icons';
 import { Feather } from '@expo/vector-icons';
-import { backgroundColor, cardBackground2, loginBackground, primaryColor } from '../global';
+import { loginBackground, } from '../global';
 
 const { height } = Dimensions.get("screen");
 

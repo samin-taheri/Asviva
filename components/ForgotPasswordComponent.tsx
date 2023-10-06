@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Pressable } from 'react-native';
 import { ForgotPasswordProps } from '../types/data';
 import { backgroundColor, cardBackground2, primaryColor } from '../global';

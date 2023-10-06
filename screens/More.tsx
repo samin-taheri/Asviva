@@ -11,10 +11,10 @@ export default function More({ navigation }: any) {
       setModalVisible(!isModalVisible);
     };
     return (
-        <ScrollView 
-        showsVerticalScrollIndicator={false}>
+       
         <View style={styles.container}>
             <CustomHeader title="Details" />
+            <ScrollView  showsVerticalScrollIndicator={false}>
             <View style={styles.contentContainer}>
             <DetailsSection
                 title="Nickname: kdck_KHjLdm"
@@ -73,8 +73,8 @@ export default function More({ navigation }: any) {
                 onPress={()=> navigation.navigate("Login")}
             />
             </View>
+            </ScrollView>
         </View>
-        </ScrollView>
     )
 }
 

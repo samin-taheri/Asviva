@@ -1,5 +1,5 @@
-import { View, StyleSheet, Text, ImageSourcePropType, Image, ScrollView, TouchableOpacity, Pressable, ImageBackground } from "react-native";
-import { backgroundColor, tableBackgroundColor, textColor } from '../global';
+import { View, StyleSheet, Text, ImageSourcePropType, ScrollView, TouchableOpacity } from "react-native";
+import { backgroundColor, tableBackgroundColor } from '../global';
 import { useRoute } from '@react-navigation/native';
 import { Feather } from "@expo/vector-icons";
 import Card from "../components/Card";
@@ -19,8 +19,6 @@ interface DataItem {
   backgroundColor: string;
   imageSource: ImageSourcePropType;
 }
-
-
   
 const newData: DataItem[] = [
     { id: '1', backgroundColor: '#7a5a7c', crowd1: 'Have certain exercise habits', crowd2: 'Someone who is ready to build aphysical foundation.', intro: 'Thisexperience contains some basic ideas from typical endurance training. The comfortable, aerobic exercise intensity can help ypu achieve real fitness and make cycling more fun.', desc: 'Take your first step and master riding skills', title1: 'Beginner', title2: '15-minute Body Warm Up', imageSource: require('../assets/bg-5.jpg') },

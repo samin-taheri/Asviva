@@ -22,8 +22,9 @@ export default function Profile({navigation}: any) {
     };
   
     return(
-        <ScrollView style={styles.container} showsVerticalScrollIndicator={false}>
+        <View style={styles.container}>
         <CustomHeader title="Profile" onBack={() => navigation.goBack()}/>  
+        <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.contentContainer}>
         <ProfileCard
                 title="Change Avatar"
@@ -83,6 +84,7 @@ export default function Profile({navigation}: any) {
             />
         </View>
         </ScrollView>
+        </View>
     )
 }
 const styles = StyleSheet.create({
