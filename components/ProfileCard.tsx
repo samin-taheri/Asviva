@@ -8,7 +8,8 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
   title,
   onPress,
   selectedOption,
-  imageSource
+  imageSource,
+  selectedNumber
 }) => {
   return (
     <Pressable style={styles.card} onPress={onPress}>
@@ -17,7 +18,8 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
       </View>
       <View style={{ flexDirection: 'column', flex: 1 }}>
         <Text style={styles.title}>{title}</Text>
-        <Text style={styles.button}>{selectedOption || "Please Select"}</Text>
+        <Text style={styles.button}>{selectedOption !== null
+         ? selectedOption || "Please Select" : `Selected: ${selectedNumber}`}</Text>
       </View>
       <View style={[styles.icon]}>
         <Feather

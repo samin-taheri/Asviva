@@ -13,7 +13,7 @@ interface MyModalProps {
   onClose: () => void;
   title: string;
   selectedOption: string | null;
-onSelect: (option: string) => void;
+  onSelect: (option: string) => void;
 }
 
 const BottomSelectorModal: React.FC<MyModalProps> = ({ isVisible, onClose, title, selectedOption, onSelect }) => {
@@ -32,8 +32,8 @@ const BottomSelectorModal: React.FC<MyModalProps> = ({ isVisible, onClose, title
             item.label === selectedOption ? styles.selectedOption : null,
           ]}
           onPress={() => {
-            onSelect(item.label); // Call onSelect when an option is pressed
-            onClose(); // Close the modal
+            onSelect(item.label); 
+            onClose();
           }}
         >
           <Text style={styles.optionText}>{item.label}</Text>

@@ -71,6 +71,7 @@ export interface ProfileCardProps {
     style?: ViewStyle;
     iconColor?: string;
     selectedOption?: string;
+    selectedNumber?: number;
     selectedDate?: string; 
     imageSource: ImageSourcePropType
 }

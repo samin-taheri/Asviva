@@ -4,29 +4,53 @@ import { backgroundColor } from '../global';
 import CustomHeader from "../components/CustomHeader";
 import ProfileCard from "../components/ProfileCard";
 import BottomSelectorModal from "../components/BottomSelectorModal";
+import NumberSelectorModal from "../components/NumberSelectorComponent";
 
 export default function Profile({navigation}: any) {
-    const [isDatePickerVisible, setDatePickerVisibility] = useState(false);
-    const [isModalVisible, setIsModalVisible] = useState(false);
-    const [selectedOption, setSelectedOption] = useState<string | null>(null); 
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const [isModalVisible2, setIsModalVisibl2] = useState(false);
+  const [isModalVisible3, setIsModalVisibl3] = useState(false);
+  const [isModalVisible4, setIsModalVisibl4] = useState(false);
+  const [selectedOption, setSelectedOption] = useState<string | null>(null); 
+  const [selectedHeight, setselectedHeight] = useState<number | null>(null);
+  const [selectedWeight, setselectedWeight] = useState<number | null>(null);
+  const [selectedBirthday, setselectedBirthday] = useState<number | null>(null);
 
     const handleGenderSelect = (option: string) => {
         setSelectedOption(option);
         toggleModal(); 
       };
       
-    const  toggleModal= () => {
+    const toggleModal= () => {
         setIsModalVisible(!isModalVisible);
       };
+      const toggleModal2 = () => {
+        setIsModalVisibl2(!isModalVisible2);
+      };
     
-    const showDatePicker = () => {
-      setDatePickerVisibility(true);
-    };
-  
-    const hideDatePicker = () => {
-      setDatePickerVisibility(false);
-    };
-  
+      const handleHeightSelect = (number: number | null) => {
+        setselectedHeight(number);
+        toggleModal2();
+      };
+
+      const toggleModal3 = () => {
+        setIsModalVisibl3(!isModalVisible3);
+      };
+    
+      const handleWeightSelect = (number: number | null) => {
+        setselectedWeight(number);
+        toggleModal3();
+      };
+    
+      const toggleModal4 = () => {
+        setIsModalVisibl4(!isModalVisible4);
+      };
+    
+      const handleBirthdaySelect = (number: number | null) => {
+        setselectedBirthday(number);
+        toggleModal4();
+      };
+
     return(
         <View style={styles.container}>
         <CustomHeader title="Profile" onBack={() => navigation.goBack()}/>  
@@ -68,27 +92,40 @@ export default function Profile({navigation}: any) {
                 title="Height"
                 iconName="human-male-height"
                 imageSource={require('../assets/profile-5.png')}
-                selectedOption="Please Select" 
-                onPress={() => {
-                }}
+                onPress={toggleModal2}
+                selectedOption={selectedHeight !== null ? `Selected: ${selectedHeight}` : "Please Select"}
             />
             <ProfileCard
                 title="Weight"
                 iconName="weight"
                 imageSource={require('../assets/profile-20.png')}
-                selectedOption="Please Select" 
-                onPress={() => {
-                }}
+                onPress={toggleModal3}
+                selectedOption={selectedWeight !== null ? `Selected: ${selectedWeight}` : "Please Select"}
             />
             <ProfileCard
                 title="Birthday"
                 iconName="cake-variant"
                 imageSource={require('../assets/profile-9.png')}
-                onPress={showDatePicker}
-                selectedOption="Please Select" 
+                onPress={toggleModal4}
+                selectedOption={selectedBirthday !== null ? `Selected: ${selectedBirthday}` : "Please Select"}
+                />
+              <BottomSelectorModal selectedOption={selectedOption} onSelect={handleGenderSelect} title="Select Gender" isVisible={isModalVisible} onClose={toggleModal} />
+              <NumberSelectorModal
+              isVisible={isModalVisible2}
+              onToggle={toggleModal2}
+              onSelectNumber={handleHeightSelect}
             />
-        <BottomSelectorModal selectedOption={selectedOption} onSelect={handleGenderSelect} title="Select Gender" isVisible={isModalVisible} onClose={toggleModal} />
-        </View>
+            <NumberSelectorModal
+              isVisible={isModalVisible3}
+              onToggle={toggleModal3}
+              onSelectNumber={handleWeightSelect}
+            />
+            <NumberSelectorModal
+              isVisible={isModalVisible4}
+              onToggle={toggleModal4}
+              onSelectNumber={handleBirthdaySelect}
+            />
+            </View>
         </ScrollView>
         </View>
     )
