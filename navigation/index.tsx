@@ -25,6 +25,9 @@ import CouchingDetails from "../screens/CouchingDetails";
 import ChallengeDetails from "../screens/ChallengeDetails";
 import PowerDetails from "../screens/PowerDetails";
 import PowerSubDetails from "../screens/PowerSubDetails";
+import Setting from "../screens/Setting";
+import HelpAndFeedback from "../screens/HelpAndFeedback";
+import MyGame from "../screens/MyGame";
 
 export default function Navigation() {
   return (
@@ -109,6 +112,21 @@ function RootNavigator() {
         <Stack.Screen
         name="PowerSubDetails"
         component={PowerSubDetails}
+        options={{ headerShown: false}}
+      />
+       <Stack.Screen
+        name="Setting"
+        component={Setting}
+        options={{ headerShown: false}}
+      />
+      <Stack.Screen
+        name="HelpAndFeedback"
+        component={HelpAndFeedback}
+        options={{ headerShown: false}}
+      />
+       <Stack.Screen
+        name="MyGame"
+        component={MyGame}
         options={{ headerShown: false}}
       />
     </Stack.Navigator>

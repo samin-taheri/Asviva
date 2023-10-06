@@ -1,71 +1,49 @@
-import React, { useState } from 'react';
-import { View, StyleSheet, ScrollView } from 'react-native';
-import { backgroundColor, cardBackground, primaryColor } from '../global';
+import React from 'react';
+import { View, StyleSheet, ScrollView, TouchableOpacity, Text } from 'react-native';
+import { backgroundColor, cardBackground, cardBackground2, primaryColor } from '../global';
 import CustomHeader from "../components/CustomHeader";
 import DetailsSection from '../components/DetailsSection';
-import MyModal from '../components/MyModal';
+import { Feather } from "@expo/vector-icons";
 
-export default function More({ navigation }: any) {
-    const [isModalVisible, setModalVisible] = useState(false);
-    const toggleModal = () => {
-      setModalVisible(!isModalVisible);
-    };
+export default function Setting({ navigation }: any) {
     return (
        
         <View style={styles.container}>
-            <CustomHeader title="Details" />
+            <CustomHeader title="Settings" onBack={()=> navigation.goBack()}/>
             <ScrollView  showsVerticalScrollIndicator={false}>
             <View style={styles.contentContainer}>
+            
+            
             <DetailsSection
-                title="Nickname: kdck_KHjLdm"
+                title="Unit Type"
                 iconName="account-tie"
-                imageSource={require('../assets/profile-15.png')}
-                onPress={() => navigation.navigate('Profile')}
-            />
-             <View style={styles.line} />
-            <DetailsSection
-                title="My Game"
-                iconName="account-tie"
-                imageSource={require('../assets/9.png')}
-                onPress={()=> navigation.navigate("MyGame")}
+                imageSource={require('../assets/settings-1.png')}
+                onPress={() => {}}
             />
             <DetailsSection
-                title="Records of Workouts"
+                title="Permission Settings"
                 iconName="account-tie"
-                imageSource={require('../assets/10.png')}
-                onPress={()=> navigation.navigate("Details")}
+                imageSource={require('../assets/settings-2.png')}
+                onPress={()=> {}}
             />
             <DetailsSection
-                title="Sports Weekly"
+                title="Storage Management"
                 iconName="account-tie"
-                imageSource={require('../assets/11.png')}
-                onPress={()=> navigation.navigate("StartCreating")}
+                imageSource={require('../assets/settings-3.png')}
+                onPress={() => {
+                }}
             />
             <DetailsSection
-                title="Physical Fitness Test"
+                title="About"
                 iconName="account-tie"
-                imageSource={require('../assets/12.png')}
-                onPress={toggleModal}
+                imageSource={require('../assets/settings-4.png')}
+                onPress={() => {
+                }}
             />
-            <MyModal isVisible={isModalVisible} onClose={toggleModal} />
-            <DetailsSection
-                title="Manage Devices"
-                iconName="account-tie"
-                imageSource={require('../assets/13.png')}
-                onPress={()=> navigation.navigate("ConnectDevice")}
-            />
-            <DetailsSection
-                title="Help and Feedback"
-                iconName="account-tie"
-                imageSource={require('../assets/14.png')}
-                onPress={()=> navigation.navigate("HelpAndFeedback")}
-            />
-            <DetailsSection
-                title="Settings"
-                iconName="account-tie"
-                imageSource={require('../assets/15.png')}
-                onPress={()=> navigation.navigate("Setting")}
-            />
+            <TouchableOpacity style={styles.loginButton} onPress={()=> navigation.navigate('Login')}>
+                <Feather name="log-out" size={30} color={'#fff'} style={{right: 110}}/>
+                <Text style={styles.buttonText2}>Sign Out</Text>
+            </TouchableOpacity>
             </View>
             </ScrollView>
         </View>
@@ -94,6 +72,23 @@ const styles = StyleSheet.create({
         fontWeight: 'bold',
         marginBottom: 5,
     },
+    loginButton: {
+        width: '96%',
+        height: 45,
+        backgroundColor: primaryColor,
+        borderRadius: 12,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginBottom: 10,
+        flexDirection: 'row',
+        marginTop: 10,
+        alignSelf: 'center'
+      },
+      buttonText2: {
+        color: '#fff',
+        fontWeight: 'bold',
+        textAlign: 'center',
+      },
     line: {
         width: '92%', 
         height: 1, 
