@@ -23,9 +23,9 @@ const PowerCourseComponent: React.FC<CouchingCourseComponentProps> = ({onPress }
     setTimeout(() => {
   const newData: DataItem[] = [
     { id: '1',desc: 'Take your first step and master riding skills', title: 'Beginner', imageSource: require('../assets/power-bike.jpeg') },
-    { id: '2',desc: 'Burn more calories within limited time', title: 'Fat burning', imageSource: require('../assets/power-bike.jpeg') },
-    { id: '3',desc: 'Buil better mental and physical ability', title: 'Endurance',  imageSource: require('../assets/power-bike.jpeg') },
-    { id: '4',desc: 'More explosive power and better muscle lnes', title: 'Muscle Strength', imageSource: require('../assets/power-bike.jpeg') },
+    { id: '2',desc: 'Burn more calories within limited time', title: 'Fat burning', imageSource: require('../assets/power-bike-5.jpeg') },
+    { id: '3',desc: 'Buil better mental and physical ability', title: 'Endurance',  imageSource: require('../assets/power-bike-3.jpeg') },
+    { id: '4',desc: 'More explosive power and better muscle lnes', title: 'Muscle Strength', imageSource: require('../assets/power-bike-4.jpeg') },
   ];
   setData(newData);
   setLoading(false);
