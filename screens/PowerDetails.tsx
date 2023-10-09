@@ -4,6 +4,7 @@ import { useRoute } from '@react-navigation/native';
 import { Feather } from "@expo/vector-icons";
 import Graph from "../components/Graph";
 import { FontAwesome } from "@expo/vector-icons";
+import { LinearGradient } from "expo-linear-gradient";
 
 interface DataItem {
   id: string;
@@ -59,7 +60,12 @@ export default function PowerDetails({ navigation }: any) {
 
     return (
       <View style={styles.container}>
-        <ImageBackground source={require('../assets/bg-5.jpg')} style={styles.cardBackground}>
+ <LinearGradient
+          colors={['gray', "#fff"]}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 1 }} 
+          style={styles.linearGradient}
+        >        
         <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
               <Feather name="arrow-left" size={30} color="#fff" />
             </TouchableOpacity>
@@ -69,12 +75,12 @@ export default function PowerDetails({ navigation }: any) {
               <Text style={styles.desc}>{selectedItem.desc}</Text>
               </View>
             </View>
-          </ImageBackground>
         <ScrollView showsVerticalScrollIndicator={false} style={{marginTop: 10}}>
         {newData.map((item) => (
         <View key={item.id.toString()}>{renderItem({ item })}</View>
         ))}
         </ScrollView>
+        </LinearGradient>
       </View>
     )
   }
@@ -86,6 +92,11 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: backgroundColor,
     }, 
+    linearGradient: {
+      width: '100%',
+      height: '100%',
+      opacity: 0.95,
+    },
     container3: {
         padding: 16
     },  
@@ -126,7 +137,7 @@ const styles = StyleSheet.create({
     },
     backButton: {
       position: 'absolute',
-      top: '20%',
+      top: '4%',
       left: '2%',
       zIndex: 1,
       padding: 16,
