@@ -4,6 +4,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { FontAwesome } from "@expo/vector-icons";
 import { cardBackground2, primaryColor, textColor } from '../global';
 import { CouchingCourseComponentProps } from '../types/data';
+import Myloader from './MyLoader';
 
 interface DataItem {
   id: string;
@@ -74,7 +75,7 @@ const CouchingCourseComponent: React.FC<CouchingCourseComponentProps> = ({onPres
   if (loading) {
     return (
       <View style={styles.loaderContainer}>
-        <ActivityIndicator size="large" color={primaryColor} />
+        <Myloader/>
       </View>
     );
   }

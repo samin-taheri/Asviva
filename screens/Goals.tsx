@@ -3,6 +3,7 @@ import { View, StyleSheet, Text, TouchableOpacity, Image, ActivityIndicator } fr
 import { backgroundColor, primaryColor } from '../global';
 import CustomHeader from "../components/CustomHeader";
 import LearningPath from "../components/DottedLineWithCircles";
+import Myloader from "../components/MyLoader";
 
 export default function Goals({navigation}: any) {
     const [isLoading, setIsLoading] = useState(true);
@@ -23,10 +24,7 @@ export default function Goals({navigation}: any) {
         <CustomHeader title="Goals" onBack={() => navigation.navigate('Root')}/> 
         <View style={styles.contentContainer}> 
         {isLoading ? 
-       <View style={styles.contentContainer2}>
-       <ActivityIndicator size="large" color={primaryColor} />
-       <Text style={styles.text}>Generating...</Text>
-        </View>
+          <Myloader title='Generating...'/>
       :
       <>
         <View style={{padding: 30}}>
@@ -48,7 +46,6 @@ export default function Goals({navigation}: any) {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: backgroundColor,
     },
     image: {
       width: 200,
@@ -64,6 +61,8 @@ const styles = StyleSheet.create({
     },
     contentContainer: {
         flex: 1,
+        backgroundColor: '#f8f8f8'
+
     },
     contentContainer2: {
       flex: 1,

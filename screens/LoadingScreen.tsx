@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, ActivityIndicator, StyleSheet, Image, TouchableOpacity } from 'react-native';
 import { backgroundColor, primaryColor } from '../global';
 import CustomHeader from '../components/CustomHeader';
+import Myloader from '../components/MyLoader';
 
 export default function LoadingScreen({ navigation }: any) {
   const [isLoading, setIsLoading] = useState(true);
@@ -22,9 +23,7 @@ export default function LoadingScreen({ navigation }: any) {
       <>
       {isLoading ? 
        <View style={styles.contentContainer}>
-       <Image source={require("../assets/exersize.png")} style={styles.image} />
-       <ActivityIndicator size="large" color={primaryColor} />
-       <Text style={styles.text}>Searching...</Text>
+          <Myloader title='Searching...'/>
      </View>
      :
      <View style={styles.contentContainer}>

@@ -4,6 +4,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
 import { cardBackground2, primaryColor, textColor } from '../global';
 import { CouchingCourseComponentProps } from '../types/data';
+import Myloader from './MyLoader';
 
 interface DataItem {
   id: string;
@@ -81,7 +82,7 @@ const ChallengeComponent: React.FC<CouchingCourseComponentProps> = ({onPress }) 
   if (loading) {
     return (
       <View style={styles.loaderContainer}>
-        <ActivityIndicator size="large" color={primaryColor} />
+       <Myloader/>
       </View>
     );
   }

@@ -45,7 +45,7 @@ const Chart: React.FC<ChartProps> = ({ onPress }) => {
     </View>
         <Card>
         <View style={{flexDirection: 'column', alignSelf: 'center'}}>
-        <View style={{flexDirection: 'row', justifyContent: 'space-around', paddingBottom: 10}}>
+        <View style={{flexDirection: 'row', justifyContent: 'space-around', paddingBottom: 10, paddingLeft: '2%'}}>
         <StatsCard title="Workouts" value="0 min" />
         <StatsCard title="Calories" value="0 kcal"/>
         <StatsCard title="Clock In" value="0 day"/>

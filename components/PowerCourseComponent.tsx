@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, StyleSheet, Image, SafeAreaView, ImageSourcePropType, Pressable, ActivityIndicator } from 'react-native';
 import { cardBackground2, primaryColor } from '../global';
 import { CouchingCourseComponentProps } from '../types/data';
+import Myloader from './MyLoader';
 
 interface DataItem {
   id: string;
@@ -48,7 +49,7 @@ const PowerCourseComponent: React.FC<CouchingCourseComponentProps> = ({onPress }
   if (loading) {
     return (
       <View style={styles.loaderContainer}>
-        <ActivityIndicator size="large" color={primaryColor} />
+        <Myloader/>
       </View>
     );
   }
