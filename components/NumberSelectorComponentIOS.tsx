@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Button } from 'react-native';
 import Modal from 'react-native-modal';
 import RNPickerSelect from 'react-native-picker-select';
 import { NumberSelectorModalProps } from '../types/data';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const NumberSelectorModal: React.FC<NumberSelectorModalProps> = ({
   isVisible,
@@ -31,10 +32,12 @@ const NumberSelectorModal: React.FC<NumberSelectorModalProps> = ({
         <Text style={styles.label}>Select a Number:</Text>
         <RNPickerSelect
           placeholder={{ label: 'Select a number', value: null }}
+          useNativeAndroidPickerStyle={false}
           onValueChange={(value) => handleNumberChange(value)}
           items={numberItems}
           value={selectedNumber}
           style={pickerSelectStyles}
+          key={selectedNumber}
         />
         <Button title="Select" onPress={() => onSelectNumber(selectedNumber)} />
         <Button title="Cancel" onPress={onToggle} />
@@ -85,5 +88,4 @@ const pickerSelectStyles = StyleSheet.create({
   },
 });
 
-export default
- NumberSelectorModal;
+export default NumberSelectorModal;

@@ -38,10 +38,10 @@ const Chart: React.FC<ChartProps> = ({ onPress }) => {
     <View>
         <View style={{flexDirection:  'row', justifyContent: 'space-between'}}>
         <Lable title="Today's Workout"/>
-        <Pressable onPress={onPress} style={{flexDirection: 'row', paddingTop: 10, paddingRight: 15}}>
+        {/* <Pressable onPress={onPress} style={{flexDirection: 'row', paddingTop: 10, paddingRight: 15}}>
         <Text style={{paddingTop: 3, color: '#636363', fontSize: 14}}>Details</Text>
         <Feather name="chevron-right" size={16} color="#636363" style={Platform.OS === 'ios' ? {paddingTop: 4}:{paddingTop: 5}}/>
-        </Pressable>
+        </Pressable> */}
     </View>
         <Card>
         <View style={{flexDirection: 'column', alignSelf: 'center'}}>

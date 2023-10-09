@@ -47,7 +47,9 @@ export default function More({ navigation }: any) {
                 imageSource={require('../assets/12.png')}
                 onPress={toggleModal}
             />
-            <MyModal isVisible={isModalVisible} onClose={toggleModal} />
+            <MyModal isVisible={isModalVisible} onClose={toggleModal} title={''} selectedOption={null} onSelect={function (option: string): void {
+                        throw new Error('Function not implemented.');
+                    } } />
             <DetailsSection
                 title="Manage Devices"
                 iconName="account-tie"

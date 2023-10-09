@@ -21,7 +21,7 @@ export default function SplashScreen({ navigation }: any) {
       >
         <View style={styles.slide}>
           <Image
-            source={require('../assets/splash-9.png')}
+            source={require('../assets/splash-1.jpeg')}
             style={styles.image}
             resizeMode="cover"
           />
@@ -30,7 +30,7 @@ export default function SplashScreen({ navigation }: any) {
         </View>
         <View style={styles.slide}>
           <Image
-            source={require('../assets/splash-10.png')}
+            source={require('../assets/splash-2.jpeg')}
             style={styles.image}
             resizeMode="cover"
           />
@@ -38,7 +38,7 @@ export default function SplashScreen({ navigation }: any) {
         </View>
         <View style={styles.slide}>
           <Image
-            source={require('../assets/splash-2.png')}
+            source={require('../assets/splash-3.jpeg')}
             style={styles.image}
             resizeMode="cover"
           />
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    height: '40%',
+    height: '20%',
   },
   text: {
     color: '#fff',
@@ -91,7 +91,6 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 22,
     fontWeight: 'bold',
-    paddingTop: 10,
     textAlign: 'center',
     padding: 15,
   },

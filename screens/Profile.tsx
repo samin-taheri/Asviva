@@ -1,11 +1,12 @@
 import React, { useState } from "react";
-import { View, StyleSheet, ScrollView } from "react-native";
+import { View, StyleSheet, ScrollView, Platform } from "react-native";
 import { backgroundColor } from '../global';
 import CustomHeader from "../components/CustomHeader";
 import ProfileCard from "../components/ProfileCard";
 import BottomSelectorModal from "../components/BottomSelectorModal";
-import NumberSelectorModal from "../components/NumberSelectorComponent";
+import NumberSelectorModal from "../components/NumberSelectorComponentIOS";
 import TextInputComponent from "../components/TextInputComponent";
+import NumberSelectorComponentAndroid from "../components/NumberSelectorComponentAndroid";
 
 export default function Profile({navigation}: any) {
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -14,10 +15,10 @@ export default function Profile({navigation}: any) {
   const [isModalVisible4, setIsModalVisibl4] = useState(false);
   const [isModalVisible5, setIsModalVisibl5] = useState(false);
   const [selectedOption, setSelectedOption] = useState<string | null>(null); 
-  const [selectedHeight, setselectedHeight] = useState<number | null>(null);
-  const [selectedWeight, setselectedWeight] = useState<number | null>(null);
-  const [selectedBirthday, setselectedBirthday] = useState<number | null>(null);
   const [selectedNickname, setselectedNickname] = useState<string | null>(null);
+  const [selectedBirthday, setselectedBirthday] = useState<string | null>(null);
+  const [selectedWeight, setselectedWeight] = useState<string | null>(null);
+  const [selectedHeight, setselectedHeight] = useState<string | null>(null);
 
     const handleGenderSelect = (option: string) => {
         setSelectedOption(option);
@@ -27,30 +28,30 @@ export default function Profile({navigation}: any) {
     const toggleModal= () => {
         setIsModalVisible(!isModalVisible);
       };
+
       const toggleModal2 = () => {
         setIsModalVisibl2(!isModalVisible2);
       };
     
-      const handleHeightSelect = (number: number | null) => {
-        setselectedHeight(number);
+      const handleNicknameSelect = (string: string | null) => {
+        setselectedNickname(string);
         toggleModal2();
       };
-
       const toggleModal3 = () => {
         setIsModalVisibl3(!isModalVisible3);
       };
     
-      const handleWeightSelect = (number: number | null) => {
-        setselectedWeight(number);
+      const handleBirthday = (string: string | null) => {
+        setselectedBirthday(string);
         toggleModal3();
       };
-    
+
       const toggleModal4 = () => {
         setIsModalVisibl4(!isModalVisible4);
       };
     
-      const handleBirthdaySelect = (number: number | null) => {
-        setselectedBirthday(number);
+      const handleWeight = (string: string | null) => {
+        setselectedWeight(string);
         toggleModal4();
       };
 
@@ -58,11 +59,10 @@ export default function Profile({navigation}: any) {
         setIsModalVisibl5(!isModalVisible5);
       };
     
-      const handleNicknameSelect = (string: string | null) => {
-        setselectedNickname(string);
+      const handleHeight = (string: string | null) => {
+        setselectedHeight(string);
         toggleModal5();
       };
-
     return(
         <View style={styles.container}>
         <CustomHeader title="Profile" onBack={() => navigation.goBack()}/>  
@@ -80,7 +80,7 @@ export default function Profile({navigation}: any) {
                 iconName="account-tie"
                 selectedOption={selectedNickname !== null ? `Selected: ${selectedNickname}` : "Please Select"}
                 imageSource={require('../assets/profile-13.png')}
-                onPress={toggleModal5}
+                onPress={toggleModal2}
             />
             <View style={styles.line} />
             <ProfileCard
@@ -103,44 +103,44 @@ export default function Profile({navigation}: any) {
                 title="Height"
                 iconName="human-male-height"
                 imageSource={require('../assets/profile-5.png')}
-                onPress={toggleModal2}
+                onPress={toggleModal5}
                 selectedOption={selectedHeight !== null ? `Selected: ${selectedHeight}` : "Please Select"}
             />
             <ProfileCard
                 title="Weight"
                 iconName="weight"
                 imageSource={require('../assets/profile-20.png')}
-                onPress={toggleModal3}
-                selectedOption={selectedWeight !== null ? `Selected: ${selectedWeight}` : "Please Select"}
+                onPress={toggleModal4}
+                selectedOption={selectedWeight !== null ? `Selected: ${selectedWeight}` : "Please Select" }
             />
             <ProfileCard
                 title="Birthday"
                 iconName="cake-variant"
                 imageSource={require('../assets/profile-9.png')}
-                onPress={toggleModal4}
+                onPress={toggleModal3}
                 selectedOption={selectedBirthday !== null ? `Selected: ${selectedBirthday}` : "Please Select"}
                 />
               <BottomSelectorModal selectedOption={selectedOption} onSelect={handleGenderSelect} title="Select Gender" isVisible={isModalVisible} onClose={toggleModal} />
-              <NumberSelectorModal
+            <TextInputComponent
               isVisible={isModalVisible2}
               onToggle={toggleModal2}
-              onSelectNumber={handleHeightSelect}
-            />
-            <NumberSelectorModal
-              isVisible={isModalVisible3}
-              onToggle={toggleModal3}
-              onSelectNumber={handleWeightSelect}
-            />
-            <NumberSelectorModal
-              isVisible={isModalVisible4}
-              onToggle={toggleModal4}
-              onSelectNumber={handleBirthdaySelect}
-            />
-            <TextInputComponent
-              isVisible={isModalVisible5}
-              onToggle={toggleModal5}
               onSelectNickname={handleNicknameSelect}
             />
+            <NumberSelectorComponentAndroid
+              isVisible={isModalVisible3}
+              onToggle={toggleModal3}
+              onSelectNickname={handleBirthday}
+              />
+               <NumberSelectorComponentAndroid
+              isVisible={isModalVisible4}
+              onToggle={toggleModal4}
+              onSelectNickname={handleWeight}
+              />
+               <NumberSelectorComponentAndroid
+              isVisible={isModalVisible5}
+              onToggle={toggleModal5}
+              onSelectNickname={handleHeight}
+              />
             </View>
         </ScrollView>
         </View>

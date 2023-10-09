@@ -9,7 +9,7 @@ interface TextInputComponentProps {
   onSelectNickname: (selectedNickname: string) => void;
 }
 
-const TextInputComponent: React.FC<TextInputComponentProps> = ({
+const NumberSelectorComponentAndroid: React.FC<TextInputComponentProps> = ({
   isVisible,
   onToggle,
   onSelectNickname,
@@ -20,13 +20,7 @@ const TextInputComponent: React.FC<TextInputComponentProps> = ({
   const handleTextInputChange = (text: string) => {
     setInputText(text);
     setsSlectedNickname(selectedNickname);
-  };
-
-  const handleConfirm = () => {
-    onSelectNickname(inputText);
-    setInputText('');
-    onToggle();
-  };
+  }
 
   return (
     <Modal
@@ -36,12 +30,13 @@ const TextInputComponent: React.FC<TextInputComponentProps> = ({
       style={styles.modal}
     >
       <View style={styles.modalContainer}>
-        <Text style={styles.modalTitle}>Enter Nickname</Text>
+        <Text style={styles.modalTitle}>Select a Number:</Text>
         <TextInput
           style={styles.textInput}
           onChangeText={handleTextInputChange}
           value={inputText}
-          placeholder="Select Nickname"
+          placeholder="Select a Number"
+          keyboardType='numeric'
         />
           <TouchableOpacity style={styles.loginButton} onPress={() => onSelectNickname(inputText)}>
           <Text style={styles.buttonText}>Select</Text>
@@ -90,4 +85,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default TextInputComponent;
+export default NumberSelectorComponentAndroid;

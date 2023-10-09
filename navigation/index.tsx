@@ -28,6 +28,7 @@ import PowerSubDetails from "../screens/PowerSubDetails";
 import Setting from "../screens/Setting";
 import HelpAndFeedback from "../screens/HelpAndFeedback";
 import MyGame from "../screens/MyGame";
+import Goals from "../screens/Goals";
 
 export default function Navigation() {
   return (
@@ -127,6 +128,11 @@ function RootNavigator() {
        <Stack.Screen
         name="MyGame"
         component={MyGame}
+        options={{ headerShown: false}}
+      />
+       <Stack.Screen
+        name="Goals"
+        component={Goals}
         options={{ headerShown: false}}
       />
     </Stack.Navigator>
