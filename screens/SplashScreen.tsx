@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, Image, TouchableOpacity, ScrollView } from 'react-native';
 import Swiper from 'react-native-swiper';
 import { primaryColor } from '../global';
 import { Feather } from "@expo/vector-icons";
@@ -12,43 +12,45 @@ export default function SplashScreen({ navigation }: any) {
 
   return (
     <View style={styles.container}>
-      <Swiper
-        style={styles.wrapper}
-        showsButtons={false}
-        loop={false}
-        activeDotColor={primaryColor}
-        dotColor='#a7a5a5' 
-      >
-        <View style={styles.slide}>
-          <Image
-            source={require('../assets/splash-1.jpeg')}
-            style={styles.image}
-            resizeMode="cover"
-          />
-          <Text style={styles.title}>Welcome to AsVIVA</Text>
-          <Text style={styles.title3}>Track Your Fitness Health Data!</Text>
-        </View>
-        <View style={styles.slide}>
-          <Image
-            source={require('../assets/splash-2.jpeg')}
-            style={styles.image}
-            resizeMode="cover"
-          />
-          <Text style={styles.title}>Quality, service and expert advice. This is fitness shopping made in Germany! </Text>
-        </View>
-        <View style={styles.slide}>
-          <Image
-            source={require('../assets/splash-3.jpeg')}
-            style={styles.image}
-            resizeMode="cover"
-          />
-          <Text style={styles.title}>Buy fitness equipment at AsVIVA. Exercise bikes, cross trainers, treadmills, indoor bikes and much more...</Text>
-        </View>
-      </Swiper>
-      <TouchableOpacity  style={styles.buttonContainer} onPress={navigateToHome}>
-        <Text style={styles.buttonText}>Get Started</Text>
-        <Feather name="chevron-right" size={20} color='white' style={{ paddingLeft: 2 }} />
-      </TouchableOpacity>
+      <ScrollView contentContainerStyle={styles.contentContainer}>
+        <Swiper
+          style={styles.wrapper}
+          showsButtons={false}
+          loop={false}
+          activeDotColor={primaryColor}
+          dotColor='#a7a5a5'
+        >
+          <View style={styles.slide}>
+            <Image
+              source={require('../assets/splash-1.jpeg')}
+              style={styles.image}
+              resizeMode="cover"
+            />
+            <Text style={styles.title}>Welcome to AsVIVA</Text>
+            <Text style={styles.title3}>Track Your Fitness Health Data!</Text>
+          </View>
+          <View style={styles.slide}>
+            <Image
+              source={require('../assets/splash-2.jpeg')}
+              style={styles.image}
+              resizeMode="cover"
+            />
+            <Text style={styles.title3}>Quality, service and expert advice. This is fitness shopping made in Germany! </Text>
+          </View>
+          <View style={styles.slide}>
+            <Image
+              source={require('../assets/splash-3.jpeg')}
+              style={styles.image}
+              resizeMode="cover"
+            />
+            <Text style={styles.title3}>Buy fitness equipment at AsVIVA. Exercise bikes, cross trainers, treadmills, indoor bikes and much more...</Text>
+          </View>
+        </Swiper>
+        <TouchableOpacity style={styles.buttonContainer} onPress={navigateToHome}>
+          <Text style={styles.buttonText}>Get Started</Text>
+          <Feather name="chevron-right" size={20} color='white' style={{ paddingLeft: '5%' }} />
+        </TouchableOpacity>
+      </ScrollView>
     </View>
   );
 };
@@ -58,19 +60,25 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: 'white',
   },
+  contentContainer: {
+    flex: 1,
+    justifyContent: 'space-between',
+    paddingTop: '20%'
+  },
   buttonContainer: {
     backgroundColor: primaryColor,
-    width:  120,
-    height: 35,
+    width: 150,
+    height: 40,
     borderRadius: 8,
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
-    position: 'absolute',
-    bottom: 30,
-    right: 30,    
+    alignSelf: 'center', 
+    marginBottom: 50, 
+    marginTop: 20
   },
-  wrapper: {},
+  wrapper: {
+  },
   slide: {
     flex: 1,
     justifyContent: 'center',
@@ -80,7 +88,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: '100%',
-    height: '20%',
+    height: '24%',
   },
   text: {
     color: '#fff',
@@ -92,17 +100,17 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: 'bold',
     textAlign: 'center',
-    padding: 15,
+    paddingTop: 10,
   },
   title3: {
-    fontSize: 22,
-    fontWeight: 'bold',
+    fontSize: 18,
+    fontWeight: '500',
     textAlign: 'center',
-    paddingBottom: 20,
+    paddingTop: 10,
   },
   title2: {
     fontSize: 19,
-    fontWeight: '700',
+    fontWeight: '500',
     fontStyle: 'italic'
   },
   button: {

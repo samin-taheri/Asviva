@@ -35,10 +35,9 @@ export default function StartCreating({ navigation }: any) {
   };
 
   const handleNextQuestion = () => {
-    if (currentQuestion < questions.length - 1) {
+    if(currentQuestion < questions.length - 1 && selectedOption !== null){
       setCurrentQuestion(currentQuestion + 1);
       setSelectedOption(null);
-    } else{
     }
   };
 
@@ -64,7 +63,7 @@ export default function StartCreating({ navigation }: any) {
             key={index}
             style={[
               styles.optionButton,
-              { backgroundColor: selectedOption === option ? '#f0c3c7' : backgroundColor },
+              { backgroundColor: selectedOption === option ? '#f7e0e2' : backgroundColor },
             ]}
             onPress={() => handleOptionSelect(option)}
           >
@@ -80,19 +79,32 @@ export default function StartCreating({ navigation }: any) {
             >
               <Text style={styles.buttonText}>Previous</Text>
             </TouchableOpacity>
+            {isNextButtonVisible ? (
             <TouchableOpacity
-              style={[
+                style={[
                 styles.loginButton,
                 !isNextButtonVisible && { backgroundColor: '#bebebe' },
                 isLastQuestion && isSubmitButtonVisible && styles.redButton,
-              ]}
-              onPress={handleNextQuestion}
-              disabled={!isNextButtonVisible}
+                ]}
+                onPress={handleNextQuestion}
+                disabled={!isNextButtonVisible}
             >
-              <Text style={styles.buttonText}>
+                <Text style={styles.buttonText}>
                 {currentQuestion < questions.length - 1 ? 'Next' : 'Submit'}
-              </Text>
+                </Text>
             </TouchableOpacity>
+            ): (
+                <TouchableOpacity
+                style={[
+                styles.loginButton,
+                !isNextButtonVisible && { backgroundColor: '#bebebe' },
+                isLastQuestion && isSubmitButtonVisible && styles.redButton,
+                ]}
+                onPress={() => navigation.navigate('Goals')}
+            >
+                <Text style={styles.buttonText}>{currentQuestion < questions.length - 1 ? 'Next' : 'Submit'}</Text>
+            </TouchableOpacity>
+            )}
           </View>
         </View>
         <View style={styles.progressTextContainer}>
@@ -130,9 +142,10 @@ const styles = StyleSheet.create({
   },
   questionText: {
     fontSize: 20,
-    marginBottom: 20,
+    marginBottom: 30,
     textAlign: 'center',
     fontWeight: '600',
+    padding:10
   },
   optionButton: {
     width: '90%',
