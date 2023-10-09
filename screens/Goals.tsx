@@ -1,24 +1,46 @@
-import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
+import { useEffect, useState } from "react";
+import { View, StyleSheet, Text, TouchableOpacity, Image, ActivityIndicator } from "react-native";
 import { backgroundColor, primaryColor } from '../global';
 import CustomHeader from "../components/CustomHeader";
 import LearningPath from "../components/DottedLineWithCircles";
 
 export default function Goals({navigation}: any) {
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+      const timer = setTimeout(() => {
+        setIsLoading(false);
+      }, 3000); 
+  
+      return () => {
+        clearTimeout(timer); 
+      };
+    }, []);
+  
     
     return(
         <View style={styles.container}>
         <CustomHeader title="Goals" onBack={() => navigation.navigate('Root')}/> 
         <View style={styles.contentContainer}> 
-            <View style={{padding: 30}}>
-                <Text style={styles.title}>This week's goals have been generated for you</Text>
-                <Text style={styles.subtitle}>This week's goals have been generated for you</Text>
-                <LearningPath />
-            </View>
-            <View style={styles.buttonContainer}> 
-                <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('Root')}>
-                <Text style={styles.buttonText}>Complete</Text>
-                </TouchableOpacity>
-            </View>
+        {isLoading ? 
+       <View style={styles.contentContainer2}>
+       <ActivityIndicator size="large" color={primaryColor} />
+       <Text style={styles.text}>Generating...</Text>
+        </View>
+      :
+      <>
+        <View style={{padding: 30}}>
+        <Text style={styles.title}>This week's goals have been generated for you</Text>
+        <Text style={styles.subtitle}>This week's goals have been generated for you</Text>
+        <LearningPath />
+        </View>
+        <View style={styles.buttonContainer}> 
+            <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('Root')}>
+            <Text style={styles.buttonText}>Complete</Text>
+            </TouchableOpacity>
+        </View>
+      </>
+      }
         </View>
         </View>
     )
@@ -28,8 +50,26 @@ const styles = StyleSheet.create({
         flex: 1,
         backgroundColor: backgroundColor,
     },
+    image: {
+      width: 200,
+      height: 220,
+      borderRadius: 8,
+      marginLeft: 16,
+    },
+    text: {
+      marginTop: 20,
+      fontSize: 18,
+      color: primaryColor,
+      fontWeight: '600',
+    },
     contentContainer: {
         flex: 1,
+    },
+    contentContainer2: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      marginBottom: 100
     },
     buttonContainer: {
         position: 'absolute',

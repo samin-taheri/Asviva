@@ -23,6 +23,15 @@ const LearningPath: React.FC = ({  }) => {
           Weekly exercise time: <Text style={{color: primaryColor, fontWeight: '600', fontSize: 20}}>90 min</Text>
           </Text>  
         </View>
+        <View style={styles.dottedLine} />
+        <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          <View style={styles.hollowDot}>
+            <View style={styles.innerDot} />
+          </View>
+          <Text style={styles.stepText}>
+          Calories to burn: <Text style={{color: primaryColor, fontWeight: '600', fontSize: 20}}>450 kcal</Text>
+          </Text>  
+        </View>
       </View>
     </View>
   );

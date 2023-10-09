@@ -42,7 +42,7 @@ export default function PowerDetails({ navigation }: any) {
                   <View style={styles.iconContainer}>
                 <FontAwesome
                     name="flash"
-                    size={20}
+                    size={15}
                     color={textColor}
                 />
                   <Text style={styles.desc2}>{item.kcal}</Text>
@@ -70,7 +70,7 @@ export default function PowerDetails({ navigation }: any) {
               </View>
             </View>
           </ImageBackground>
-        <ScrollView showsVerticalScrollIndicator={false} style={{marginTop: 10, marginBottom: 30}}>
+        <ScrollView showsVerticalScrollIndicator={false} style={{marginTop: 10}}>
         {newData.map((item) => (
         <View key={item.id.toString()}>{renderItem({ item })}</View>
         ))}

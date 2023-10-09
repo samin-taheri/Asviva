@@ -25,7 +25,7 @@ const CouchingCourseComponent: React.FC<CouchingCourseComponentProps> = ({onPres
           { id: '3',user: '24 min', kcal: '134 kcal', title: 'Sweat Fat Burning', imageSource: require('../assets/couching-5.jpg') },
           { id: '4',user: '17 min', kcal: '89 kcal', title: 'HIT Training New', imageSource: require('../assets/couching-6.jpg') },
           { id: '5',user: '30 min', kcal: '170 kcal', title: 'Rhythmic Fat Riding', imageSource: require('../assets/couching-4.jpg') },
-          { id: '6',user: '22 min', kcal: '132 kcal', title: 'Cardşopulmonary Strength Training New', imageSource: require('../assets/couching-8.jpg') },
+          { id: '6',user: '22 min', kcal: '132 kcal', title: 'Cardiopulmonary Strength Training New', imageSource: require('../assets/couching-8.jpg') },
           { id: '7',user: '29 min', kcal: '185 kcal', title: 'Comprehensive Fat Burning', imageSource: require('../assets/couching-9.jpg') },
           { id: '8',user: '27 min', kcal: '186 kcal', title: 'Strength Training New', imageSource: require('../assets/couching-10.jpg') },
           { id: '9',user: '25 min', kcal: '129 kcal', title: 'Speed & Endurance Training', imageSource: require('../assets/couching-11.jpg') },

@@ -27,7 +27,7 @@ export default function SplashScreen({ navigation }: any) {
               resizeMode="cover"
             />
             <Text style={styles.title}>Welcome to AsVIVA</Text>
-            <Text style={styles.title3}>Track Your Fitness Health Data!</Text>
+            <Text style={styles.title2}>Track Your Fitness Health Data!</Text>
           </View>
           <View style={styles.slide}>
             <Image
@@ -100,18 +100,19 @@ const styles = StyleSheet.create({
     fontSize: 22,
     fontWeight: 'bold',
     textAlign: 'center',
-    paddingTop: 10,
+    paddingTop: 20,
   },
   title3: {
     fontSize: 18,
     fontWeight: '500',
     textAlign: 'center',
-    paddingTop: 10,
+    padding: 20
   },
   title2: {
-    fontSize: 19,
+    fontSize: 18,
     fontWeight: '500',
-    fontStyle: 'italic'
+    textAlign: 'center',
+    padding: 10
   },
   button: {
   },

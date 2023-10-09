@@ -20,11 +20,11 @@ const ChallengeComponent: React.FC<CouchingCourseComponentProps> = ({onPress }) 
   useEffect(() => {
     setTimeout(() => {
       const newData: DataItem[] = [
-        { id: '1',user: '0', loc: '5.58 km', title: 'Sightseeing road (Norway)', imageSource: require('../assets/challenge-1.jpg') },
-        { id: '2',user: '1', loc: '3.66 km', title: '(Xiamen) Skybike path', imageSource: require('../assets/challenge-3.jpg') },
-        { id: '3',user: '0', loc: '5.28 km', title: 'Otar River (Norway)', imageSource: require('../assets/challenge-4.jpg') },
-        { id: '4',user: '0', loc: '3.67 km', title: 'The Alps', imageSource: require('../assets/challenge-5.jpg') },
-        { id: '5',user: '0', loc: '3.00 km', title: '(Austria) Alpine garden', imageSource: require('../assets/challenge-6.jpg') },
+        { id: '1',user: '0', loc: '5.28 km', title: 'Otar River (Norway)', imageSource: require('../assets/challenge-4.jpg') },
+        { id: '2',user: '0', loc: '3.67 km', title: 'The Alps', imageSource: require('../assets/challenge-5.jpg') },
+        { id: '3',user: '0', loc: '3.00 km', title: '(Austria) Alpine garden', imageSource: require('../assets/challenge-6.jpg') },
+        { id: '4',user: '0', loc: '5.58 km', title: 'Sightseeing road (Norway)', imageSource: require('../assets/challenge-1.jpg') },
+        { id: '5',user: '1', loc: '3.66 km', title: '(Xiamen) Skybike path', imageSource: require('../assets/challenge-3.jpg') },
         { id: '6',user: '0', loc: '17.50 km', title: '(Three dimensional) space tunnel', imageSource: require('../assets/challenge-7.jpg') },
         { id: '7',user: '0', loc: '20.19 km', title: '(3D) Pink Blue tunnel', imageSource: require('../assets/challenge-8.jpg') },
         { id: '8',user: '0', loc: '3.35 km', title: '(3D) Love tunnel', imageSource: require('../assets/challenge-10.jpg') },

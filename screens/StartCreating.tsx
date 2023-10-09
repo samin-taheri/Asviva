@@ -101,6 +101,7 @@ export default function StartCreating({ navigation }: any) {
                 isLastQuestion && isSubmitButtonVisible && styles.redButton,
                 ]}
                 onPress={() => navigation.navigate('Goals')}
+                disabled={!isSubmitButtonVisible}
             >
                 <Text style={styles.buttonText}>{currentQuestion < questions.length - 1 ? 'Next' : 'Submit'}</Text>
             </TouchableOpacity>
