@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import CustomHeader from '../components/CustomHeader';
-import { backgroundColor, primaryColor } from '../global';
+import { backgroundColor, cardBackground2, primaryColor } from '../global';
 
 // Import the "Goals" page or component
 import Goals from './Goals'; // Update the import path as per your project structure
@@ -63,7 +63,7 @@ export default function StartCreating({ navigation }: any) {
             key={index}
             style={[
               styles.optionButton,
-              { backgroundColor: selectedOption === option ? '#f7e0e2' : backgroundColor },
+              { backgroundColor: selectedOption === option ?  'rgba(153, 92, 88, 0.2)' : backgroundColor },
             ]}
             onPress={() => handleOptionSelect(option)}
           >

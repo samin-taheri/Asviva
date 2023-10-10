@@ -83,8 +83,8 @@ const styles = StyleSheet.create({
   },
   icon: {
     backgroundColor: cardBackground,
-    width: 50,
-    height: 50,
+    width: 45,
+    height: 45,
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 50,

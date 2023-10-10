@@ -57,7 +57,7 @@ const CouchingCourseComponent: React.FC<CouchingCourseComponentProps> = ({onPres
                 <View style={[styles.iconContainer , {marginLeft: 10}]}>
                 <FontAwesome
                     name="flash"
-                    size={20}
+                    size={15}
                     color={textColor}
                     style={{paddingRight: 5}}
                 />
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 12,
-    backgroundColor: 'rgba(55,57,54,0.2)',
+    backgroundColor: 'rgba(255,255,255,0.7)',
     flexDirection: 'row',
     alignContent: 'center',
     marginTop: 5,

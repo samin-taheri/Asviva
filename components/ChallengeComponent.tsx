@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, StyleSheet, ImageBackground, SafeAreaView, ImageSourcePropType, Pressable, ActivityIndicator } from 'react-native';
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
+import { Ionicons } from "@expo/vector-icons";
 import { cardBackground2, primaryColor, textColor } from '../global';
 import { CouchingCourseComponentProps } from '../types/data';
 import Myloader from './MyLoader';
@@ -11,6 +12,7 @@ interface DataItem {
   title: string;
   user: string;
   loc: string;
+  time: string;
   imageSource: ImageSourcePropType;
 }
 
@@ -21,16 +23,16 @@ const ChallengeComponent: React.FC<CouchingCourseComponentProps> = ({onPress }) 
   useEffect(() => {
     setTimeout(() => {
       const newData: DataItem[] = [
-        { id: '1',user: '0', loc: '5.28 km', title: 'Otar River (Norway)', imageSource: require('../assets/challenge-4.jpg') },
-        { id: '2',user: '0', loc: '3.67 km', title: 'The Alps', imageSource: require('../assets/challenge-5.jpg') },
-        { id: '3',user: '0', loc: '3.00 km', title: '(Austria) Alpine garden', imageSource: require('../assets/challenge-6.jpg') },
-        { id: '4',user: '0', loc: '5.58 km', title: 'Sightseeing road (Norway)', imageSource: require('../assets/challenge-1.jpg') },
-        { id: '5',user: '1', loc: '3.66 km', title: '(Xiamen) Skybike path', imageSource: require('../assets/challenge-3.jpg') },
-        { id: '6',user: '0', loc: '17.50 km', title: '(Three dimensional) space tunnel', imageSource: require('../assets/challenge-7.jpg') },
-        { id: '7',user: '0', loc: '20.19 km', title: '(3D) Pink Blue tunnel', imageSource: require('../assets/challenge-8.jpg') },
-        { id: '8',user: '0', loc: '3.35 km', title: '(3D) Love tunnel', imageSource: require('../assets/challenge-10.jpg') },
-        { id: '9',user: '0', loc: '5.01 km', title: '(3D) Purple and Yellow tunnel', imageSource: require('../assets/challenge-11.jpg') },
-        { id: '10',user: '0', loc: '4.96 km', title: '(Three dimensional) time travel', imageSource: require('../assets/challenge-12.jpg') },
+        { id: '1',user: '0', time: '20 min', loc: '5.28 km', title: 'Otar River (Norway)', imageSource: require('../assets/challenge-4.jpg') },
+        { id: '2',user: '0', time: '20 min', loc: '3.67 km', title: 'The Alps', imageSource: require('../assets/challenge-5.jpg') },
+        { id: '3',user: '0', time: '20 min', loc: '3.00 km', title: '(Austria) Alpine garden', imageSource: require('../assets/challenge-6.jpg') },
+        { id: '4',user: '0', time: '20 min', loc: '5.58 km', title: 'Sightseeing road (Norway)', imageSource: require('../assets/challenge-1.jpg') },
+        { id: '5',user: '1', time: '20 min',loc: '3.66 km', title: '(Xiamen) Skybike path', imageSource: require('../assets/challenge-3.jpg') },
+        { id: '6',user: '0', time: '20 min', loc: '17.50 km', title: '(Three dimensional) space tunnel', imageSource: require('../assets/challenge-7.jpg') },
+        { id: '7',user: '0', time: '20 min', loc: '20.19 km', title: '(3D) Pink Blue tunnel', imageSource: require('../assets/challenge-8.jpg') },
+        { id: '8',user: '0', time: '20 min', loc: '3.35 km', title: '(3D) Love tunnel', imageSource: require('../assets/challenge-10.jpg') },
+        { id: '9',user: '0', time: '20 min', loc: '5.01 km', title: '(3D) Purple and Yellow tunnel', imageSource: require('../assets/challenge-11.jpg') },
+        { id: '10',user: '0', time: '20 min', loc: '4.96 km', title: '(Three dimensional) time travel', imageSource: require('../assets/challenge-12.jpg') },
       ];
       setData(newData);
       setLoading(false);
@@ -62,6 +64,14 @@ const ChallengeComponent: React.FC<CouchingCourseComponentProps> = ({onPress }) 
                     color={textColor}
                 />
                 <Text style={{fontSize: 11}}>{item.loc}</Text>
+                </View>
+                <View style={[styles.iconContainer , {marginLeft: 10}]}>
+                <Ionicons
+                    name="bicycle"
+                    size={20}
+                    color={textColor}
+                />
+                <Text style={{fontSize: 11, paddingLeft: 2}}>{item.time}</Text>
                 </View>
                 </View>
               </View>
@@ -152,7 +162,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: 12,
-    backgroundColor: 'rgba(55,57,54,0.2)',
+    backgroundColor: 'rgba(255,255,255,0.7)',
     flexDirection: 'row',
     alignContent: 'center',
     marginTop: 5,

@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, StyleSheet, Dimensions, Image } from 'react-native'; 
 import { ColoredCards2Props } from '../types/data';
+import { primaryColor } from '../global';
 
 const windowWidth = Dimensions.get('window').width; 
 
@@ -23,8 +24,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column', 
     alignItems: 'center',
     padding: 8,
-    borderRadius: 12,
-
+    borderRadius: 12
   },
   icon: {
     marginBottom: 10,
