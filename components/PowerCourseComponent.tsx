@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, StyleSheet, Image, SafeAreaView, ImageSourcePropType, Pressable, ActivityIndicator } from 'react-native';
-import { cardBackground2, primaryColor } from '../global';
+import { backgroundColor, cardBackground2, primaryColor } from '../global';
 import { CouchingCourseComponentProps } from '../types/data';
 import Myloader from './MyLoader';
 
@@ -9,6 +9,7 @@ interface DataItem {
   title: string;
   desc: string;
   imageSource: ImageSourcePropType;
+  background: string;
 }
 
 const PowerCourseComponent: React.FC<CouchingCourseComponentProps> = ({onPress }) => {
@@ -21,10 +22,10 @@ const PowerCourseComponent: React.FC<CouchingCourseComponentProps> = ({onPress }
     // Simulate a half-second delay before loading the data
     setTimeout(() => {
   const newData: DataItem[] = [
-    { id: '1',desc: 'Take your first step and master riding skills', title: 'Beginner', imageSource: require('../assets/power-bike.jpeg') },
-    { id: '2',desc: 'Burn more calories within limited time', title: 'Fat burning', imageSource: require('../assets/power-bike-5.jpeg') },
-    { id: '3',desc: 'Buil better mental and physical ability', title: 'Endurance',  imageSource: require('../assets/power-bike-3.jpeg') },
-    { id: '4',desc: 'More explosive power and better muscle lnes', title: 'Muscle Strength', imageSource: require('../assets/power-bike-4.jpeg') },
+    { id: '1', background: '#fff', desc: 'Take your first step and master riding skills', title: 'Beginner', imageSource: require('../assets/power-bike.png') },
+    { id: '2', background: '#fff', desc: 'Burn more calories within limited time', title: 'Fat burning', imageSource: require('../assets/power-bike-5.png') },
+    { id: '3', background: '#fff', desc: 'Buil better mental and physical ability', title: 'Endurance',  imageSource: require('../assets/power-bike-3.png') },
+    { id: '4', background: '#fff', desc: 'More explosive power and better muscle lnes', title: 'Muscle Strength', imageSource: require('../assets/power-bike-4.png') },
   ];
   setData(newData);
   setLoading(false);
@@ -35,7 +36,7 @@ const PowerCourseComponent: React.FC<CouchingCourseComponentProps> = ({onPress }
     return (
       <View style={styles.item}>
         <Pressable style={styles.cardContainer} onPress={() => onPress(item?.id)}>
-          <View style={[styles.cardContent, { backgroundColor: 'white' }]}>
+          <View style={[styles.cardContent, { backgroundColor: item.background }]}>
             <View style={{ flexDirection: 'column', flex: 1, paddingLeft: 8 }}>
               <Text style={styles.title}>{item.title}</Text>
               <Text style={styles.desc}>{item.desc}</Text>

@@ -143,7 +143,7 @@ function BottomTabNavigator() {
   return (
     <BottomTab.Navigator>
       <BottomTab.Screen
-        name="Home"
+        name=" "
         component={Home}
         options={({ navigation }) => ({
           tabBarIcon: ({ color, focused }) => (
@@ -151,22 +151,23 @@ function BottomTabNavigator() {
           ),
           tabBarIconStyle: {marginTop: 5},
           tabBarLabel: "",
-          headerLeft: () => (
-            <Pressable style={{ paddingLeft: 16 }} onPress={()=> navigation.navigate('Profile')}>
+          headerRight: () => (
+            <View style={{flexDirection: 'row', paddingRight: 20}}>
+             <Pressable style={{ top: 2, borderRadius: 8, backgroundColor: '#e8e8e8', padding: 6, flexDirection: 'row', height: 30 }} onPress={()=> navigation.navigate('ConnectDevice')}>
+             <Feather name="radio" size={18} color='#000'  style={{paddingRight: 4, bottom: 0.5}}/>
+             <Text style={{fontSize: 12, paddingRight: 3}}>Tap to Connect</Text>
+           </Pressable>
+           <Pressable style={{ paddingLeft: 10, bottom: 2 }} onPress={()=> navigation.navigate('Profile')}>
               <MaterialIcons name="account-circle" size={37} color="#dadada" />
             </Pressable>
+           </View>
           ),
-          headerRight: () => (
-            <Pressable style={{ right: 15, borderRadius: 8, backgroundColor: '#e8e8e8', padding: 6, flexDirection: 'row' }} onPress={()=> navigation.navigate('ConnectDevice')}>
-              <Feather name="radio" size={18} color='#000'  style={{paddingRight: 4, bottom: 0.5}}/>
-              <Text style={{fontSize: 12, paddingRight: 3}}>Tap to Connect</Text>
-            </Pressable>
-          ),
-          headerTitle: () => (
-            <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+          
+          headerLeft: () => (
+            <View style={{ flexDirection: 'row', alignItems: 'center', paddingLeft: 22 }}>
               <Image
                 source={require('../assets/logo.png')}
-                style={{ width: 85, height: 25 }}
+                style={{ width: 95, height: 25 }}
               />
             </View>
           ),

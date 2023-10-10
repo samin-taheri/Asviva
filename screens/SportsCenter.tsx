@@ -9,7 +9,7 @@ import ChallengeComponent from "../components/ChallengeComponent";
 
 export default function SportsCenter({ navigation }: any) {
   const [activeTab, setActiveTab] = useState<number>(0);
-  const tabs: string[] = ['Coaching', 'Challenge', 'Power'];
+  const tabs: string[] = ['Coaching', 'Challenge', 'Workout', 'Multiplier'];
 
   const handleTabPress = (index: number) => {
     setActiveTab(index);

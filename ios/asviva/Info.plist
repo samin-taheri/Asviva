@@ -11,6 +11,10 @@
     <key>CFBundleDisplayName</key>
     <string>asviva</string>
     <key>CFBundleExecutable</key>
+    <key>NSCameraUsageDescription</key>
+    <string>Access to the camera is required to take photos.</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Access to the photo gallery is required to select images.</string>
     <string>$(EXECUTABLE_NAME)</string>
     <key>CFBundleIdentifier</key>
     <string>$(PRODUCT_BUNDLE_IDENTIFIER)</string>

@@ -23,7 +23,7 @@ export default function LoadingScreen({ navigation }: any) {
       <>
       {isLoading ? 
        <View style={styles.contentContainer}>
-          <Myloader title='Searching...'/>
+          <Myloader title='Searching...' image={require('../assets/power-bike-5.png')}/>
      </View>
      :
      <View style={styles.contentContainer}>

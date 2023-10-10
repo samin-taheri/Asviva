@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { View, StyleSheet, ScrollView, Platform } from "react-native";
+import { View, StyleSheet, ScrollView, Image, Button } from "react-native";
 import { backgroundColor } from '../global';
 import CustomHeader from "../components/CustomHeader";
 import ProfileCard from "../components/ProfileCard";
 import BottomSelectorModal from "../components/BottomSelectorModal";
-import NumberSelectorModal from "../components/NumberSelectorComponentIOS";
 import TextInputComponent from "../components/TextInputComponent";
 import NumberSelectorComponentAndroid from "../components/NumberSelectorComponentAndroid";
 
@@ -63,6 +62,7 @@ export default function Profile({navigation}: any) {
         setselectedHeight(string);
         toggleModal5();
       };
+
     return(
         <View style={styles.container}>
         <CustomHeader title="Profile" onBack={() => navigation.goBack()}/>  

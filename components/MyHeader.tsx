@@ -99,14 +99,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logoImage: {
-    width: '45%', 
+    width: '55%', 
     height: '80%', 
     resizeMode: 'contain',
     position: 'absolute',
     top: -80
   },
   logoImage2: {
-    width: '45%', 
+    width: '55%', 
     height: '80%', 
     resizeMode: 'contain',
     position: 'absolute',

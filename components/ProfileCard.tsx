@@ -13,6 +13,7 @@ const ProfileCard: React.FC<ProfileCardProps> = ({
   selectedNickname
 }) => {
   return (
+    
     <Pressable style={styles.card} onPress={onPress}>
       <View style={styles.iconContainer}>
         <Image source={imageSource} style={styles.image} />

@@ -2,13 +2,18 @@ import React   from 'react'
 
 import { Text, SafeAreaView, Image, StyleSheet } from 'react-native';
 import { primaryColor } from '../global';
+import { ImageSourcePropType } from "react-native";
 
 export interface MyLoaderProps {
     title?: string;
+    image?: ImageSourcePropType;
 }
-const Myloader: React.FC<MyLoaderProps> = ({title}) => {
+const Myloader: React.FC<MyLoaderProps> = ({title, image}) => {
     return (
             <SafeAreaView style={styles.contentContainer}>
+              {image &&
+                <Image source={image} style={styles.image2} />
+              }
                 <Image source={require("../assets/loader.gif")} style={styles.image} />
                 <Text style={styles.text}>{title}</Text>
             </SafeAreaView>
@@ -32,6 +37,10 @@ const styles = StyleSheet.create({
     image: {
       width: 120,
       height: 120,
+    },
+    image2: {
+      width: 150,
+      height: 150,
     },
     buttonContainer: {
       position: 'absolute',
