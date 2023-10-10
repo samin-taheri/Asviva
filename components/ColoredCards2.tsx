@@ -9,7 +9,7 @@ const ColoredCards2: React.FC<ColoredCards2Props> = ({ title, description, image
 
   return (
         <View style={[styles.card, { backgroundColor: cardColor, width: cardWidth }]}>
-            <View style={{ width: 35, height: 35, alignItems: 'center', justifyContent: 'center', borderRadius: 20, marginRight: 10 }}>
+            <View style={{ width: 15, height: 15, alignItems: 'center', justifyContent: 'center', borderRadius: 20, marginRight: 10 }}>
             <Image source={imageSource} style={styles.image} /> 
             </View>
             <Text style={[styles.title, {color: color}]}>{title}</Text>
@@ -47,8 +47,8 @@ const styles = StyleSheet.create({
     paddingTop: 4
   },
   image: {
-    width: 160,
-    height: 160,
+    width: 120,
+    height: 120,
     resizeMode: 'cover',
     borderRadius: 12,
     marginTop: 20

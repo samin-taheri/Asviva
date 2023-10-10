@@ -32,6 +32,29 @@ const TotalWorkout2: React.FC = () => {
             cardColor={cardBackground2}
             imageSource={require('../assets/calories.png')}
             />
+            </View>
+            <View style={styles.container}>
+            <ColoredCards2  
+            title="Distance"
+            color={primaryColor}
+            description="0 meter"
+            cardColor={cardBackground2}
+            imageSource={require('../assets/map.png')}
+            />
+             <ColoredCards2  
+            title="Energy"
+            color={primaryColor}
+            description="0 watt"
+            cardColor={cardBackground2}
+            imageSource={require('../assets/energy-4.png')}
+            />
+             <ColoredCards2  
+            title="Pulse"
+            color={primaryColor}
+            description="0 bpm"
+            cardColor={cardBackground2}
+            imageSource={require('../assets/pulse.png')}
+            />
       </View>
       </View>
   );

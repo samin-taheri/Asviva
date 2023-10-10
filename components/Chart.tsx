@@ -33,7 +33,7 @@ const data = {
     color: (opacity = 0.2) => `rgba(0, 0, 0, ${opacity})`, 
   };
   
-const Chart: React.FC<ChartProps> = ({ onPress }) => {
+const Chart: React.FC<ChartProps> = ({ }) => {
   return (
     <View>
         <View style={{flexDirection:  'row', justifyContent: 'space-between'}}>

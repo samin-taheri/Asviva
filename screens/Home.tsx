@@ -4,6 +4,7 @@ import Chart from "../components/Chart";
 import { backgroundColor } from '../global';
 import BackgroundCard from "../components/backgroundCard";
 import TotalWorkout2 from "../components/TotalWorkout2";
+import WorkoutDetailsComponent from "../components/WorkoutDetailsComponent";
 
 export default function Home({navigation}: any) {
 
@@ -14,7 +15,8 @@ export default function Home({navigation}: any) {
             <BackgroundCard title="Find your coach"  backgroundImage={require('../assets/bg-3.jpg')} onPress={()=> navigation.navigate('SportsCenter')}/>
             <TotalWorkout2/>
             <WeaklyGoals onPress={()=> navigation.navigate("StartCreating")}/>
-            <Chart onPress={()=> navigation.navigate("Details")}/>
+            <WorkoutDetailsComponent onPress={()=> navigation.navigate("Details")} title="Record of Workouts"/>
+            <Chart/>
         </View>
         </ScrollView>
     )

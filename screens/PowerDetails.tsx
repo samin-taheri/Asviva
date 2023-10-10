@@ -4,6 +4,7 @@ import { useRoute } from '@react-navigation/native';
 import { Feather } from "@expo/vector-icons";
 import Graph from "../components/Graph";
 import { FontAwesome } from "@expo/vector-icons";
+import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { LinearGradient } from "expo-linear-gradient";
 
 interface DataItem {
@@ -12,19 +13,20 @@ interface DataItem {
   title2: string;
   desc: string;
   kcal: string;
+  time: string;
   imageSource: ImageSourcePropType;
 }
 
   
 const newData: DataItem[] = [
-  { id: '1', desc: 'Take your first step and master riding skills', title1: 'Beginner', title2: '15-minute Body Warm Up', kcal: '82 kcal',  imageSource: require('../assets/power-bike.png') },
-  { id: '2', desc: 'Burn more calories within limited time', title1: 'Fat burning',  title2: '20-minute Basic Training', kcal: '128 kcal', imageSource: require('../assets/power-bike.png') },
-  { id: '3', desc: 'Build better mental and physical ability', title1: 'Endurance', title2: '5-minute Basic Exercise for Starters', kcal: '32 kcal',  imageSource: require('../assets/power-bike.png') },
-  { id: '4', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '10-minute Tempo Adaptation', kcal: '62 kcal', imageSource: require('../assets/power-bike.png') },
-  { id: '5', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '15-minute Energy Awakening', kcal: '98 kcal', imageSource: require('../assets/power-bike.png') },
-  { id: '6', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '20-minute Rhythm Control',  kcal: '139 kcal', imageSource: require('../assets/power-bike.png') },
-  { id: '7', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '20-minute Aerobic Interval Experience', kcal: '137 kcal', imageSource: require('../assets/power-bike.png') },
-  { id: '8', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '10-minute Daily Health', kcal: '58 kcal', imageSource: require('../assets/power-bike.png') },
+  { id: '1',time: '60 min', desc: 'Take your first step and master riding skills', title1: 'Beginner', title2: '15-minute Body Warm Up', kcal: '82 kcal',  imageSource: require('../assets/power-bike.png') },
+  { id: '2',time: '55 min', desc: 'Burn more calories within limited time', title1: 'Fat burning',  title2: '20-minute Basic Training', kcal: '128 kcal', imageSource: require('../assets/power-bike.png') },
+  { id: '3',time: '50 min', desc: 'Build better mental and physical ability', title1: 'Endurance', title2: '5-minute Basic Exercise for Starters', kcal: '32 kcal',  imageSource: require('../assets/power-bike.png') },
+  { id: '4',time: '70 min', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '10-minute Tempo Adaptation', kcal: '62 kcal', imageSource: require('../assets/power-bike.png') },
+  { id: '5',time: '65 min', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '15-minute Energy Awakening', kcal: '98 kcal', imageSource: require('../assets/power-bike.png') },
+  { id: '6',time: '60 min', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '20-minute Rhythm Control',  kcal: '139 kcal', imageSource: require('../assets/power-bike.png') },
+  { id: '7',time: '50 min', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '20-minute Aerobic Interval Experience', kcal: '137 kcal', imageSource: require('../assets/power-bike.png') },
+  { id: '8',time: '55 min', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '10-minute Daily Health', kcal: '58 kcal', imageSource: require('../assets/power-bike.png') },
 ];
 
 export default function PowerDetails({ navigation }: any) {
@@ -40,6 +42,7 @@ export default function PowerDetails({ navigation }: any) {
               <View style={[styles.cardContent, { backgroundColor: 'white' }]}>
                 <View style={{ flexDirection: 'column', flex: 1, paddingLeft: 8 }}>
                   <Text style={styles.title3}>{item.title2}</Text>
+                  <View style={{flexDirection: 'row'}}>
                   <View style={styles.iconContainer}>
                 <FontAwesome
                     name="flash"
@@ -47,6 +50,15 @@ export default function PowerDetails({ navigation }: any) {
                     color={textColor}
                 />
                   <Text style={styles.desc2}>{item.kcal}</Text>
+                </View>
+                <View style={styles.iconContainer}>
+                <MaterialCommunityIcons
+                    name="bike"
+                    size={20}
+                    color={textColor}
+                />
+                  <Text style={styles.desc2}>{item.time}</Text>
+                </View>
                 </View>
                 </View>
                 <View style={{marginRight: -10}}>
@@ -60,12 +72,12 @@ export default function PowerDetails({ navigation }: any) {
 
     return (
       <View style={styles.container}>
- <LinearGradient
-          colors={['gray', "#fff"]}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }} 
-          style={styles.linearGradient}
-        >        
+      <LinearGradient
+                colors={['gray', "#fff"]}
+                start={{ x: 0, y: 0 }}
+                end={{ x: 1, y: 1 }} 
+                style={styles.linearGradient}
+              >        
         <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
               <Feather name="arrow-left" size={30} color="#fff" />
             </TouchableOpacity>
@@ -203,7 +215,7 @@ const styles = StyleSheet.create({
       alignContent: 'center',
       marginTop: 5,
       padding: 0,
-      width: 100,
+      width: 90,
       height: 30,
       marginLeft: 6
     },

@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
   },
   cardBackground: {
     width: '100%',
-    height: 200,
+    height: 180,
     resizeMode: 'cover',
     justifyContent: 'center',
   },
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     padding: 14,
     width: '93%',
     marginLeft: '3.5%',
-    marginTop: '30%',
+    marginTop: '27%',
     borderRadius: 12,
     flexDirection: 'row',
     justifyContent: 'space-between', 

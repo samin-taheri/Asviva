@@ -28,7 +28,6 @@ export interface LableProps {
 }
 export interface ChartProps {
     children?: ReactNode;
-    onPress?: () => void;
 }
 export interface GraphProps {
     children?: ReactNode;
@@ -75,6 +74,10 @@ export interface ProfileCardProps {
     selectedDate?: string; 
     selectedNickname?: string;
     imageSource: ImageSourcePropType
+}
+export interface WorkoutDetailsProps {
+    title: string;
+    onPress: () => void;
 }
 export interface BackGroundCardProps {
     title: string;

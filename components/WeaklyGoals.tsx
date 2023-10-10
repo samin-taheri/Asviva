@@ -27,8 +27,6 @@ const styles= StyleSheet.create({
         borderRadius: 10,
         borderColor: "rgba(0,0,0,0.1)",
         borderWidth: 1,
-        padding: 10,
-        marginBottom: 10,
         backgroundColor: '#fff'
     },
     name: {
@@ -46,8 +44,8 @@ const styles= StyleSheet.create({
         flex: 1,
       },
       image: {
-        width: 130,
-        height: 120,
+        width: 110,
+        height: 109,
         borderRadius: 8,
         marginLeft: 16,
       },
