@@ -35,6 +35,8 @@ export interface GraphProps {
     title?: string;
     width: number;
     height: number;
+    barPercentage: number;
+    color?: string;
 }
 export interface TotalProps {
     onPress?: () => void;
@@ -92,7 +94,7 @@ export interface DetailsSectionProps {
     title: string;
     iconName?: string;
     onPress: () => void;
-    style?: ViewStyle;
+    style?: ViewStyle
     iconColor?: string;
     imageSource: ImageSourcePropType
 }

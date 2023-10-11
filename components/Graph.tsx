@@ -1,36 +1,11 @@
 import React from "react";
 import { View, StyleSheet, Text } from "react-native";
-import {LineChart} from "react-native-chart-kit";
+import {BarChart} from "react-native-chart-kit";
 import Card from "./Card";
 import { tableBackgroundColor, textColor } from '../global';
 import { GraphProps } from "../types/data";
-
-const data = {
-    labels: ["0", "09.21", "09.22", "09.23", "09.24", "Today"],
-    datasets: [
-      {
-        data: [
-            Math.random() * 100,
-            Math.random() * 100,
-            Math.random() * 100,
-            Math.random() * 100,
-            Math.random() * 100,
-            Math.random() * 100
-          ],
-        color: (opacity = 1) => textColor, 
-        strokeWidth: 1
-      }
-    ],
-  };
-
-  const chartConfig = {
-    backgroundGradientFrom: 'white', 
-    backgroundGradientTo: 'white',
-    decimalPlaces: 0, 
-    color: (opacity = 0.2) => `rgba(0, 0, 0, ${opacity})`, 
-  };
   
-const Graph: React.FC<GraphProps> = ({ onPress, title, width, height }) => {
+const Graph: React.FC<GraphProps> = ({ onPress, title, width, height, barPercentage, color }) => {
   return (
     <View style={{padding: 8}}>
         <Card>
@@ -40,13 +15,37 @@ const Graph: React.FC<GraphProps> = ({ onPress, title, width, height }) => {
                 <Text style={styles.introTitle}>{title}</Text>
               </View>
               : null }
-                <LineChart
-                style={{padding: 0, marginLeft: -10}}
-                data={data}
+             
+              <BarChart
+                data={{
+                  labels: ["0", "09.21", "09.22", "09.23", "09.24", "Today"],
+                  datasets: [
+                    {
+                      data: [
+                          Math.random() * 100,
+                          Math.random() * 100,
+                          Math.random() * 100,
+                          Math.random() * 100,
+                          Math.random() * 100,
+                          Math.random() * 100
+                        ],
+                      strokeWidth: 1
+                    }
+                  ],
+                }}
                 width={width}
                 height={height}
-                chartConfig={chartConfig}
-                />
+                yAxisLabel=""
+                yAxisSuffix=""
+                chartConfig={{
+                  backgroundGradientFrom: 'white', 
+                  backgroundGradientTo: 'white',
+                  decimalPlaces: 0, 
+                  color: (opacity = 0.1) => color || textColor,
+                  barPercentage: barPercentage
+                }}
+                style={{left: -2}}
+              />
                 </View>
             </Card>
     </View>

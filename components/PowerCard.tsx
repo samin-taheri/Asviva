@@ -18,7 +18,7 @@ const PowerCard: React.FC<SimpleCardProps> = ({
         <LinearGradient
           colors={[backgroundColor, "#fff"]}
           start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }} 
+          end={{ x: 0, y: 1 }} 
           style={styles.linearGradient}
         >
       <View style={styles.content}>

@@ -5,14 +5,14 @@ import PowerCard from "./PowerCard";
 import { CochingCardProps } from "../types/data";
 
 const cardData = [
-  { id: '1', backgroundColor: '#7a5a7c', desc: 'Take your first step and master riding skills', title1: 'Beginner', title2: '15-minute Body Warm Up', kcal: '82 kcal',  imageSource: require('../assets/power-bike.png') },
-  { id: '2', backgroundColor: '#5a5a7c', desc: 'Burn more calories within limited time', title1: 'Fat burning',  title2: '20-minute Basic Training', kcal: '128 kcal', imageSource: require('../assets/power-bike.png') },
-  { id: '3', backgroundColor: '#5a7a7c', desc: 'Build better mental and physical ability', title1: 'Endurance', title2: '5-minute Basic Exercise for Starters', kcal: '32 kcal',  imageSource: require('../assets/power-bike.png') },
+  { id: '1', backgroundColor: '#7e4f81', desc: 'Take your first step and master riding skills', title1: 'Beginner', title2: '15-minute Body Warm Up', kcal: '82 kcal',  imageSource: require('../assets/power-bike.png') },
+  { id: '2', backgroundColor: '#534f81', desc: 'Burn more calories within limited time', title1: 'Fat burning',  title2: '20-minute Basic Training', kcal: '128 kcal', imageSource: require('../assets/power-bike.png') },
+  { id: '3', backgroundColor: '#72814f', desc: 'Build better mental and physical ability', title1: 'Endurance', title2: '5-minute Basic Exercise for Starters', kcal: '32 kcal',  imageSource: require('../assets/power-bike.png') },
   { id: '4', backgroundColor: '#5a7c5f', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '10-minute Tempo Adaptation', kcal: '62 kcal', imageSource: require('../assets/power-bike.png') },
   { id: '5', backgroundColor: '#7c765a', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '15-minute Energy Awakening', kcal: '98 kcal', imageSource: require('../assets/power-bike.png') },
   { id: '6', backgroundColor: '#7c6b5a', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '20-minute Rhythm Control',  kcal: '139 kcal', imageSource: require('../assets/power-bike.png') },
-  { id: '7', backgroundColor: '#7c5d5a', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '20-minute Aerobic Interval Experience', kcal: '137 kcal', imageSource: require('../assets/power-bike.png') },
-  { id: '8', backgroundColor: '#7c5a72', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '10-minute Daily Health', kcal: '58 kcal', imageSource: require('../assets/power-bike.png') },
+  { id: '7', backgroundColor: '#81624f', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '20-minute Aerobic Interval Experience', kcal: '137 kcal', imageSource: require('../assets/power-bike.png') },
+  { id: '8', backgroundColor: '#814f6a', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '10-minute Daily Health', kcal: '58 kcal', imageSource: require('../assets/power-bike.png') },
 ];
 
 const HorizontalPowerCard: React.FC<CochingCardProps> = ({onPress}) => {

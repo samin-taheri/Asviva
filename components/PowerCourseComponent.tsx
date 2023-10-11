@@ -22,10 +22,10 @@ const PowerCourseComponent: React.FC<CouchingCourseComponentProps> = ({onPress }
     // Simulate a half-second delay before loading the data
     setTimeout(() => {
   const newData: DataItem[] = [
-    { id: '1', background: '#eceefe', desc: 'Take your first step and master riding skills', title: 'Beginner', imageSource: require('../assets/power-bike.png') },
-    { id: '2', background: '#feecf4', desc: 'Burn more calories within limited time', title: 'Fat burning', imageSource: require('../assets/power-bike-5.png') },
-    { id: '3', background: '#ecfef5', desc: 'Buil better mental and physical ability', title: 'Endurance',  imageSource: require('../assets/power-bike-3.png') },
-    { id: '4', background: '#fefbec', desc: 'More explosive power and better muscle lnes', title: 'Muscle Strength', imageSource: require('../assets/power-bike-4.png') },
+    { id: '1', background: '#f0e5ff', desc: 'Take your first step and master riding skills', title: 'Beginner', imageSource: require('../assets/power-bike.png') },
+    { id: '2', background: '#ffe5f8', desc: 'Burn more calories within limited time', title: 'Fat burning', imageSource: require('../assets/power-bike-5.png') },
+    { id: '3', background: '#ecffe5', desc: 'Buil better mental and physical ability', title: 'Endurance',  imageSource: require('../assets/power-bike-3.png') },
+    { id: '4', background: '#ffffe5', desc: 'More explosive power and better muscle lnes', title: 'Muscle Strength', imageSource: require('../assets/power-bike-4.png') },
   ];
   setData(newData);
   setLoading(false);
@@ -91,7 +91,7 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     flexDirection: 'row',
     alignItems: 'center',
-    borderWidth: 1.2,
+    borderWidth: 1,
     borderColor: 'black'
   },
   cardImage: {

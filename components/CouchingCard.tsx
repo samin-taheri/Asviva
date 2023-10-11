@@ -61,11 +61,11 @@ const styles = StyleSheet.create({
   iconContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 12,
-    backgroundColor: 'rgba(55,57,54,0.2)',
+    borderRadius: 20,
+    backgroundColor: 'rgba(55,57,54,0.1)',
     flexDirection: 'row',
     alignContent: 'center',
-    padding: 5
+    padding: 6
   },
   title: {
     fontSize: 14,

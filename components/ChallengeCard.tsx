@@ -20,7 +20,7 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({
           <View style={styles.textContainer}>
             <Text style={styles.title}>{title}</Text>
           </View>
-          <View style={{ flexDirection: 'row', justifyContent: "space-between" }}>
+          <View style={{ flexDirection: 'row', justifyContent: "space-between", bottom: 5 }}>
             <View style={styles.iconContainer}>
               <MaterialCommunityIcons
                 name="account-supervisor"
@@ -68,11 +68,11 @@ const styles = StyleSheet.create({
   iconContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 12,
+    borderRadius: 20,
     backgroundColor: 'rgba(255, 255, 255, 0.4)',
     flexDirection: 'row',
     alignContent: 'center',
-    padding: 4
+    padding: 6
   },
   title: {
     fontSize: 16,

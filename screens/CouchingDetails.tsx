@@ -80,7 +80,7 @@ export default function CouchingDetails({navigation}: any) {
             </View>
            </Card>
            </View>
-           <Graph title={'Course Info'} width={340} height={170}/>
+           <Graph title={'Course Info'} width={340} height={170} barPercentage={0.6}/>
           <BoxWithItems />
           </ScrollView>
         </View>

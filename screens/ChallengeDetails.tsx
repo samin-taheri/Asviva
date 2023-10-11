@@ -92,8 +92,8 @@ export default function ChallengeDetails({navigation}: any) {
             </View>
            </Card>
            </View>
-           <View style={{marginBottom: 30}}>
-           <Graph title={'Route Info'} width={340} height={170}/>
+           <View style={{marginBottom: 30,}}>
+           <Graph title={'Route Info'} width={340} height={170} barPercentage={0.6}/>
            </View>
           </ScrollView>
           </ImageBackground>
