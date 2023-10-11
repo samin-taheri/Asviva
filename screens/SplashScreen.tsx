@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Image, TouchableOpacity, Animated, ViewStyle, E
 import Swiper from 'react-native-swiper';
 import { primaryColor } from '../global';
 import { Feather } from "@expo/vector-icons";
+import SplashIcons from '../components/SplashIcons';
 
 export default function SplashScreen ({ navigation }: any){
   const zoomAnim = useRef(new Animated.Value(0)).current;
@@ -41,34 +42,35 @@ export default function SplashScreen ({ navigation }: any){
           source={require('../assets/logo.png')}
         />
         </Animated.View>
-           <View style={{paddingTop: '140%'}}>
-           <Text style={styles.title}>Welcome to AsVIVA</Text>
+           <View style={{paddingTop: '135%'}}>
+           <SplashIcons/>
+          <Text style={styles.title}>Welcome to AsVIVA</Text>
             <Text style={styles.title2}>Track Your Fitness Health Data!</Text>
            </View>
           </View>
           <View style={styles.slide}>
             <Image
-              source={require('../assets/splash-2.jpg')}
-              style={styles.image}
+              source={require('../assets/splash-15.jpeg')}
+              style={styles.image3}
               resizeMode="cover"
             />
-            {/* <Text style={styles.title3}>Quality, service and expert advice. This is fitness shopping made in Germany! </Text> */}
+            <Text style={styles.title3}>Buy fitness equipment at AsVIVA. Exercise bikes, cross trainers, treadmills, indoor bikes and much more...</Text>
           </View>
           <View style={styles.slide}>
             <Image
-              source={require('../assets/splash-3.jpg')}
-              style={styles.image}
+              source={require('../assets/splash-17.jpeg')}
+              style={styles.image3}
               resizeMode="cover"
             />
-            {/* <Text style={styles.title3}>Buy fitness equipment at AsVIVA. Exercise bikes, cross trainers, treadmills, indoor bikes and much more...</Text> */}
+            <Text style={styles.title3}>Quality, service and expert advice. This is fitness shopping made in Germany! </Text>
           </View>
           <View style={styles.slide}>
             <Image
-              source={require('../assets/splash-4.jpg')}
-              style={styles.image}
+              source={require('../assets/splash-19.jpeg')}
+              style={styles.image3}
               resizeMode="cover"
             />
-            {/* <Text style={styles.title3}>Buy fitness equipment at AsVIVA. Exercise bikes, cross trainers, treadmills, indoor bikes and much more...</Text> */}
+            <Text style={styles.title3}>Fitness with Asviva. Our fitness equipment for your training at home! </Text>
           </View>
         </Swiper>
         <TouchableOpacity style={styles.buttonContainer} onPress={navigateToHome}>
@@ -89,21 +91,21 @@ const styles = StyleSheet.create({
     width: 300, 
     height: 300,
     borderRadius: 200,
-    backgroundColor: 'rgba(202, 202, 202, 0.2)', 
+    backgroundColor: 'rgba(213, 213, 213, 0.2)', 
   },
   innerCircle: {
     position: 'absolute',
     width: 250, 
     height: 250, 
     borderRadius: 200, 
-    backgroundColor: 'rgba(202, 202, 202, 0.3)',
+    backgroundColor: 'rgba(213, 213, 213, 0.3)',
   },
   innerCircle2: {
     position: 'absolute',
     width: 200, 
     height: 200, 
     borderRadius: 200, 
-    backgroundColor: 'rgba(202, 202, 202, 0.4)',
+    backgroundColor: 'rgba(213, 213, 213, 0.4)',
   },
   logoContainer: {
     width: '65%', 
@@ -112,7 +114,6 @@ const styles = StyleSheet.create({
     position: 'absolute',
     justifyContent: 'center',
     alignItems: 'center',
-    
   },
   logoImage: {
     width: '60%', 
@@ -126,7 +127,7 @@ const styles = StyleSheet.create({
   buttonContainer: {
     backgroundColor: primaryColor,
     width:  90,
-    height: 40,
+    height: 35,
     borderRadius: 8,
     alignItems: 'center',
     justifyContent: 'center',
@@ -150,6 +151,14 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
   },
+  image2: {
+    width: '100%',
+    height: '40%',
+  },
+  image3: {
+    width: '100%',
+    height: '60%',
+  },
   text: {
     color: '#fff',
     fontSize: 30,
@@ -164,12 +173,12 @@ const styles = StyleSheet.create({
   },
   title3: {
     fontSize: 18,
-    fontWeight: '500',
+    fontWeight: '600',
     textAlign: 'center',
     padding: 20
   },
   title2: {
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: '500',
     textAlign: 'center',
     padding: 10
