@@ -1,24 +1,18 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, ImageSourcePropType, Image, ViewStyle } from 'react-native';
-
-interface BrandCardProps {
-  imageSource: ImageSourcePropType;
-  style?: ViewStyle;
-}
+import { View, StyleSheet, Image } from 'react-native';
+import { BrandCardProps } from '../types/data';
 
 const BrandCard: React.FC<BrandCardProps> = ({ imageSource, style}) => {
   return (
-    <View>
       <View style={[styles.cardContainer, style]}>
         <Image source={imageSource} style={styles.image} />
       </View>
-    </View>
   );
 };
 
 const styles = StyleSheet.create({
   cardContainer: {
-    width: '100%',
+    width: '45%',
     backgroundColor: 'white',
     padding: 16,
     margin: 8,

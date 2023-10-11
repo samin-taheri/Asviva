@@ -1,45 +1,18 @@
 import React from "react";
-import { View, StyleSheet, ScrollView, Pressable, Text, Platform } from "react-native";
-import { backgroundColor, cardBackground } from '../global';
+import { View, StyleSheet, ScrollView } from "react-native";
+import { backgroundColor } from '../global';
 import CustomHeader from "../components/CustomHeader";
 import { primaryColor } from '../global';
-import DeviceCard from "../components/DeviceCard";
 import Lable from "../components/Lable";
 import BrandCard from "../components/BrandCard";
-import { Feather } from "@expo/vector-icons";
 
-export default function ConnectDevice({ navigation }: any) {
+export default function BrandScreen({ navigation }: any) {
 
     return (
         <ScrollView style={styles.container}>
-            <CustomHeader title="Connect the Devices" onBack={() => navigation.navigate('Root')} />
+            <CustomHeader title="Brands" onBack={() => navigation.navigate('Root')} />
             <View style={styles.contentContainer}>
-            <Lable title="Devices" />
-            <DeviceCard
-                title="Cycling"
-                cardColor={cardBackground}
-                imageSource={require('../assets/exercise.png')}
-                onPress={() =>navigation.navigate('Loading')}
-            />
-            <DeviceCard
-                title="Apple Watch"
-                cardColor={cardBackground}
-                imageSource={require('../assets/connect-4.png')}
-                onPress={() =>navigation.navigate('Loading')}
-            />
-            <DeviceCard
-                title="Standard Heart Rate Device"
-                cardColor={cardBackground}
-                imageSource={require('../assets/connect-5.png')}
-                onPress={() =>navigation.navigate('Loading')}
-            />
-            <View style={{flexDirection: 'row', justifyContent: 'space-between', paddingTop: 10}}>
-            <Lable title="Brands" />
-             <Pressable style={{flexDirection: 'row', paddingTop: 10, paddingRight: 15}} onPress={()=> navigation.navigate('Brands')}>
-                <Text style={{paddingTop: 3, color: '#636363', fontSize: 14}}>View more</Text>
-                <Feather name="chevron-right" size={16} color="#636363" style={Platform.OS === 'ios' ? {paddingTop: 4}:{paddingTop: 5}}/>
-            </Pressable>
-            </View>
+            <Lable title="The brand of your equipment" />
             <View style={{flexDirection: 'row'}}>
             <BrandCard imageSource={{uri: 'https://static.kinomap.com/manufacturer/asviva.png'}}/>
             <BrandCard imageSource={{uri: 'https://static.kinomap.com/manufacturer/adidas.png'}}/>

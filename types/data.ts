@@ -229,3 +229,7 @@ export interface MyModalProps {
     selectedOption: string | null;
     onSelect: (option: string) => void;
 }
+export interface BrandCardProps {
+    imageSource: ImageSourcePropType;
+    style?: ViewStyle;
+}

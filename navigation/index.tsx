@@ -29,6 +29,7 @@ import Setting from "../screens/Setting";
 import HelpAndFeedback from "../screens/HelpAndFeedback";
 import MyGame from "../screens/MyGame";
 import Goals from "../screens/Goals";
+import BrandScreen from "../screens/BrandScreen";
 
 export default function Navigation() {
   return (
@@ -133,6 +134,11 @@ function RootNavigator() {
        <Stack.Screen
         name="Goals"
         component={Goals}
+        options={{ headerShown: false}}
+      />
+       <Stack.Screen
+        name="Brands"
+        component={BrandScreen}
         options={{ headerShown: false}}
       />
     </Stack.Navigator>
