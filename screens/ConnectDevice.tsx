@@ -10,10 +10,19 @@ import { Feather } from "@expo/vector-icons";
 
 export default function ConnectDevice({ navigation }: any) {
 
+    const brands = [
+        { name: 'asviva', uri: 'https://static.kinomap.com/manufacturer/asviva.png' },
+        { name: 'adidas', uri: 'https://static.kinomap.com/manufacturer/adidas.png' },
+        { name: 'alinco', uri: 'https://static.kinomap.com/manufacturer/alinco.png' },
+        { name: 'abilica', uri: 'https://static.kinomap.com/manufacturer/abilica.png' },
+        { name: 'anyrun', uri: 'https://static.kinomap.com/manufacturer/anyrun.png' },
+        { name: 'attacus', uri: 'https://static.kinomap.com/manufacturer/attacus.png' }
+      ];
+      
     return (
-        <ScrollView style={styles.container}>
+        <View style={styles.container}>
             <CustomHeader title="Connect the Devices" onBack={() => navigation.navigate('Root')} />
-            <View style={styles.contentContainer}>
+            <ScrollView showsVerticalScrollIndicator={false} style={styles.contentContainer}>
             <Lable title="Devices" />
             <DeviceCard
                 title="Cycling"
@@ -40,20 +49,13 @@ export default function ConnectDevice({ navigation }: any) {
                 <Feather name="chevron-right" size={16} color="#636363" style={Platform.OS === 'ios' ? {paddingTop: 4}:{paddingTop: 5}}/>
             </Pressable>
             </View>
-            <View style={{flexDirection: 'row'}}>
-            <BrandCard imageSource={{uri: 'https://static.kinomap.com/manufacturer/asviva.png'}}/>
-            <BrandCard imageSource={{uri: 'https://static.kinomap.com/manufacturer/adidas.png'}}/>
+            <View style={styles.brandsContainer}>
+            {brands.map((brand, index) => (
+                <BrandCard key={index} imageSource={{ uri: brand.uri }} />
+            ))}
             </View>
-            <View style={{flexDirection: 'row'}}>
-            <BrandCard imageSource={{uri: 'https://static.kinomap.com/manufacturer/alinco.png'}}/>
-            <BrandCard imageSource={{uri: 'https://static.kinomap.com/manufacturer/abilica.png'}}/>
-            </View>
-            <View style={{flexDirection: 'row'}}>
-            <BrandCard imageSource={{uri: 'https://static.kinomap.com/manufacturer/anyrun.png'}}/>
-            <BrandCard imageSource={{uri: 'https://static.kinomap.com/manufacturer/attacus.png'}}/>
-            </View>
-            </View>
-        </ScrollView>
+            </ScrollView>
+        </View>
     )
 }
 const styles = StyleSheet.create({
@@ -65,6 +67,11 @@ const styles = StyleSheet.create({
         flex: 1,
         padding: 8
     },
+    brandsContainer: {
+        flexDirection: "row",
+        flexWrap: "wrap",
+        justifyContent: "space-between",
+      },
     text: {
         fontSize: 18,
         fontWeight: '600',

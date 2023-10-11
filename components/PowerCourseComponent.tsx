@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, FlatList, StyleSheet, Image, SafeAreaView, ImageSourcePropType, Pressable, ActivityIndicator } from 'react-native';
-import { backgroundColor, cardBackground2, primaryColor } from '../global';
+import { cardBackground2, primaryColor } from '../global';
 import { CouchingCourseComponentProps } from '../types/data';
 import Myloader from './MyLoader';
 
@@ -22,10 +22,10 @@ const PowerCourseComponent: React.FC<CouchingCourseComponentProps> = ({onPress }
     // Simulate a half-second delay before loading the data
     setTimeout(() => {
   const newData: DataItem[] = [
-    { id: '1', background: '#fff', desc: 'Take your first step and master riding skills', title: 'Beginner', imageSource: require('../assets/power-bike.png') },
-    { id: '2', background: '#fff', desc: 'Burn more calories within limited time', title: 'Fat burning', imageSource: require('../assets/power-bike-5.png') },
-    { id: '3', background: '#fff', desc: 'Buil better mental and physical ability', title: 'Endurance',  imageSource: require('../assets/power-bike-3.png') },
-    { id: '4', background: '#fff', desc: 'More explosive power and better muscle lnes', title: 'Muscle Strength', imageSource: require('../assets/power-bike-4.png') },
+    { id: '1', background: '#eceefe', desc: 'Take your first step and master riding skills', title: 'Beginner', imageSource: require('../assets/power-bike.png') },
+    { id: '2', background: '#feecf4', desc: 'Burn more calories within limited time', title: 'Fat burning', imageSource: require('../assets/power-bike-5.png') },
+    { id: '3', background: '#ecfef5', desc: 'Buil better mental and physical ability', title: 'Endurance',  imageSource: require('../assets/power-bike-3.png') },
+    { id: '4', background: '#fefbec', desc: 'More explosive power and better muscle lnes', title: 'Muscle Strength', imageSource: require('../assets/power-bike-4.png') },
   ];
   setData(newData);
   setLoading(false);
@@ -91,6 +91,8 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     flexDirection: 'row',
     alignItems: 'center',
+    borderWidth: 1.2,
+    borderColor: 'black'
   },
   cardImage: {
     width: 100,
