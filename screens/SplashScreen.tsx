@@ -153,7 +153,7 @@ const styles = StyleSheet.create({
   },
   image2: {
     width: '100%',
-    height: '40%',
+    height: '20%',
   },
   image3: {
     width: '100%',

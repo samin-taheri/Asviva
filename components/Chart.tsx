@@ -6,7 +6,6 @@ import Card from "./Card";
 import StatsCard from "./StatsCard";
 import { primaryColor } from '../global';
 import Lable from "./Lable";
-import { Feather } from "@expo/vector-icons";
 
 const data = {
     labels: ["0", "10.4", "10.5", "10.6", "10.7", "10.8", "10.9", "Today"],

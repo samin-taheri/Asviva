@@ -1,16 +1,20 @@
 import React from "react";
-import { View, StyleSheet } from "react-native";
+import { View, StyleSheet, ScrollView, Pressable, Text, Platform } from "react-native";
 import { backgroundColor, cardBackground } from '../global';
 import CustomHeader from "../components/CustomHeader";
 import { primaryColor } from '../global';
 import DeviceCard from "../components/DeviceCard";
+import Lable from "../components/Lable";
+import BrandCard from "../components/BrandCard";
+import { Feather } from "@expo/vector-icons";
 
 export default function ConnectDevice({ navigation }: any) {
 
     return (
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             <CustomHeader title="Connect the Devices" onBack={() => navigation.navigate('Root')} />
             <View style={styles.contentContainer}>
+            <Lable title="Devices" />
             <DeviceCard
                 title="Cycling"
                 cardColor={cardBackground}
@@ -29,8 +33,27 @@ export default function ConnectDevice({ navigation }: any) {
                 imageSource={require('../assets/connect-5.png')}
                 onPress={() =>navigation.navigate('Loading')}
             />
+            <View style={{flexDirection: 'row', justifyContent: 'space-between', paddingTop: 10}}>
+            <Lable title="Brands" />
+             <Pressable style={{flexDirection: 'row', paddingTop: 10, paddingRight: 15}}>
+                <Text style={{paddingTop: 3, color: '#636363', fontSize: 14}}>View more</Text>
+                <Feather name="chevron-right" size={16} color="#636363" style={Platform.OS === 'ios' ? {paddingTop: 4}:{paddingTop: 5}}/>
+            </Pressable>
             </View>
-        </View>
+            <View style={{flexDirection: 'row'}}>
+            <BrandCard imageSource={require('../assets/asviva.png')}/>
+            <BrandCard imageSource={require('../assets/adidas.png')} style={{marginLeft: 20}}/>
+            </View>
+            <View style={{flexDirection: 'row'}}>
+            <BrandCard imageSource={require('../assets/abilica.png')}/>
+            <BrandCard imageSource={require('../assets/alinco.png')} style={{marginLeft: 20}}/>
+            </View>
+            <View style={{flexDirection: 'row'}}>
+            <BrandCard imageSource={require('../assets/anyrun.png')}/>
+            <BrandCard imageSource={require('../assets/attacus.png')} style={{marginLeft: 20}}/>
+            </View>
+            </View>
+        </ScrollView>
     )
 }
 const styles = StyleSheet.create({

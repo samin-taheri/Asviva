@@ -1,7 +1,6 @@
 import React from 'react';
 import { View, Text, StyleSheet, Dimensions, Image } from 'react-native'; 
 import { ColoredCards2Props } from '../types/data';
-import { primaryColor } from '../global';
 
 const windowWidth = Dimensions.get('window').width; 
 
@@ -18,41 +17,41 @@ const ColoredCards2: React.FC<ColoredCards2Props> = ({ title, description, image
     </View>
   );
 };
-
-const styles = StyleSheet.create({
-  card: {
-    flexDirection: 'column', 
-    alignItems: 'center',
-    padding: 8,
-    borderRadius: 12,
-  },
-  icon: {
-    marginBottom: 10,
-  },
-  gradient: {
-    flex: 1,
-    width: '100%', 
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  title: {
-    fontSize: 13,
-    fontWeight: '600',
-    paddingTop: 30,
-    textAlign: 'center'
-  },
-  description: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    paddingTop: 4
-  },
-  image: {
-    width: 120,
-    height: 120,
-    resizeMode: 'cover',
-    borderRadius: 12,
-    marginTop: 20
-  },
-});
-
-export default ColoredCards2;
+  const styles = StyleSheet.create({
+    card: {
+      flexDirection: 'column', 
+      alignItems: 'center',
+      padding: 8,
+      borderRadius: 12,
+    },
+    icon: {
+      marginBottom: 10,
+    },
+    gradient: {
+      flex: 1,
+      width: '100%', 
+      justifyContent: 'center',
+      alignItems: 'center',
+    },
+    title: {
+      fontSize: 13,
+      fontWeight: '600',
+      paddingTop: 30,
+      textAlign: 'center'
+    },
+    description: {
+      fontSize: 16,
+      fontWeight: 'bold',
+      paddingTop: 4
+    },
+    image: {
+      width: 120,
+      height: 120,
+      resizeMode: 'cover',
+      borderRadius: 12,
+      marginTop: 20
+    },
+  });
+  
+  export default ColoredCards2;
+  
