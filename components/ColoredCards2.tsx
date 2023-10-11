@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     flexDirection: 'column', 
     alignItems: 'center',
     padding: 8,
-    borderRadius: 12
+    borderRadius: 12,
   },
   icon: {
     marginBottom: 10,

@@ -13,7 +13,9 @@ const MyHeader: React.FC<MyHeaderProps> = (props) => {
       <View style={styles.topShadow}>
         {props.showLogo
           ? (
-            <Animatable.View style={styles.logoContainer}>
+            <Animatable.View style={styles.logoContainer} 
+            animation="fadeInDown"
+            iterationCount={1} >
                 <Image
                   style={styles.logoImage2}
                   source={require('../assets/logo.png')}
@@ -35,7 +37,9 @@ const MyHeader: React.FC<MyHeaderProps> = (props) => {
                 </View>
               )
           )}
-       <Animatable.View style={styles.logoContainer}>
+       <Animatable.View style={styles.logoContainer} 
+       animation="fadeInDown"
+        iterationCount={1} >
         <Image
           style={styles.logoImage}
           source={require('../assets/logo.png')}

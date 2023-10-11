@@ -3,7 +3,7 @@ import { View,Text, StyleSheet, Image, Pressable } from "react-native";
 import Lable from "./Lable";
 import Card from "./Card";
 import { WeaklyGoalsProps } from "../types/data";
-import { primaryColor } from '../global';
+import { buttonBackground, primaryColor } from '../global';
 
 const WeaklyGoals: React.FC<WeaklyGoalsProps> = ({ onPress }) => {
     return (
@@ -65,7 +65,7 @@ const styles= StyleSheet.create({
         height: 30,
         borderRadius: 8,
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
       }
 })
 export default WeaklyGoals;

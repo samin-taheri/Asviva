@@ -5,6 +5,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { cardBackground, textColor } from '../global';
 import { WorkoutDetailsProps } from "../types/data";
 import Lable from "./Lable";
+import Card from "./Card";
 
 const WorkoutDetailsComponent: React.FC<WorkoutDetailsProps> = ({
   title,
@@ -13,7 +14,7 @@ const WorkoutDetailsComponent: React.FC<WorkoutDetailsProps> = ({
   return (
     <View>
     <Lable title="Workout Details" /> 
-    <View style={styles.card}>
+    <Card>
       <View style={styles.iconContainer}>
         <Image source={require('../assets/records-3.png')} style={styles.image} />
       </View>
@@ -35,7 +36,7 @@ const WorkoutDetailsComponent: React.FC<WorkoutDetailsProps> = ({
           color={textColor}
         />
       </Pressable>
-    </View>
+    </Card>
     </View>
   );
 };

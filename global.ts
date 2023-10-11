@@ -9,4 +9,6 @@ export const cardBackground = '#f3f3f5';
 export const cardBackground2 = 'rgba(153, 92, 88, 0.1)'; 
 export const loginBackground = '#f3f3f5';  
 export const tableBackgroundColor = 'rgba(209, 209, 209, 0.4)';
+export const buttonBackground = 'rgba(198,60,56,0.5)';
+
 
