@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
   iconContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 20,
+    borderRadius: 12,
     backgroundColor: 'rgba(55,57,54,0.1)',
     flexDirection: 'row',
     alignContent: 'center',

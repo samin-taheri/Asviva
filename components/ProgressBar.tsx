@@ -90,6 +90,30 @@ const App: React.FC = () => {
             <Text style={styles.introTitle}>{loading ? 'Loading' : 'Download'}</Text>
             </View>
           <ProgressBar progress={progress} />
+          <View style={{justifyContent: 'space-between', flexDirection: 'row', borderWidth: 1.5, borderColor: '#e2e2e2',  borderStyle: 'dashed', borderRadius: 12, marginTop: 10}}>
+            <View style={{flexDirection: 'row'}}>
+            <Feather
+            name="flag"
+            size={20}
+            color={textColor}
+            style={{marginTop: 8, marginLeft: 10}}
+          />
+          <Text style={styles.introTitle}>Contest</Text>
+          </View>
+          <Text style={styles.introTitle}>0</Text>
+          </View>
+          <View style={{justifyContent: 'space-between', flexDirection: 'row', borderWidth: 1.5, borderColor: '#e2e2e2',  borderStyle: 'dashed', borderRadius: 12, marginBottom: 10, marginTop: 15}}>
+          <View style={{flexDirection: 'row'}}>
+            <Feather
+            name="users"
+            size={20}
+            color={textColor}
+            style={{marginTop: 8, marginLeft: 10}}
+          />
+          <Text style={styles.introTitle}>Square</Text>
+          </View>
+          <Text style={styles.introTitle}>19</Text>
+          </View>
         </View>
       </Card>
     </View>

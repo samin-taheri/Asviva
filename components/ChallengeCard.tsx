@@ -51,6 +51,7 @@ const styles = StyleSheet.create({
     height: 230,
     borderRadius: 12,
     overflow: 'hidden',
+    elevation: 2,
     margin: 8,
   },
   card: {
@@ -68,7 +69,7 @@ const styles = StyleSheet.create({
   iconContainer: {
     alignItems: 'center',
     justifyContent: 'center',
-    borderRadius: 20,
+    borderRadius: 12,
     backgroundColor: 'rgba(255, 255, 255, 0.4)',
     flexDirection: 'row',
     alignContent: 'center',

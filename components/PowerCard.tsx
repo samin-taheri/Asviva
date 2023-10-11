@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'rgba(255, 255, 255, 0.2)',
     flexDirection: 'row',
     alignContent: 'center',
-    padding: 5
+    padding: 6
   },
   title: {
     fontSize: 14,
