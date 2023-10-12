@@ -27,6 +27,8 @@ import HelpAndFeedback from "../screens/HelpAndFeedback";
 import Goals from "../screens/Goals";
 import BrandScreen from "../screens/BrandScreen";
 import MyWorkouts from "../screens/MyWorkouts";
+import MultiplierDetails from "../screens/MultiplayerDetails";
+import MultiplayerDetails from "../screens/MultiplayerDetails";
 
 export default function Navigation() {
   return (
@@ -111,6 +113,11 @@ function RootNavigator() {
         <Stack.Screen
         name="PowerSubDetails"
         component={PowerSubDetails}
+        options={{ headerShown: false}}
+      />
+        <Stack.Screen
+        name="MultiplayerDetails"
+        component={MultiplayerDetails}
         options={{ headerShown: false}}
       />
        <Stack.Screen

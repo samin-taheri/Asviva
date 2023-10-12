@@ -147,6 +147,9 @@ export interface ProgressBarProps {
 export interface CouchingCourseComponentProps {
     onPress: (id: string) => void;
 }
+export interface MultiplayerComponentProps {
+    onPress: (id: string) => void;
+}
 export interface SimpleCardProps {
     backgroundColor: string;
     title: string;

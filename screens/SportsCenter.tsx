@@ -6,10 +6,11 @@ import CustomTopTabBar from "../components/CustomTopTabBar";
 import CouchingCourseComponent from "../components/CouchingCourseComponent";
 import PowerCourseComponent from "../components/PowerCourseComponent";
 import ChallengeComponent from "../components/ChallengeComponent";
+import MultiplayerComponent from "../components/MultiplayerComponent";
 
 export default function SportsCenter({ navigation }: any) {
   const [activeTab, setActiveTab] = useState<number>(0);
-  const tabs: string[] = ['Coaching', 'Challenge', 'Workout', 'Multiplier'];
+  const tabs: string[] = ['Coaching', 'Challenge', 'Workout', 'Multiplayer'];
 
   const handleTabPress = (index: number) => {
     setActiveTab(index);
@@ -27,6 +28,7 @@ export default function SportsCenter({ navigation }: any) {
         {activeTab === 0 && <CouchingCourseComponent onPress={(id) => navigation.navigate( 'CouchingDetails', {id})}/> }
         {activeTab === 1 && <ChallengeComponent onPress={(id) => navigation.navigate( 'ChallengeDetails', {id})}/>}
         {activeTab === 2 && <PowerCourseComponent onPress={(id) => navigation.navigate( 'PowerDetails', {id})}/>}
+        {activeTab === 3 && <MultiplayerComponent onPress={(id) => navigation.navigate( 'MultiplayerDetails', {id})}/>}
       </View>
     </View>
   );
