@@ -74,7 +74,7 @@ const BarChartComponent = () => {
 
 const styles = StyleSheet.create({
   container: {
-
+    width: '93%'
   },
   title: {
     fontSize: 18,

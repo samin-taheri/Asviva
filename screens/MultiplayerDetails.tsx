@@ -4,8 +4,6 @@ import { useRoute } from '@react-navigation/native';
 import { Feather } from "@expo/vector-icons";
 import BoxWithItems from "../components/BoxWithItems";
 import ColoredCards2 from "../components/ColoredCards2";
-import Card from "../components/Card";
-import Graph from "../components/Graph";
 import GraphDetails from "../components/GraphDetails";
 
 interface DataItem {

@@ -33,7 +33,7 @@ export default function LoadingScreen({ navigation }: any) {
       }
       </>
       <View style={styles.buttonContainer}>
-        <TouchableOpacity style={styles.button}>
+        <TouchableOpacity style={styles.button} onPress={()=> navigation.navigate('DeviceScreen')}>
           <Text style={styles.buttonText}>Search Again</Text>
         </TouchableOpacity>
       </View>
