@@ -23,7 +23,7 @@ export default function Details({ navigation }: any) {
                         tintColor={primaryColor}
                         onAnimationComplete={() => console.log('onAnimationComplete')}
                         backgroundColor="#ccc"
-                        style={{ alignItems: 'center', paddingTop: '10%' }}
+                        style={{ alignItems: 'center', paddingTop: '7%', paddingBottom:'7%' }}
                     >
                         {(fill) => (
                             <View style={styles.progressBarTextContainer}>
@@ -129,7 +129,6 @@ const styles = StyleSheet.create({
         justifyContent: 'space-between',
         padding: 8,
         width: '95%',
-        paddingTop: '5%'
     },
     contentContainer3: {
         flex: 1,
