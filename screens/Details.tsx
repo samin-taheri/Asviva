@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     },
     progressBarTextContainer: {
         position: 'absolute',
-        paddingTop: '100%',
+        paddingTop: '80%',
         paddingLeft: '50%',
         transform: [{ translateX: -30 }, { translateY: -30 }],
     },
