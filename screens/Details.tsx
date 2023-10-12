@@ -5,7 +5,6 @@ import CustomHeader from "../components/CustomHeader";
 import ColoredCards2 from "../components/ColoredCards2";
 import { Ionicons } from "@expo/vector-icons";
 import BarChartComponent from "../components/MyBarChart";
-import Lable from "../components/Lable";
 import { AnimatedCircularProgress } from 'react-native-circular-progress';
 
 export default function Details({ navigation }: any) {
@@ -20,10 +19,11 @@ export default function Details({ navigation }: any) {
                         size={200}
                         width={15}
                         fill={80}
+                        duration={2000}
                         tintColor={primaryColor}
                         onAnimationComplete={() => console.log('onAnimationComplete')}
                         backgroundColor="#ccc"
-                        style={{ alignItems: 'center', paddingTop: '15%' }}
+                        style={{ alignItems: 'center', paddingTop: '10%' }}
                     >
                         {(fill) => (
                             <View style={styles.progressBarTextContainer}>
@@ -88,7 +88,7 @@ const styles = StyleSheet.create({
     },
     progressBarTextContainer: {
         position: 'absolute',
-        paddingTop: '135%',
+        paddingTop: '100%',
         paddingLeft: '50%',
         transform: [{ translateX: -30 }, { translateY: -30 }],
     },
