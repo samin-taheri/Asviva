@@ -24,7 +24,7 @@ export default function SplashScreen ({ navigation }: any){
   }, [zoomAnim]);
 
   return (
-    <View style={styles.container}>
+    <View style={styles.contentContainer}>
         <Swiper
           style={styles.wrapper}
           showsButtons={false}
@@ -32,7 +32,7 @@ export default function SplashScreen ({ navigation }: any){
           activeDotColor={primaryColor}
           dotColor='#a7a5a5'
         >
-        <View style={styles.slide}>
+        <View style={[styles.slide]}>
         <Animated.View style={[styles.logoContainer, { transform: [{scale: zoomAnim.interpolate({inputRange: [0, 0.5, 1], outputRange: [1, 1.1, 1]})}]}]}>
         <Animated.View style={[styles.outerCircle, { transform: [{scale: zoomAnim.interpolate({inputRange: [0, 0.5, 1], outputRange: [1, 1.1, 1]})}]}]}></Animated.View>
         <Animated.View style={[styles.innerCircle, { transform: [{scale: zoomAnim.interpolate({inputRange: [0, 0.5, 1], outputRange: [1, 1.1, 1]})}]}]}></Animated.View>
@@ -74,7 +74,7 @@ export default function SplashScreen ({ navigation }: any){
           </View>
         </Swiper>
         <TouchableOpacity style={styles.buttonContainer} onPress={navigateToHome}>
-          <Text style={styles.buttonText}>Start</Text>
+          <Text style={styles.buttonText}>Get Started</Text>
           <Feather name="chevron-right" size={20} color='white' style={{ paddingLeft: '5%' }} />
         </TouchableOpacity>
     </View>
@@ -122,21 +122,20 @@ const styles = StyleSheet.create({
   contentContainer: {
     flex: 1,
     justifyContent: 'space-between',
-    paddingTop: '20%'
+    paddingBottom: '20%',
+    backgroundColor: 'white'
   },
   buttonContainer: {
     backgroundColor: primaryColor,
-    width:  90,
-    height: 35,
-    borderRadius: 8,
+    width:  '60%',
+    height: 40,
+    borderRadius: 12,
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
-    marginBottom: 20, 
-    marginTop: 20,
+    alignSelf: 'center', 
     position: 'absolute',
-    bottom: 20,
-    right: 30,  
+    bottom: 40,
   },
   wrapper: {
   },
@@ -157,7 +156,7 @@ const styles = StyleSheet.create({
   },
   image3: {
     width: '100%',
-    height: '60%',
+    height: '65%',
   },
   text: {
     color: '#fff',
@@ -166,13 +165,13 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   title: {
-    fontSize: 25,
+    fontSize: 22,
     fontWeight: 'bold',
     textAlign: 'center',
     paddingTop: 20,
   },
   title3: {
-    fontSize: 18,
+    fontSize: 17,
     fontWeight: '600',
     textAlign: 'center',
     padding: 20

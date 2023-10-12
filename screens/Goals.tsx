@@ -21,7 +21,7 @@ export default function Goals({navigation}: any) {
     
     return(
         <View style={styles.container}>
-        <CustomHeader title="Goals" onBack={() => navigation.navigate('Root')}/> 
+        <CustomHeader title="Goals" onBack={() => navigation.navigate('Root')} navigation={navigation}  onLogo={false}/> 
         <View style={styles.contentContainer}> 
         {isLoading ? 
           <Myloader title='Generating...'/>

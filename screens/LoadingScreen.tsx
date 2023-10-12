@@ -19,7 +19,7 @@ export default function LoadingScreen({ navigation }: any) {
 
   return (
     <View style={styles.container}>
-      <CustomHeader title="Device Pairing" onBack={() => navigation.goBack()}/>
+      <CustomHeader title="Device Pairing" onBack={() => navigation.goBack()} navigation={navigation}  onLogo={false}/>
       <>
       {isLoading ? 
        <View style={styles.contentContainer}>

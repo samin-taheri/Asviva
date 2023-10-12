@@ -21,7 +21,7 @@ export default function ConnectDevice({ navigation }: any) {
       
     return (
         <View style={styles.container}>
-            <CustomHeader title="Connect the Devices" onBack={() => navigation.navigate('Root')} />
+            <CustomHeader title="Connect the Devices" onBack={() => navigation.navigate('Root')} navigation={navigation}  onLogo={false}/>
             <ScrollView showsVerticalScrollIndicator={false} style={styles.contentContainer}>
             <Lable title="Devices" />
             <DeviceCard

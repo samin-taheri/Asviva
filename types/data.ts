@@ -52,6 +52,8 @@ export interface StatsCardProps {
 export interface CustomHeaderProps {
     title?: string;
     onBack?: () => void;
+    navigation: any;
+    onLogo: boolean;
 }
 export interface TopNavigationBarProps {
     option1Text: string;

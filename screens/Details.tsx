@@ -10,7 +10,7 @@ export default function Details({navigation}: any) {
 
     return(
         <View style={styles.container}>
-        <CustomHeader title="Records of Workouts" onBack={() => navigation.goBack()}/>  
+        <CustomHeader title="Records of Workouts" onBack={() => navigation.goBack()} navigation={navigation}  onLogo={false}/>  
         <View style={styles.contentContainer}>
         <Lable title="Records of Workouts" /> 
         <BarChartComponent />

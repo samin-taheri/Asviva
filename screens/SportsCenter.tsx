@@ -17,7 +17,7 @@ export default function SportsCenter({ navigation }: any) {
 
   return (
     <View style={styles.container}>
-      <CustomHeader title="SportsCenter" />
+      <CustomHeader navigation={navigation}  onLogo={true}/>  
       <CustomTopTabBar
         tabs={tabs}
         activeTab={activeTab}

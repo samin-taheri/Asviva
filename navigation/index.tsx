@@ -157,27 +157,7 @@ function BottomTabNavigator() {
           ),
           tabBarIconStyle: {marginTop: 5},
           tabBarLabel: "",
-          headerRight: () => (
-            <View style={{flexDirection: 'row', paddingRight: 20}}>
-             <Pressable style={{ top: 3, borderRadius: 8, backgroundColor: '#e8e8e8', padding: 6, flexDirection: 'row', height: 29 }} onPress={()=> navigation.navigate('ConnectDevice')}>
-             <Feather name="radio" size={18} color='#000'  style={{paddingRight: 4, bottom: 0.5}}/>
-             <Text style={{fontSize: 12, paddingRight: 3}}>Tap to Connect</Text>
-           </Pressable>
-           <Pressable style={{ paddingLeft: 10, top: 0}} onPress={()=> navigation.navigate('Profile')}>
-              <MaterialIcons name="account-circle" size={37} color="#dadada" />
-            </Pressable>
-           </View>
-          ),
-          
-          headerLeft: () => (
-            <View style={{ flexDirection: 'row', alignItems: 'center', paddingLeft: 22 }}>
-              <Image
-                source={require('../assets/logo.png')}
-                style={{ width: 110, height: 25 }}
-              />
-            </View>
-          ),
-          headerTitleStyle: {fontSize: 18, fontWeight: '600'}
+          headerShown: false
         })
       }
       />

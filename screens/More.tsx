@@ -13,7 +13,7 @@ export default function More({ navigation }: any) {
     return (
        
         <View style={styles.container}>
-            <CustomHeader title="Details" />
+            <CustomHeader navigation={navigation}  onLogo={true}/>  
             <ScrollView  showsVerticalScrollIndicator={false}>
             <View style={styles.contentContainer}>
             <DetailsSection

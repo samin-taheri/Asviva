@@ -65,7 +65,7 @@ export default function Profile({navigation}: any) {
 
     return(
         <View style={styles.container}>
-        <CustomHeader title="Profile" onBack={() => navigation.goBack()}/>  
+        <CustomHeader title="Profile" onBack={() => navigation.goBack()} navigation={navigation}  onLogo={false}/>  
         <ScrollView showsVerticalScrollIndicator={false}>
         <View style={styles.contentContainer}>
         <ProfileCard

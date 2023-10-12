@@ -5,12 +5,14 @@ import { backgroundColor } from '../global';
 import BackgroundCard from "../components/backgroundCard";
 import TotalWorkout2 from "../components/TotalWorkout2";
 import WorkoutDetailsComponent from "../components/WorkoutDetailsComponent";
+import CustomHeader from "../components/CustomHeader";
 
 export default function Home({navigation}: any) {
 
     return(
         <ScrollView 
         showsVerticalScrollIndicator={false}>
+        <CustomHeader navigation={navigation}  onLogo={true}/>  
         <View style={styles.container}>
             <BackgroundCard title="Find your coach"  backgroundImage={require('../assets/bg-3.jpg')} onPress={()=> navigation.navigate('SportsCenter')}/>
             <TotalWorkout2/>

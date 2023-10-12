@@ -193,7 +193,7 @@ export default function BrandScreen({ navigation }: any) {
 
   return (
     <View style={styles.container}>
-      <CustomHeader title="Brands" onBack={() => navigation.goBack()} />
+      <CustomHeader title="Brands" onBack={() => navigation.goBack()} navigation={navigation} onLogo={false}/>
       <View style={styles.contentContainer}>
         <Lable title="Choose the brand of your equipment" />
         <View style={styles.searchContainer}>

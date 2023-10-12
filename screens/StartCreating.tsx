@@ -55,7 +55,7 @@ export default function StartCreating({ navigation }: any) {
 
   return (
     <View style={styles.container}>
-      <CustomHeader title="Questionnaire" onBack={() => navigation.goBack()} />
+      <CustomHeader title="Questionnaire" onBack={() => navigation.goBack()} navigation={navigation} onLogo={false}/>
       <View style={styles.container2}>
         <Text style={styles.questionText}>{questions[currentQuestion].text}</Text>
         {questions[currentQuestion].options.map((option, index) => (

@@ -6,7 +6,7 @@ export default function MyGame({navigation}: any) {
 
     return(
         <View style={styles.container}>
-        <CustomHeader title="My Game" onBack={() => navigation.goBack()}/>  
+        <CustomHeader title="My Game" onBack={() => navigation.goBack()} navigation={navigation}  onLogo={false}/>  
         <View style={styles.contentContainer}>
             <Text style={styles.text}>My Game</Text>
         </View>
