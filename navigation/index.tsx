@@ -27,9 +27,7 @@ import HelpAndFeedback from "../screens/HelpAndFeedback";
 import Goals from "../screens/Goals";
 import BrandScreen from "../screens/BrandScreen";
 import MyWorkouts from "../screens/MyWorkouts";
-import MultiplierDetails from "../screens/MultiplayerDetails";
 import MultiplayerDetails from "../screens/MultiplayerDetails";
-import ShowDeviceScreen from "../screens/ShowDeviceScreen";
 
 export default function Navigation() {
   return (
@@ -144,11 +142,6 @@ function RootNavigator() {
        <Stack.Screen
         name="Brands"
         component={BrandScreen}
-        options={{ headerShown: false}}
-      />
-        <Stack.Screen
-        name="DeviceScreen"
-        component={ShowDeviceScreen}
         options={{ headerShown: false}}
       />
     </Stack.Navigator>
