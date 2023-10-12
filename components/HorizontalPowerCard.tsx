@@ -22,7 +22,7 @@ const HorizontalPowerCard: React.FC<CochingCardProps> = ({onPress}) => {
 
   return (
     <View style={styles.container}>
-    <Lable title="Power Course" />
+    <Lable title="Workout Course" />
       <FlatList
         data={cardData}
         keyExtractor={(item) => item.id}

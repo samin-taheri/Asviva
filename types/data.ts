@@ -181,6 +181,16 @@ export interface ListItemProps {
 export interface CochingCardProps {
     onPress: (id: string) => void;
 }
+export interface MultiplayerCardProps {
+    imageSource: { uri: string };
+    title: string;
+    isLive: boolean;
+    km: string;
+    date: string;
+    min: string;
+    id: string;
+    onPress: (id: string) => void;
+}
 export interface CochingCardProps {
     onPress: (id: string) => void;
 }

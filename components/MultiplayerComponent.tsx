@@ -24,14 +24,14 @@ const MultiplayerComponent: React.FC<MultiplayerComponentProps> = ({onPress }) =
   useEffect(() => {
     setTimeout(() => {
       const newData: DataItem[] = [
-          { id: '1', isLive: true, km: '4.4 km', date: '10/15/23', min: '43 min', title: 'Monday Cycling', subtitle: 'Run through bajanda', imageSource: require('../assets/multiplayer-6.jpg') },
-          { id: '2', isLive: true, km: '15.5 km', date: '10/15/23', min: '34 min', title: 'Tuesday Cycling', subtitle: 'San Francisco Bay Coyote Hills', imageSource: require('../assets/multiplayer-2.jpg') },
-          { id: '3', isLive: false, km: '7 km', date: '10/15/23', min: '50 min', title: ' Wednesday Cycling', subtitle: 'Tail along Vitava', imageSource: require('../assets/multiplayer-3.jpg') },
-          { id: '4', isLive: true, km: '17.4 km', date: '10/15/23', min: '60 min', title: 'thursday Cycling', subtitle: 'Otocec forest and park run', imageSource: require('../assets/multiplayer-4.jpg') },
-          { id: '5', isLive: true, km: '6 km', date: '10/15/23', min: '42 min', title: 'Friday Cycling', subtitle: 'Lake of silvaplana', imageSource: require('../assets/multiplayer-5.jpg') },
-          { id: '6', isLive: false, km: '6 km', date: '10/15/23', min: '42 min', title: 'Saturday Cycling', subtitle: 'Kayaking on the Rospuda river', imageSource: require('../assets/multiplayer-1.jpg') },
-          { id: '7', isLive: true, km: '6 km', date: '10/15/23', min: '42 min', title: 'Sunday Cycling', subtitle: 'Dolomites Trail running', imageSource: require('../assets/multiplayer-7.jpg') },
-      ];
+        { id: '1', isLive: true, km: '15.5 km', date: '10/15/23', min: '34 min', title: 'Monday Cycling', subtitle: 'San Francisco Bay Coyote Hills', imageSource: require('../assets/multiplayer-2.jpg') },
+        { id: '2', isLive: false, km: '7 km', date: '10/15/23', min: '50 min', title: ' Tuesday Cycling', subtitle: 'Tail along Vitava', imageSource: require('../assets/multiplayer-3.jpg') },
+        { id: '3', isLive: true, km: '4.4 km', date: '10/15/23', min: '43 min', title: 'Wednesday Cycling', subtitle: 'Run through bajanda', imageSource: require('../assets/multiplayer-6.jpg') },
+        { id: '4', isLive: true, km: '17.4 km', date: '10/15/23', min: '60 min', title: 'thursday Cycling', subtitle: 'Otocec forest and park run', imageSource: require('../assets/multiplayer-4.jpg') },
+        { id: '5', isLive: true, km: '6 km', date: '10/15/23', min: '42 min', title: 'Friday Cycling', subtitle: 'Lake of silvaplana', imageSource: require('../assets/multiplayer-5.jpg') },
+        { id: '6', isLive: false, km: '6 km', date: '10/15/23', min: '42 min', title: 'Saturday Cycling', subtitle: 'Kayaking on the Rospuda river', imageSource: require('../assets/multiplayer-1.jpg') },
+        { id: '7', isLive: true, km: '6 km', date: '10/15/23', min: '42 min', title: 'Sunday Cycling', subtitle: 'Dolomites Trail running', imageSource: require('../assets/multiplayer-7.jpg') },
+    ];
 
     setData(newData);
     setLoading(false);
@@ -134,7 +134,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignContent: 'center',
     flex: 1,
-   
   },
   container2: {
     flexDirection: 'row',
