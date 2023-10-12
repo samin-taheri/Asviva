@@ -3,9 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "../screens/Home";
-import { MaterialIcons } from "@expo/vector-icons";
 import { Entypo } from "@expo/vector-icons";
-import { Feather } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import More from "../screens/More";
 import SportsCenter from "../screens/SportsCenter";
@@ -13,7 +11,6 @@ import Profile from "../screens/Profile";
 import Details from "../screens/Details";
 import { primaryColor } from '../global';
 import StartCreating from "../screens/StartCreating";
-import { Text, View, Image, Pressable } from "react-native";
 import ConnectDevice from "../screens/ConnectDevice";
 import Cycle from "../screens/Cycle";
 import Login from "../screens/Login";
@@ -27,9 +24,9 @@ import PowerDetails from "../screens/PowerDetails";
 import PowerSubDetails from "../screens/PowerSubDetails";
 import Setting from "../screens/Setting";
 import HelpAndFeedback from "../screens/HelpAndFeedback";
-import MyGame from "../screens/MyGame";
 import Goals from "../screens/Goals";
 import BrandScreen from "../screens/BrandScreen";
+import MyWorkouts from "../screens/MyWorkouts";
 
 export default function Navigation() {
   return (
@@ -127,8 +124,8 @@ function RootNavigator() {
         options={{ headerShown: false}}
       />
        <Stack.Screen
-        name="MyGame"
-        component={MyGame}
+        name="MyWorkouts"
+        component={MyWorkouts}
         options={{ headerShown: false}}
       />
        <Stack.Screen

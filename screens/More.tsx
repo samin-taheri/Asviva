@@ -24,10 +24,10 @@ export default function More({ navigation }: any) {
             />
              <View style={styles.line} />
             <DetailsSection
-                title="My Game"
+                title="My Workouts"
                 iconName="account-tie"
                 imageSource={require('../assets/9.png')}
-                onPress={()=> navigation.navigate("MyGame")}
+                onPress={()=> navigation.navigate("MyWorkouts")}
             />
             <DetailsSection
                 title="Records of Workouts"
@@ -48,8 +48,8 @@ export default function More({ navigation }: any) {
                 onPress={toggleModal}
             />
             <MyModal isVisible={isModalVisible} onClose={toggleModal} title={''} selectedOption={null} onSelect={function (option: string): void {
-                        throw new Error('Function not implemented.');
-                    } } />
+                throw new Error('Function not implemented.');
+            } } />
             <DetailsSection
                 title="Manage Devices"
                 iconName="account-tie"

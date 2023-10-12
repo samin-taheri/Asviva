@@ -10,7 +10,7 @@ export default function Cycle({navigation}: any) {
     return(
         <View style={styles.container}>
         <CustomHeader navigation={navigation} onLogo={true}/>  
-        <ScrollView style={styles.contentContainer}>
+        <ScrollView style={styles.contentContainer} showsVerticalScrollIndicator={false}>
             <HorizontalChallengeCard onPress={(id) => navigation.navigate( 'ChallengeDetails', {id})}/>
             <HorizontalCoachingCard onPress={(id) => navigation.navigate( 'CouchingDetails', {id})}/>
             <HorizontalPowerCard onPress={(id) => navigation.navigate( 'PowerSubDetails', {id})}/>

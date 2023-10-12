@@ -1,5 +1,5 @@
 import { View, StyleSheet, Text, ImageSourcePropType, ImageBackground, ScrollView, TouchableOpacity } from "react-native";
-import { tableBackgroundColor } from '../global';
+import { tableBackgroundColor, textColor } from '../global';
 import { useRoute } from '@react-navigation/native';
 import { Feather } from "@expo/vector-icons";
 import ColoredCards2 from "../components/ColoredCards2";
@@ -7,6 +7,7 @@ import Card from "../components/Card";
 import Graph from "../components/Graph";
 import { useEffect, useState } from "react";
 import ProgressBar from "../components/ProgressBar";
+import GraphDetails from "../components/GraphDetails";
 
 interface DataItem {
   id: string;
@@ -33,19 +34,7 @@ export default function ChallengeDetails({navigation}: any) {
   const route = useRoute();
   const { id } = route.params as { id: string }; 
   const selectedItem = newData.find(item => item.id === id);
-  const [progress, setProgress] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (progress < 100) {
-        setProgress(progress + 10);
-      } else {
-        clearInterval(interval);
-      }
-    }, 1000); 
-    return () => clearInterval(interval);
-  }, [progress]);
-  
+ 
   if (selectedItem) {
     return(
         <View style={styles.container}>
@@ -92,9 +81,9 @@ export default function ChallengeDetails({navigation}: any) {
             </View>
            </Card>
            </View>
-           <View style={{marginBottom: 30,}}>
-           <Graph title={'Route Info'} width={320} height={170} barPercentage={0.6}/>
-           </View>
+           <View style={{marginBottom: 20}}>
+           <GraphDetails title={'Course Info'} width={320} height={170} barPercentage={0.5} color={textColor} />
+          </View>
           </ScrollView>
           </ImageBackground>
           </View>

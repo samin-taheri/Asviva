@@ -13,50 +13,55 @@ const ChallengeCard: React.FC<ChallengeCardProps> = ({
   onPress
 }) => {
   return (
-    <Pressable style={styles.card} onPress={() => onPress(id)}>
-    <ImageBackground source={imageSource} style={styles.cardBackground}>
-      <View style={styles.card}>
-        <View style={styles.content}>
-          <View style={styles.textContainer}>
-            <Text style={styles.title}>{title}</Text>
-          </View>
-          <View style={{ flexDirection: 'row', justifyContent: "space-between", bottom: 5 }}>
-            <View style={styles.iconContainer}>
-              <MaterialCommunityIcons
-                name="account-supervisor"
-                size={20}
-                color='#fff'
-              />
-              <Text style={{ fontSize: 11, color: '#fff' }}>{user}</Text>
+    <View style={styles.cardContainer}>
+      <Pressable style={styles.card} onPress={() => onPress(id)}>
+        <ImageBackground source={imageSource} style={styles.cardBackground}>
+          <View style={styles.card}>
+            <View style={styles.content}>
+              <View style={styles.textContainer}>
+                <Text style={styles.title}>{title}</Text>
+              </View>
+              <View style={styles.iconContainers}>
+                <View style={styles.iconContainer}>
+                  <MaterialCommunityIcons
+                    name="account-supervisor"
+                    size={20}
+                    color="#fff"
+                  />
+                  <Text style={{ fontSize: 11, color: "#fff" }}>{user}</Text>
+                </View>
+                <View style={[styles.iconContainer, { marginLeft: 10 }]}>
+                  <Entypo
+                    name="location-pin"
+                    size={20}
+                    color="#fff"
+                  />
+                  <Text style={{ fontSize: 11, color: "#fff" }}>{loc}</Text>
+                </View>
+              </View>
             </View>
-            <View style={[styles.iconContainer, { marginLeft: 10 }]}>
-              <Entypo
-                name="location-pin"
-                size={20}
-                color='#fff'
-              />
-              <Text style={{ fontSize: 11, color: '#fff' }}>{loc}</Text>
-            </View>
           </View>
-        </View>
-      </View>
-    </ImageBackground>
-    </Pressable>
+        </ImageBackground>
+      </Pressable>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
+  cardContainer: {
+    position: "relative",
+    marginBottom: 10,
+  },
   cardBackground: {
     width: 200,
-    height: 230,
+    height: 220,
     borderRadius: 12,
-    overflow: 'hidden',
-    elevation: 2,
+    overflow: "hidden",
     margin: 8,
   },
   card: {
     flex: 1,
-    backgroundColor: 'rgba(255, 255, 255, 0)', 
+    backgroundColor: "rgba(255, 255, 255, 0)",
   },
   content: {
     flex: 1,
@@ -65,26 +70,35 @@ const styles = StyleSheet.create({
   },
   textContainer: {
     justifyContent: "flex-end",
+    marginBottom: 15
+  },
+  iconContainers: {
+    position: "absolute",
+    bottom: 0,
+    left: 0,
+    right: 0,
+    flexDirection: "row",
+    justifyContent: "space-between",
+    padding: 10,
   },
   iconContainer: {
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
     borderRadius: 12,
-    backgroundColor: 'rgba(255, 255, 255, 0.4)',
-    flexDirection: 'row',
-    alignContent: 'center',
-    padding: 6
+    backgroundColor: "rgba(255, 255, 255, 0.4)",
+    flexDirection: "row",
+    alignContent: "flex-end",
+    padding: 6,
   },
   title: {
     fontSize: 16,
-    fontWeight: 'bold',
+    fontWeight: "bold",
     marginBottom: 8,
-    color: '#fff', 
-    paddingTop: 130
+    color: "#fff",
+    paddingTop: 130,
   },
   description: {
     fontSize: 14,
-    color: '#fff', 
+    color: "#fff",
   },
 });
 
