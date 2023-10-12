@@ -1,5 +1,5 @@
 import { View, StyleSheet, Text, ImageSourcePropType, Image, ScrollView, TouchableOpacity, Pressable, SafeAreaView, FlatList, ImageBackground } from "react-native";
-import { backgroundColor, tableBackgroundColor, textColor } from '../global';
+import { backgroundColor, tableBackgroundColor, textColor, workoutBackground1, workoutBackground2, workoutBackground3, workoutBackground4, workoutBackground5, workoutBackground6, workoutBackground7, workoutBackground8 } from '../global';
 import { useRoute } from '@react-navigation/native';
 import { Feather } from "@expo/vector-icons";
 import Graph from "../components/Graph";
@@ -15,19 +15,20 @@ interface DataItem {
   kcal: string;
   time: string;
   color: string;
+  backgroundColor: string;
   imageSource: ImageSourcePropType;
 }
 
   
 const newData: DataItem[] = [
-  { id: '1',time: '60 min', color: '#7e4f81', desc: 'Take your first step and master riding skills', title1: 'Beginner', title2: '15-minute Body Warm Up', kcal: '82 kcal',  imageSource: require('../assets/power-bike.png') },
-  { id: '2',time: '55 min', color: '#534f81', desc: 'Burn more calories within limited time', title1: 'Fat burning',  title2: '20-minute Basic Training', kcal: '128 kcal', imageSource: require('../assets/power-bike.png') },
-  { id: '3',time: '50 min', color: '#72814f', desc: 'Build better mental and physical ability', title1: 'Endurance', title2: '5-minute Basic Exercise for Starters', kcal: '32 kcal',  imageSource: require('../assets/power-bike.png') },
-  { id: '4',time: '70 min', color: '#5a7c5f', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '10-minute Tempo Adaptation', kcal: '62 kcal', imageSource: require('../assets/power-bike.png') },
-  { id: '5',time: '65 min', color: '#7c765a', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '15-minute Energy Awakening', kcal: '98 kcal', imageSource: require('../assets/power-bike.png') },
-  { id: '6',time: '60 min', color: '#7c6b5a', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '20-minute Rhythm Control',  kcal: '139 kcal', imageSource: require('../assets/power-bike.png') },
-  { id: '7',time: '50 min', color: '#81624f', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '20-minute Aerobic Interval Experience', kcal: '137 kcal', imageSource: require('../assets/power-bike.png') },
-  { id: '8',time: '55 min', color: '#814f6a', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '10-minute Daily Health', kcal: '58 kcal', imageSource: require('../assets/power-bike.png') },
+  { id: '1',time: '60 min', color: '#7e4f81', backgroundColor: workoutBackground1, desc: 'Take your first step and master riding skills', title1: 'Beginner', title2: '15-minute Body Warm Up', kcal: '82 kcal',  imageSource: require('../assets/power-bike.png') },
+  { id: '2',time: '55 min', color: '#534f81', backgroundColor: workoutBackground2, desc: 'Burn more calories within limited time', title1: 'Fat burning',  title2: '20-minute Basic Training', kcal: '128 kcal', imageSource: require('../assets/power-bike.png') },
+  { id: '3',time: '50 min', color: '#72814f', backgroundColor: workoutBackground3, desc: 'Build better mental and physical ability', title1: 'Endurance', title2: '5-minute Basic Exercise for Starters', kcal: '32 kcal',  imageSource: require('../assets/power-bike.png') },
+  { id: '4',time: '70 min', color: '#5a7c5f', backgroundColor: workoutBackground4, desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '10-minute Tempo Adaptation', kcal: '62 kcal', imageSource: require('../assets/power-bike.png') },
+  { id: '5',time: '65 min', color: '#7c765a', backgroundColor: workoutBackground5, desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '15-minute Energy Awakening', kcal: '98 kcal', imageSource: require('../assets/power-bike.png') },
+  { id: '6',time: '60 min', color: '#7c6b5a', backgroundColor: workoutBackground6, desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '20-minute Rhythm Control',  kcal: '139 kcal', imageSource: require('../assets/power-bike.png') },
+  { id: '7',time: '50 min', color: '#81624f', backgroundColor: workoutBackground7, desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '20-minute Aerobic Interval Experience', kcal: '137 kcal', imageSource: require('../assets/power-bike.png') },
+  { id: '8',time: '55 min', color: '#814f6a', backgroundColor: workoutBackground8, desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '10-minute Daily Health', kcal: '58 kcal', imageSource: require('../assets/power-bike.png') },
 ];
 
 export default function PowerDetails({ navigation }: any) {
@@ -44,26 +45,26 @@ export default function PowerDetails({ navigation }: any) {
                 <View style={{ flexDirection: 'column', flex: 1, paddingLeft: 8 }}>
                   <Text style={styles.title3}>{item.title2}</Text>
                   <View style={{flexDirection: 'row'}}>
-                  <View style={styles.iconContainer}>
+                  <View style={[styles.iconContainer,{backgroundColor: item.backgroundColor}]}>
                 <FontAwesome
                     name="flash"
                     size={15}
-                    color={textColor}
+                    color={item.color}
                 />
-                  <Text style={styles.desc2}>{item.kcal}</Text>
+                  <Text style={[styles.desc2, {color: item.color}]}>{item.kcal}</Text>
                 </View>
-                <View style={styles.iconContainer}>
+                <View style={[styles.iconContainer,{backgroundColor: item.backgroundColor}]}>
                 <MaterialCommunityIcons
                     name="bike"
                     size={20}
-                    color={textColor}
+                    color={item.color}
                 />
-                  <Text style={styles.desc2}>{item.time}</Text>
+                  <Text style={[styles.desc2, {color: item.color}]}>{item.time}</Text>
                 </View>
                 </View>
                 </View>
-                <View style={{marginRight: -20}}>
-                <Graph width={130} height={70} barPercentage={0.3} color={item.color}/>
+                <View style={{marginRight: -25}}>
+                <Graph width={140} height={70} barPercentage={0.35} color={item.color}/>
                 </View>
               </View>
             </Pressable>
@@ -124,7 +125,7 @@ const styles = StyleSheet.create({
         fontSize: 13,
         textAlign: 'left',
         paddingLeft: 10,
-        color: '#000'
+        fontWeight: '500'
       },
       cardBackground: {
         width: '100%',
@@ -212,7 +213,6 @@ const styles = StyleSheet.create({
       alignItems: 'center',
       justifyContent: 'center',
       borderRadius: 12,
-      backgroundColor: tableBackgroundColor,
       flexDirection: 'row',
       alignContent: 'center',
       marginTop: 5,

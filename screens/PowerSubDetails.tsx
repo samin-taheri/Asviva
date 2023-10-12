@@ -1,12 +1,12 @@
 import { View, StyleSheet, Text, ImageSourcePropType, ScrollView, TouchableOpacity } from "react-native";
-import { backgroundColor, tableBackgroundColor } from '../global';
+import { backgroundColor, tableBackgroundColor, workoutBackground1, workoutBackground2, workoutBackground3, workoutBackground4, workoutBackground5, workoutBackground6, workoutBackground7, workoutBackground8 } from '../global';
 import { useRoute } from '@react-navigation/native';
 import { Feather } from "@expo/vector-icons";
 import Card from "../components/Card";
-import Graph from "../components/Graph";
 import BoxWithItems from "../components/BoxWithItems";
 import ColoredCards2 from "../components/ColoredCards2";
 import { LinearGradient } from "expo-linear-gradient";
+import GraphDetails from "../components/GraphDetails";
 
 interface DataItem {
   id: string;
@@ -17,18 +17,19 @@ interface DataItem {
   crowd1: string;
   crowd2: string;
   backgroundColor: string;
+  color: string;
   imageSource: ImageSourcePropType;
 }
   
 const newData: DataItem[] = [
-    { id: '1', backgroundColor: '#7e4f81', crowd1: 'Have certain exercise habits', crowd2: 'Someone who is ready to build aphysical foundation.', intro: 'Thisexperience contains some basic ideas from typical endurance training. The comfortable, aerobic exercise intensity can help ypu achieve real fitness and make cycling more fun.', desc: 'Take your first step and master riding skills', title1: 'Beginner', title2: '15-minute Body Warm Up', imageSource: require('../assets/bg-5.jpg') },
-    { id: '2', backgroundColor: '#534f81', crowd1: 'Have certain exercise habits',crowd2: 'Someone who is ready to build aphysical foundation.', intro: 'Thisexperience contains some basic ideas from typical endurance training. The comfortable, aerobic exercise intensity can help ypu achieve real fitness and make cycling more fun.', desc: 'Burn more calories within limited time', title1: 'Fat burning',  title2: '20-minute Basic Training', imageSource: require('../assets/bg-5.jpg') },
-    { id: '3', backgroundColor: '#72814f', crowd1: 'Have certain exercise habits', crowd2: 'Someone who is ready to build aphysical foundation.', intro: 'Thisexperience contains some basic ideas from typical endurance training. The comfortable, aerobic exercise intensity can help ypu achieve real fitness and make cycling more fun.', desc: 'Build better mental and physical ability', title1: 'Endurance', title2: '5-minute Basic Exercise for Starters',  imageSource: require('../assets/bg-5.jpg') },
-    { id: '4', backgroundColor: '#5a7c5f', crowd1: 'Have certain exercise habits', crowd2: 'Someone who is ready to build aphysical foundation.', intro: 'Thisexperience contains some basic ideas from typical endurance training. The comfortable, aerobic exercise intensity can help ypu achieve real fitness and make cycling more fun.', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '10-minute Tempo Adaptation', imageSource: require('../assets/bg-5.jpg') },
-    { id: '5', backgroundColor: '#7c765a', crowd1: 'Have certain exercise habits', crowd2: 'Someone who is ready to build aphysical foundation.', intro: 'Thisexperience contains some basic ideas from typical endurance training. The comfortable, aerobic exercise intensity can help ypu achieve real fitness and make cycling more fun.', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '15-minute Energy Awakening', imageSource: require('../assets/bg-5.jpg') },
-    { id: '6', backgroundColor: '#7c6b5a', crowd1: 'Have certain exercise habits', crowd2: 'Someone who is ready to build aphysical foundation.', intro: 'Thisexperience contains some basic ideas from typical endurance training. The comfortable, aerobic exercise intensity can help ypu achieve real fitness and make cycling more fun.', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '20-minute Rhythm Control', imageSource: require('../assets/bg-5.jpg') },
-    { id: '7', backgroundColor: '#81624f', crowd1: 'Have certain exercise habits', crowd2: 'Someone who is ready to build aphysical foundation.', intro: 'Thisexperience contains some basic ideas from typical endurance training. The comfortable, aerobic exercise intensity can help ypu achieve real fitness and make cycling more fun.', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '20-minute Aerobic Interval Experience', imageSource: require('../assets/bg-5.jpg') },
-    { id: '8', backgroundColor: '#814f6a', crowd1: 'Have certain exercise habits', crowd2: 'Someone who is ready to build aphysical foundation.', intro: 'Thisexperience contains some basic ideas from typical endurance training. The comfortable, aerobic exercise intensity can help ypu achieve real fitness and make cycling more fun.', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '10-minute Daily Health', imageSource: require('../assets/bg-5.jpg') },
+    { id: '1', backgroundColor: '#7e4f81', color: workoutBackground1, crowd1: 'Have certain exercise habits', crowd2: 'Someone who is ready to build aphysical foundation.', intro: 'Thisexperience contains some basic ideas from typical endurance training. The comfortable, aerobic exercise intensity can help ypu achieve real fitness and make cycling more fun.', desc: 'Take your first step and master riding skills', title1: 'Beginner', title2: '15-minute Body Warm Up', imageSource: require('../assets/bg-5.jpg') },
+    { id: '2', backgroundColor: '#534f81', color: workoutBackground2, crowd1: 'Have certain exercise habits',crowd2: 'Someone who is ready to build aphysical foundation.', intro: 'Thisexperience contains some basic ideas from typical endurance training. The comfortable, aerobic exercise intensity can help ypu achieve real fitness and make cycling more fun.', desc: 'Burn more calories within limited time', title1: 'Fat burning',  title2: '20-minute Basic Training', imageSource: require('../assets/bg-5.jpg') },
+    { id: '3', backgroundColor: '#72814f', color: workoutBackground3, crowd1: 'Have certain exercise habits', crowd2: 'Someone who is ready to build aphysical foundation.', intro: 'Thisexperience contains some basic ideas from typical endurance training. The comfortable, aerobic exercise intensity can help ypu achieve real fitness and make cycling more fun.', desc: 'Build better mental and physical ability', title1: 'Endurance', title2: '5-minute Basic Exercise for Starters',  imageSource: require('../assets/bg-5.jpg') },
+    { id: '4', backgroundColor: '#5a7c5f', color: workoutBackground4, crowd1: 'Have certain exercise habits', crowd2: 'Someone who is ready to build aphysical foundation.', intro: 'Thisexperience contains some basic ideas from typical endurance training. The comfortable, aerobic exercise intensity can help ypu achieve real fitness and make cycling more fun.', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '10-minute Tempo Adaptation', imageSource: require('../assets/bg-5.jpg') },
+    { id: '5', backgroundColor: '#7c765a', color: workoutBackground5, crowd1: 'Have certain exercise habits', crowd2: 'Someone who is ready to build aphysical foundation.', intro: 'Thisexperience contains some basic ideas from typical endurance training. The comfortable, aerobic exercise intensity can help ypu achieve real fitness and make cycling more fun.', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '15-minute Energy Awakening', imageSource: require('../assets/bg-5.jpg') },
+    { id: '6', backgroundColor: '#7c6b5a', color: workoutBackground6, crowd1: 'Have certain exercise habits', crowd2: 'Someone who is ready to build aphysical foundation.', intro: 'Thisexperience contains some basic ideas from typical endurance training. The comfortable, aerobic exercise intensity can help ypu achieve real fitness and make cycling more fun.', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '20-minute Rhythm Control', imageSource: require('../assets/bg-5.jpg') },
+    { id: '7', backgroundColor: '#81624f', color: workoutBackground7, crowd1: 'Have certain exercise habits', crowd2: 'Someone who is ready to build aphysical foundation.', intro: 'Thisexperience contains some basic ideas from typical endurance training. The comfortable, aerobic exercise intensity can help ypu achieve real fitness and make cycling more fun.', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '20-minute Aerobic Interval Experience', imageSource: require('../assets/bg-5.jpg') },
+    { id: '8', backgroundColor: '#814f6a', color: workoutBackground8, crowd1: 'Have certain exercise habits', crowd2: 'Someone who is ready to build aphysical foundation.', intro: 'Thisexperience contains some basic ideas from typical endurance training. The comfortable, aerobic exercise intensity can help ypu achieve real fitness and make cycling more fun.', desc: 'More explosive power and better muscle lnes', title1: 'Muscle Strength', title2: '10-minute Daily Health', imageSource: require('../assets/bg-5.jpg') },
   ];
 
 export default function PowerSubDetails({ navigation }: any) {
@@ -44,16 +45,15 @@ export default function PowerSubDetails({ navigation }: any) {
     return (
         <View style={styles.container}>
       <LinearGradient
-          colors={[selectedItem.backgroundColor, "#fff"]}
+          colors={[selectedItem.backgroundColor, selectedItem.color, '#fff']}
           start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 1 }} 
+          end={{ x: 0, y: 1 }} 
           style={styles.linearGradient}
         >
         <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
           <Feather name="arrow-left" size={30} color="#fff" />
         </TouchableOpacity>
           <Text style={styles.title}>{selectedItem.title2}</Text>
-         
       <ScrollView showsVerticalScrollIndicator={false}>
       <View style={styles.container2}>
       <ColoredCards2  
@@ -97,7 +97,7 @@ export default function PowerSubDetails({ navigation }: any) {
         </View>
         </Card>
        </View>
-       <Graph title={'Course Info'} width={320} height={170} barPercentage={0.6} color={selectedItem.backgroundColor} />
+       <GraphDetails title={'Course Info'} width={320} height={170} barPercentage={0.5} color={selectedItem.backgroundColor} />
       <BoxWithItems />
       </ScrollView>
       </LinearGradient>

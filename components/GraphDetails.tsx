@@ -5,7 +5,7 @@ import Card from "./Card";
 import { tableBackgroundColor, textColor } from '../global';
 import { GraphProps } from "../types/data";
   
-const Graph: React.FC<GraphProps> = ({ onPress, title, width, height, barPercentage, color }) => {
+const GraphDetails: React.FC<GraphProps> = ({ onPress, title, width, height, barPercentage, color }) => {
   return (
     <View style={{padding: 8}}>
         <Card>
@@ -18,10 +18,16 @@ const Graph: React.FC<GraphProps> = ({ onPress, title, width, height, barPercent
              
               <BarChart
                 data={{
-                  labels: ["0", "09.21", "09.22", "09.23", "09.24", "Today"],
+                  labels: ["0", "1", "2", "3", "4","5", "6", "7", "8", "9", "10", "11"],
                   datasets: [
                     {
                       data: [
+                          Math.random() * 100,
+                          Math.random() * 100,
+                          Math.random() * 100,
+                          Math.random() * 100,
+                          Math.random() * 100,
+                          Math.random() * 100,
                           Math.random() * 100,
                           Math.random() * 100,
                           Math.random() * 100,
@@ -78,4 +84,4 @@ const styles = StyleSheet.create({
       },
 });
 
-export default Graph;
+export default GraphDetails;

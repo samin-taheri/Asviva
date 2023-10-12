@@ -35,7 +35,7 @@ const BarChartComponent = () => {
             },
           ],
         }}
-        width={330}
+        width={320}
         height={170}
         yAxisLabel=""
         yAxisSuffix=""
@@ -57,9 +57,12 @@ const BarChartComponent = () => {
           },
           barPercentage: 0.45,
           formatXLabel, 
+          propsForBackgroundLines: {
+            strokeWidth: 0
+          }
         }}
         style={{
-          marginLeft: -5,
+          marginLeft: -15,
           marginVertical: 8,
           borderRadius: 16,
         }}
