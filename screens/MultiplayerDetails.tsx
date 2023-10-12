@@ -76,22 +76,22 @@ export default function MultiplayerDetails({navigation}: any) {
             color='#3d3d4e'
             title="Distance"
             description="4.4 km"
-            cardColor='rgba(255, 234, 225, 0.8)'
-            imageSource={require('../assets/clock-2.png')}
+            cardColor='rgba(204, 204, 229, 0.5)'
+            imageSource={require('../assets/distance-1.png')}
             />
             <ColoredCards2  
             color='#3d3d4e'
             title="Durance"
             description="34 min"
-            cardColor='rgba(240, 215, 237, 0.5)'
-            imageSource={require('../assets/energy.png')}
+            cardColor='rgba(228, 231, 202, 0.5)'
+            imageSource={require('../assets/durance.png')}
             />
             <ColoredCards2  
             color='#3d3d4e'
             title="Speed"
             description="7.6 kph"
-            cardColor='rgba(234, 239, 232, 0.8)'
-            imageSource={require('../assets/difficulty.png')}
+            cardColor='rgba(233, 195, 195, 0.5)'
+            imageSource={require('../assets/speed.png')}
             />
            </View>
            {/* <View style={{padding: 8}}>
