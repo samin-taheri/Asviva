@@ -10,9 +10,10 @@ import CustomHeader from "../components/CustomHeader";
 export default function Home({navigation}: any) {
 
     return(
+        <View>
+        <CustomHeader navigation={navigation}  onLogo={true}/>  
         <ScrollView 
         showsVerticalScrollIndicator={false}>
-        <CustomHeader navigation={navigation}  onLogo={true}/>  
         <View style={styles.container}>
             <BackgroundCard title="Find your coach"  backgroundImage={require('../assets/bg-3.jpg')} onPress={()=> navigation.navigate('SportsCenter')}/>
             <TotalWorkout2/>
@@ -21,6 +22,7 @@ export default function Home({navigation}: any) {
             <Chart/>
         </View>
         </ScrollView>
+        </View>
     )
 }
 const styles = StyleSheet.create({

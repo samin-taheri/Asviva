@@ -63,7 +63,7 @@ export default function StartCreating({ navigation }: any) {
             key={index}
             style={[
               styles.optionButton,
-              { backgroundColor: selectedOption === option ?  'rgba(153, 92, 88, 0.2)' : backgroundColor },
+              { backgroundColor: selectedOption === option ?  '#e1bdbc' : backgroundColor },
             ]}
             onPress={() => handleOptionSelect(option)}
           >

@@ -137,7 +137,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     top: 40,
     flexDirection: 'row',
-    marginLeft: 15
+    alignSelf: 'center'
   },
   buttonText: {
     color: 'white',
