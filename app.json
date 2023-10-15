@@ -28,6 +28,13 @@
     "web": {
       "favicon": "./assets/favicon.png"
     },
-    "scheme": "Asviva"
+    "extra": {
+      "eas": {
+        "projectId": "b5e00172-dab5-4e63-82a1-51b3c033aa8b"
+      }
+    },
+    "plugins": [
+      "expo-build-properties"
+    ]
   }
 }

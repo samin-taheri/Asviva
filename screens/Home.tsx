@@ -19,7 +19,9 @@ export default function Home({navigation}: any) {
             <TotalWorkout2/>
             <WeaklyGoals onPress={()=> navigation.navigate("StartCreating")}/>
             <WorkoutDetailsComponent onPress={()=> navigation.navigate("Details")} title="Record of Workouts"/>
+            <View style={{marginBottom: '25%'}}>
             <Chart/>
+            </View>
         </View>
         </ScrollView>
         </View>

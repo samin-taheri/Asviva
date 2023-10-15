@@ -6,16 +6,9 @@ import { backgroundColor, cardBackground2, primaryColor, textColor } from '../gl
 import MyHeader from './MyHeader';
 import { FontAwesome } from '@expo/vector-icons';
 import * as WebBrowser from 'expo-web-browser';
-import * as Google from 'expo-auth-session/providers/google';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import { Feather } from "@expo/vector-icons";
-import { useNavigation } from '@react-navigation/native';
 
 WebBrowser.maybeCompleteAuthSession();
-
-// web: 88410767948-c5ifmd2fg9c0jarhm9fhgtf508t8hah9.apps.googleusercontent.com
-// ios: 88410767948-mb2oa3ruobe52r2ctvs378a3fvssm3id.apps.googleusercontent.com
-// andriod: 88410767948-020354sqjhs6fucj1ajsvqhebgaf2sno.apps.googleusercontent.com
 
 const LoginComponent: React.FC<LoginProps> = ({ onLogin, onRegister, navigate, forgotPassword, signUp }) => {
   const [username, setUsername] = useState('');
@@ -36,49 +29,10 @@ const LoginComponent: React.FC<LoginProps> = ({ onLogin, onRegister, navigate, f
     });
   }
 
-  const [request, response, promptAsync] = Google.useAuthRequest({
-    androidClientId: '215593517581-mdpooo1874qu1c7esu52huj095pr6toe.apps.googleusercontent.com',
-    iosClientId: '215593517581-d2ph6nkf9mkqe6tj72bfveg58rbl2f9i.apps.googleusercontent.com',
-    webClientId: '215593517581-6dmek378buevoh1mqfol6ht6e3cga59s.apps.googleusercontent.com'
-  })
-  const navigation = useNavigation();
-
   const handleAppleSignIn = () => {
     // Handle Apple sign-in logic here
   };
 
-
-  async function handleGoogleSignIn() {
-   const user = await AsyncStorage.getItem("@user");
-   if(!user){
-    if(response?.type === 'success'){
-    await getUserInfo(response.authentication?.accessToken);
-    }
-   } else {
-    setUserInfo(JSON.parse(user));
-   }
-  }
-
-const getUserInfo  = async(token: any) => {
-    if(!token) return;
-    try {
-        const response = await fetch(
-            "https://www.googleapis.com/userinfo/v2/me",
-            {
-                headers: { Authorization: `Bearer ${token}`}
-            }
-        );
-        const user = await response.json();
-        await AsyncStorage.setItem("@user", JSON.stringify(user));
-        setUserInfo(user);
-
-    } catch (error) {
-        console.error(error);
-    }
-}
-useEffect(()=> {
-    handleGoogleSignIn();
-}, [response]);
 
   return (
     <View>
@@ -153,7 +107,7 @@ useEffect(()=> {
       <View style={styles.divider} />
       </View>
         <View style={styles.container2}>
-      <TouchableOpacity style={styles.googleButton} onPress={()=> promptAsync()}>
+      <TouchableOpacity style={styles.googleButton}>
         <FontAwesome name="google" size={30} color={primaryColor}/>
       </TouchableOpacity>
       <TouchableOpacity style={styles.appleButton} onPress={handleAppleSignIn}>

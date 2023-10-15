@@ -74,7 +74,7 @@ export default function SplashScreen ({ navigation }: any){
           </View>
         </Swiper>
         <TouchableOpacity style={styles.buttonContainer} onPress={navigateToHome}>
-          <Text style={styles.buttonText}>Get Started</Text>
+          <Text style={styles.buttonText}>Start</Text>
           <Feather name="chevron-right" size={20} color='white' style={{ paddingLeft: '5%' }} />
         </TouchableOpacity>
     </View>
@@ -122,21 +122,21 @@ const styles = StyleSheet.create({
   contentContainer: {
     flex: 1,
     justifyContent: 'space-between',
-    paddingBottom: '20%',
     backgroundColor: 'white'
   },
   buttonContainer: {
     backgroundColor: primaryColor,
-    width:  '60%',
+    width:  100,
     height: 40,
     borderRadius: 12,
     alignItems: 'center',
     justifyContent: 'center',
     flexDirection: 'row',
-    alignSelf: 'center', 
+    marginBottom: 20, 
     position: 'absolute',
-    bottom: 40,
-  },
+    bottom: 20,
+    right: 30,  
+    },
   wrapper: {
   },
   slide: {

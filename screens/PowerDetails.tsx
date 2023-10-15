@@ -74,7 +74,7 @@ export default function PowerDetails({ navigation }: any) {
 
     return (
       <View style={styles.container}>
-      <LinearGradient
+     <LinearGradient
                 colors={['gray', '#ccc', "#fff"]}
                 start={{ x: 0, y: 0 }}
                 end={{ x: 1, y: 1 }} 
